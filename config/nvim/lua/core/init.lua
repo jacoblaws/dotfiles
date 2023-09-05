@@ -1,6 +1,7 @@
 local utils = require('core.utils')
 
 utils.load_options()
+utils.load_keymaps()
 
 -- bootstrap lazy.nvim plugin manager
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
