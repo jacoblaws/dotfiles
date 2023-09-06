@@ -2,6 +2,7 @@ return {
   -- file
   file_default = '󰈔',
   file_modified = '',
+  file_tree = '󰙅',
 
   -- folder
   folder_open = '󰝰',
