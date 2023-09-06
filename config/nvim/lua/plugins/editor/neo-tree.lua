@@ -13,6 +13,10 @@ local config = function(_, opts)
   require('neo-tree').setup(opts)
 end
 
+local init = function()
+  require('core.utils').load_keymaps('neo_tree')
+end
+
 local dependencies = {
   'nvim-lua/plenary.nvim',
   'nvim-tree/nvim-web-devicons',
@@ -27,6 +31,7 @@ local plugin_spec = {
 
   cmd = 'Neotree',
 
+  init = init,
   opts = opts,
   config = config,
   dependencies = dependencies
