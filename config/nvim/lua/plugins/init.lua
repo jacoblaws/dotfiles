@@ -4,5 +4,9 @@ local plugins = {
 
   -- editor
   require('plugins.editor.neo-tree'),
+
+  -- ui
+  require('plugins.ui.cokeline'),
+
 }
 return plugins
