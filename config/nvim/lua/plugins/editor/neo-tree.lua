@@ -11,7 +11,6 @@ local opts = {
   auto_clean_after_session_restore = true,
 
   default_component_configs = {
-    indent = { padding = 0, indent_size = 1 },
     modified = { symbol = icon.file_modified },
 
     icon = {
