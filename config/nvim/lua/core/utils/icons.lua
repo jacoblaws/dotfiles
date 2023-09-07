@@ -30,4 +30,5 @@ return {
   git_conflict = '',
   git_untracked = '★',
   git_sign = '▎',
+  git_sign_untracked = '┆',
 }

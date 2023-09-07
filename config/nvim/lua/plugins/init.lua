@@ -3,6 +3,7 @@ local plugins = {
   require('plugins.themes.everforest'),
 
   -- editor
+  require('plugins.editor.gitsigns'),
   require('plugins.editor.neo-tree'),
 
   -- ui
