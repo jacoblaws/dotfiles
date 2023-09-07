@@ -1,13 +1,22 @@
 return {
+  -- ui
+  win_separator = '▎',
+
   -- file
   file_default = '󰈔',
   file_modified = '',
+  file_readonly = '',
   file_tree = '󰙅',
 
   -- folder
   folder_open = '󰝰',
   folder_closed = '󰉋',
   folder_empty = '󰉒',
+
+  -- bufferline
+  buffer_close = '',
+  buffer_modified = '',
+  buffer_readonly = '',
 
   -- git
   git = '󰊢',
