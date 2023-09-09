@@ -12,6 +12,7 @@ M.find = {
     ['<leader>fC'] = { find.commands,        'Find commands' },
     ['<leader>fc'] = { find.under_cursor,    'Find word under cursor' },
     ['<leader>ff'] = { find.files,           'Find files' },
+    ['<leader>fH'] = { find.highlights,      'Find highlights' },
     ['<leader>fh'] = { find.help,            'Find help' },
     ['<leader>fk'] = { find.keymaps,         'Find keymaps' },
     ['<leader>fm'] = { find.man_pages,       'Find man pages' },

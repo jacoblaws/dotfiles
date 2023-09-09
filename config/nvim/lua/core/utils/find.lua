@@ -27,6 +27,10 @@ function M.files()
   require('telescope.builtin').find_files()
 end
 
+function M.highlights()
+  require('telescope.builtin').highlights()
+end
+
 function M.help()
   require('telescope.builtin').help_tags()
 end
