@@ -7,6 +7,7 @@ local plugins = {
   require('plugins.editor.gitsigns'),
   require('plugins.editor.neo-tree'),
   require('plugins.editor.telescope'),
+  require('plugins.editor.toggleterm'),
 
   -- ui
   require('plugins.ui.cokeline'),
