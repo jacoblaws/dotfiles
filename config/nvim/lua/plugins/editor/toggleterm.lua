@@ -13,6 +13,10 @@ local config = function(_, opts)
   require('toggleterm').setup(opts)
 end
 
+local init = function()
+  require('core.utils').load_keymaps('toggleterm')
+end
+
 local plugin_spec = {
   'akinsho/toggleterm.nvim',
 
@@ -21,6 +25,7 @@ local plugin_spec = {
 
   cmd = { 'ToggleTerm', 'TermExec' },
 
+  init = init,
   opts = opts,
   config = config,
 }
