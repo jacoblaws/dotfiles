@@ -10,6 +10,13 @@ local opts = {
   disable_italic_comments = false,
 
   show_eob = false,
+
+  on_highlights = function(hl, palette)
+    -- cokeline
+    hl.CokeLineFill = { bg = palette.bg_dim }
+    hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
+    hl.CokeLineBufferInactive = { fg = palette.grey0, bg = '#262d32' }
+  end
 }
 
 local config = function(_, opts)
