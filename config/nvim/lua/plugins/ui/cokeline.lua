@@ -9,6 +9,21 @@ local opts = function()
   return {
     show_if_buffers_are_at_least = 1,
 
+    fill_hl = 'CokeLineFill',
+    default_hl = {
+      fg = function(buffer)
+        return buffer.is_focused
+          and get_hex('CokeLineBufferActive', 'fg')
+           or get_hex('CokeLineBufferInactive', 'fg')
+      end,
+
+      bg = function(buffer)
+        return buffer.is_focused
+          and get_hex('CokeLineBufferActive', 'bg')
+           or get_hex('CokeLineBufferInactive', 'bg')
+      end,
+    },
+
     sidebar = {
       filetype = 'neo-tree',
       components = {
