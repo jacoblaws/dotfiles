@@ -51,6 +51,16 @@ local options = {
 
     -- theme
     termguicolors = true,       -- enable 24-bit RGB color in the TUI
+    fillchars = {               -- various ui characters
+      horiz = '━',
+      horizup = '┻',
+      horizdown = '┳',
+      vert = '┃',
+      vertleft = '┫',
+      vertright = '┣',
+      verthoriz = '╋',
+      eob = ' ',
+    },
 
     -- misc
     ruler = false,              -- show the line/column of the cursor position
