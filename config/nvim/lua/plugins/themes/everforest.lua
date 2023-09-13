@@ -15,6 +15,16 @@ local opts = {
     -- neovim
     hl.WinSeparator = { fg = palette.bg_dim, bg = palette.bg0 }
 
+    -- neo-tree
+    hl.NeoTreeNormal = { bg = palette.bg0 }
+    hl.NeoTreeEndOfBuffer = { bg = palette.bg0 }
+
+    hl.NeoTreeTabActive   = { fg = palette.fg, bg = palette.bg0 }
+    hl.NeoTreeTabInactive = { fg = palette.grey0, bg = palette.bg_dim }
+
+    hl.NeoTreeTabSeparatorActive   = { fg = palette.bg0, bg = palette.bg0 }
+    hl.NeoTreeTabSeparatorInactive = { fg = palette.bg_dim, bg = palette.bg_dim }
+
     -- cokeline
     hl.CokeLineFill = { bg = palette.bg_dim }
     hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
