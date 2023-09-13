@@ -12,6 +12,9 @@ local opts = {
   show_eob = false,
 
   on_highlights = function(hl, palette)
+    -- neovim
+    hl.WinSeparator = { fg = palette.bg_dim, bg = palette.bg0 }
+
     -- cokeline
     hl.CokeLineFill = { bg = palette.bg_dim }
     hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
