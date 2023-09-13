@@ -3,6 +3,8 @@
 -- toggle and persist multiple terminals during an editing session
 
 local opts = {
+  shading_factor = 2,
+
   direction = 'float',
   float_opts = {
     border = 'curved',
