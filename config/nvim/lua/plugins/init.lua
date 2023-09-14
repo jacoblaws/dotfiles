@@ -2,6 +2,9 @@ local plugins = {
   -- colorschemes
   require('plugins.themes.everforest'),
 
+  -- lang utils
+  require('plugins.lang.utils.mason'),
+
   -- editor
   require('plugins.editor.treesitter'),
   require('plugins.editor.gitsigns'),
