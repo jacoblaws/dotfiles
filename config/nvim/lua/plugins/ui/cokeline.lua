@@ -30,7 +30,7 @@ local opts = function()
         {
           text = ' ' .. icon.file_tree .. ' File Explorer',
           fg = get_hex('Directory', 'fg'),
-          bg = get_hex('TabLineFill', 'bg'),
+          bg = get_hex('WinSeparator', 'fg'),
           style = 'bold',
         },
       },
@@ -39,18 +39,12 @@ local opts = function()
     components = {
       {
         text = function(buffer)
-          local get_state = require('neo-tree.sources.manager').get_state
-          local renderer = require('neo-tree.ui.renderer')
-
-          local file_open = renderer.window_exists(get_state('filesystem'))
-          local buf_open = renderer.window_exists(get_state('buffers'))
-          local git_open = renderer.window_exists(get_state('git_status'))
-
-          local neotree_open = file_open or buf_open or git_open
-
-          if buffer.index == 1 and neotree_open then return ' ' end
-          return '' 
+          local neo_tree_open = require('core.utils.ui').neo_tree_open()
+          --if buffer.index == 1 and neo_tree_open then return '▋' end
+          --return '' 
+          return (buffer.index == 1 and neo_tree_open) and '▋' or ''
         end,
+        fg = get_hex('WinSeparator', 'fg'),
       },
       {
         text = function(buffer) return (buffer.index ~= 1) and icon.win_separator or ' ' end,
