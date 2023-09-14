@@ -5,6 +5,9 @@ local plugins = {
   -- lang utils
   require('plugins.lang.utils.mason'),
 
+  -- lsp
+  require('plugins.lang.lsp.mason-lspconfig'),
+
   -- editor
   require('plugins.editor.treesitter'),
   require('plugins.editor.gitsigns'),
