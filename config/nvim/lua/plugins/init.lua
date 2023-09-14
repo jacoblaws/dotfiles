@@ -4,6 +4,7 @@ local plugins = {
 
   -- lang utils
   require('plugins.lang.utils.mason'),
+  require('plugins.lang.utils.luasnip'),
 
   -- lsp
   require('plugins.lang.lsp.mason-lspconfig'),
