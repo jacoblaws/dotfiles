@@ -10,6 +10,7 @@ local plugins = {
   require('plugins.lang.lsp.nvim-cmp'),
   require('plugins.lang.lsp.cmp-nvim-lsp'),
   require('plugins.lang.lsp.mason-lspconfig'),
+  require('plugins.lang.lsp.nvim-lspconfig'),
 
   -- editor
   require('plugins.editor.treesitter'),
