@@ -8,6 +8,7 @@ local plugins = {
 
   -- lsp
   require('plugins.lang.lsp.nvim-cmp'),
+  require('plugins.lang.lsp.cmp-nvim-lsp'),
   require('plugins.lang.lsp.mason-lspconfig'),
 
   -- editor
