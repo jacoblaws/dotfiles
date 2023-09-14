@@ -3,10 +3,7 @@
 -- bridges mason.nvim with the nvim-lspconfig plugin
 
 local opts = {
-  ensure_installed = {
-  },
-
-  automatic_installation = false,
+  automatic_installation = true,
 }
 
 local config = function(_, opts)
