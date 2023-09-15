@@ -22,6 +22,7 @@ local plugins = {
   -- ui
   require('plugins.ui.cokeline'),
   require('plugins.ui.which-key'),
+  require('plugins.ui.lualine'),
 
 }
 return plugins
