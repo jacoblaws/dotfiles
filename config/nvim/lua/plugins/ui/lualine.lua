@@ -15,6 +15,10 @@ local opts = {
 }
 
 local config = function(_, opts)
+  if vim.g.colors_name == 'everforest' then
+    opts.options.theme = require('plugins.themes.lualine.everforest')
+  end
+
   require('lualine').setup(opts)
 end
 
