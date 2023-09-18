@@ -1,5 +1,9 @@
 local M = {}
 
+function M.get_cwd()
+  return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+end
+
 function M.get_current_filetype()
   return vim.api.nvim_buf_get_option(0, 'filetype')
 end
