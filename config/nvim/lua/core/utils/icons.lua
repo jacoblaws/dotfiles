@@ -31,4 +31,12 @@ return {
   git_untracked = '★',
   git_sign = '▎',
   git_sign_untracked = '┆',
+
+  -- languages
+  c = '',
+  cpp = '',
+  lua = '' ,
+  rust = '',
+  python = '󰌠',
+  haskell = '',
 }
