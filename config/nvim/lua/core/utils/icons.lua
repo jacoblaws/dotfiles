@@ -31,6 +31,7 @@ return {
   git_untracked = '★',
   git_sign = '▎',
   git_sign_untracked = '┆',
+  git_branch = '󰘬',
 
   -- languages
   c = '',
@@ -39,4 +40,12 @@ return {
   rust = '',
   python = '󰌠',
   haskell = '',
+
+    -- statusline
+  vim = '',
+  lsp = '󰣖',
+  location = '',
+  progress = '',
+  left_separator = '',
+  right_separator = '',
 }
