@@ -29,6 +29,10 @@ local opts = {
     hl.CokeLineFill = { bg = palette.bg_dim }
     hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
     hl.CokeLineBufferInactive = { fg = palette.grey0, bg = '#262d32' }
+
+    -- lualine
+    hl.StatusLine = { bg = palette.bg0 }
+    hl.StatusLineNC = { bg = palette.bg0 }
   end
 }
 
