@@ -1,4 +1,6 @@
 local plugins = {
+  require('plugins.ui.nvim-web-devicons'),
+
   -- colorschemes
   require('plugins.themes.everforest'),
 
