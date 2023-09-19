@@ -41,6 +41,12 @@ local opts = function()
     },
 
     mapping = {
+      ['<C-k>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+      ['<C-j>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+      ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+      ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+      ['<Up>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+      ['<Down>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
       ['<CR>'] = cmp.mapping.confirm { select = false },
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
