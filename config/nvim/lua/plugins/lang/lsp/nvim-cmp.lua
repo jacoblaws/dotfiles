@@ -3,18 +3,32 @@
 -- a completion engine for neovim
 -- completion sources are installed from external repositories
 
-local opts = {
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip'  },
-  },
+local opts = function()
+  local luasnip = require('luasnip')
+  local lspkind = require('lspkind')
 
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-}
+  return {
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'luasnip'  },
+    },
+
+    snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end,
+    },
+
+    formatting = {
+      fields = {'abbr', 'kind', 'menu'},
+      format = lspkind.cmp_format({
+        mode = 'symbol_text',
+        maxwidth = 50,
+        ellipsis_char = '...',
+      }),
+    },
+  }
+end
 
 local config = function(_, opts)
   require('cmp').setup(opts)
@@ -22,6 +36,7 @@ end
 
 local dependencies = {
   'L3MON4D3/LuaSnip',
+  'onsails/lspkind.nvim',
 }
 
 local plugin_spec = {

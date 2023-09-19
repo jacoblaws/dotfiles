@@ -9,6 +9,7 @@ local plugins = {
   require('plugins.lang.utils.luasnip'),
 
   -- lsp
+  require('plugins.lang.lsp.lspkind'),
   require('plugins.lang.lsp.nvim-cmp'),
   require('plugins.lang.lsp.cmp-nvim-lsp'),
   require('plugins.lang.lsp.mason-lspconfig'),
