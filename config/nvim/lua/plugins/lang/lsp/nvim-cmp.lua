@@ -4,6 +4,7 @@
 -- completion sources are installed from external repositories
 
 local opts = function()
+  local cmp = require('cmp')
   local luasnip = require('luasnip')
   local lspkind = require('lspkind')
 
@@ -17,6 +18,11 @@ local opts = function()
       expand = function(args)
         luasnip.lsp_expand(args.body)
       end,
+    },
+
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
 
     formatting = {
