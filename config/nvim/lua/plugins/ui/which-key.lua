@@ -47,6 +47,6 @@ local plugin_spec = {
   keys = keys,
 
   opts = opts,
-  config = configs,
+  config = config,
 }
 return plugin_spec
