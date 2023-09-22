@@ -50,6 +50,8 @@ return {
   right_separator = '',
 
   -- misc
+  terminal = '󰆍',
+  telescope = '󰭎',
   whichkey_separator = '➜',
   whichkey_breadcrumb = '󰄾',
 }

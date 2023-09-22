@@ -8,6 +8,9 @@ local icon = require('core.utils.icons')
 local opts = {
   defaults = {
     mode = { 'n', 'v', },
+
+    ['<leader>f'] = { name = icon.telescope .. ' Find' },
+    ['<leader>t'] = { name = icon.terminal  .. ' Terminal' },
   },
 
   key_labels = {
@@ -38,6 +41,7 @@ local keys = { '<leader>', '"', "'", 'c', 'v' }
 
 local config = function(_, opts)
   require('which-key').setup(opts)
+  require('which-key').register(opts.defaults)
 end
 
 local plugin_spec = {
