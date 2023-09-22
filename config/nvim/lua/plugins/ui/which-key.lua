@@ -11,6 +11,7 @@ local opts = {
 
     ['<leader>f'] = { name = icon.telescope .. ' Find' },
     ['<leader>t'] = { name = icon.terminal  .. ' Terminal' },
+    ['<leader>g'] = { name = icon.git       .. ' Git' },
   },
 
   key_labels = {
