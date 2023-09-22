@@ -24,9 +24,14 @@ local config = function(_, opts)
   require('gitsigns').setup(opts)
 end
 
+local init = function()
+  require('core.utils').load_keymaps('git')
+end
+
 local plugin_spec = {
   'lewis6991/gitsigns.nvim',
 
+  init = init,
   opts = opts,
   config = config,
 }

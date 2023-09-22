@@ -2,6 +2,7 @@ local M = {}
 
 local utils = require('core.utils')
 local find = require('core.utils.find')
+local git = require('core.utils.git')
 
 
 M.find = {
@@ -24,6 +25,27 @@ M.find = {
     ['<leader>ft'] = { find.themes,          'Find themes' },
     ['<leader>fW'] = { find.words_all_files, 'Find words in all files' },
     ['<leader>fw'] = { find.words,           'Find words' },
+  },
+}
+
+M.git = {
+  plugin = true,
+
+  n = {
+    ['<leader>gb'] = { git.branches,     'Git branches' },
+    ['<leader>gC'] = { git.file_commits, 'Git commits (current file)' },
+    ['<leader>gc'] = { git.repo_commits, 'Git commits (repository)' },
+    ['<leader>gd'] = { git.view_diff,    'View Git diff' },
+    ['<leader>gg'] = { git.lazygit,      'Lazygit' },
+    ['<leader>gh'] = { git.reset_hunk,   'Reset Git hunk' },
+    ['<leader>gL'] = { git.blame_full,   'View full git blame' },
+    ['<leader>gl'] = { git.blame,        'View Git blame' },
+    ['<leader>gp'] = { git.preview_hunk, 'Preview Git hunk' },
+    ['<leader>gr'] = { git.reset_buffer, 'Reset Git buffer' },
+    ['<leader>gs'] = { git.stage_hunk,   'Stage Git hunk' },
+    ['<leader>gS'] = { git.stage_buffer, 'Stage Git buffer' },
+    ['<leader>gt'] = { git.status,       'Git status' },
+    ['<leader>gu'] = { git.unstage_hunk, 'Unstage Git hunk' },
   },
 }
 

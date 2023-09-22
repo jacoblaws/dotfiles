@@ -10,6 +10,7 @@ end
 
 local init = function()
   require('core.utils').load_keymaps('find')
+  require('core.utils').load_keymaps('git')
 end
 
 local dependencies = {
