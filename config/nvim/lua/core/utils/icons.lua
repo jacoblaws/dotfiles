@@ -48,4 +48,8 @@ return {
   progress = '',
   left_separator = '',
   right_separator = '',
+
+  -- misc
+  whichkey_separator = '➜',
+  whichkey_breadcrumb = '󰄾',
 }

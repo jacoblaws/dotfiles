@@ -3,6 +3,8 @@
 -- displays a popup with possible keybindings 
 -- of the command you started typing
 
+local icon = require('core.utils.icons')
+
 local opts = {
   defaults = {
     mode = { 'n', 'v', },
@@ -14,6 +16,12 @@ local opts = {
     ['<tab>']   = 'TAB',
     ['<esc>']   = 'ESC',
     ['<bs>']    = 'BKSPC',
+  },
+
+  icons = {
+    breadcrumb = icon.whichkey_breadcrumb,
+    separator  = icon.whichkey_separator,
+    group      = '',
   },
 
   window = {
