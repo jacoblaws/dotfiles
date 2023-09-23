@@ -1,7 +1,4 @@
 return {
-  -- ui
-  win_separator = '▎',
-
   -- file
   file_default = '󰈔',
   file_modified = '',
@@ -52,6 +49,8 @@ return {
   -- misc
   terminal = '󰆍',
   telescope = '󰭎',
+  win_separator = '┃',
+  buf_separator = '▎',
   whichkey_separator = '➜',
   whichkey_breadcrumb = '󰄾',
 }

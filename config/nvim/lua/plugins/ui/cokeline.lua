@@ -47,7 +47,7 @@ local opts = function()
         fg = get_hex('WinSeparator', 'fg'),
       },
       {
-        text = function(buffer) return (buffer.index ~= 1) and icon.win_separator or ' ' end,
+        text = function(buffer) return (buffer.index ~= 1) and icon.buf_separator or ' ' end,
       },
       {
         text = function(buffer) return ' ' .. buffer.devicon.icon end,
