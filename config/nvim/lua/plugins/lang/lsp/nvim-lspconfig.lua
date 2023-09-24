@@ -20,6 +20,7 @@ local dependencies = {
   'L3MON4D3/LuaSnip',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
+  'folke/neodev.nvim',
 }
 
 local plugin_spec = {

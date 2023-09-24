@@ -7,6 +7,7 @@ local plugins = {
   -- lang utils
   require('plugins.lang.utils.mason'),
   require('plugins.lang.utils.luasnip'),
+  require('plugins.lang.utils.neodev'),
 
   -- lsp
   require('plugins.lang.lsp.lspkind'),
