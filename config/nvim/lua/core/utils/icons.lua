@@ -47,6 +47,7 @@ return {
   right_separator = '',
 
   -- misc
+  ui = '󰌪',
   terminal = '󰆍',
   telescope = '󰭎',
   win_separator = '┃',
