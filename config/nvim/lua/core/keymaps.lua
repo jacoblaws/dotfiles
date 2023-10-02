@@ -3,7 +3,7 @@ local M = {}
 local utils = require('core.utils')
 local find = require('core.utils.find')
 local git = require('core.utils.git')
-
+local ui = require('core.utils.ui')
 
 M.find = {
   plugin = true,
@@ -46,6 +46,19 @@ M.git = {
     ['<leader>gS'] = { git.stage_buffer, 'Stage Git buffer' },
     ['<leader>gt'] = { git.status,       'Git status' },
     ['<leader>gu'] = { git.unstage_hunk, 'Unstage Git hunk' },
+  },
+}
+
+M.ui = {
+  plugin = false,
+
+  n = {
+    ['<leader>ul'] = { ui.toggle_statusline,  'Toggle statusline' },
+    ['<leader>un'] = { ui.toggle_numbers,     'Toggle numbers' },
+    ['<leader>ur'] = { ui.toggle_rel_numbers, 'Toggle relative numbers' },
+    ['<leader>us'] = { ui.toggle_spell,       'Toggle spell' },
+    ['<leader>ut'] = { ui.toggle_tabline,     'Toggle tabline' },
+    ['<leader>uw'] = { ui.toggle_wrap,        'Toggle wrap' },
   },
 }
 
