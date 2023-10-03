@@ -32,7 +32,7 @@ local opts = {
 
     -- lualine
     hl.StatusLine = { bg = palette.bg0 }
-    hl.StatusLineNC = { bg = palette.bg0 }
+    hl.StatusLineNC = { }
   end
 }
 
