@@ -4,8 +4,7 @@
 
 local opts = function()
   local icon = require('core.utils.icons')
-  local get_hex = require('cokeline.utils').get_hex
-
+  local get_hl_attr = require('cokeline.hlgroups').get_hl_attr
   return {
     show_if_buffers_are_at_least = 1,
 
@@ -13,14 +12,14 @@ local opts = function()
     default_hl = {
       fg = function(buffer)
         return buffer.is_focused
-          and get_hex('CokeLineBufferActive', 'fg')
-           or get_hex('CokeLineBufferInactive', 'fg')
+          and get_hl_attr('CokeLineBufferActive', 'fg')
+           or get_hl_attr('CokeLineBufferInactive', 'fg')
       end,
 
       bg = function(buffer)
         return buffer.is_focused
-          and get_hex('CokeLineBufferActive', 'bg')
-           or get_hex('CokeLineBufferInactive', 'bg')
+          and get_hl_attr('CokeLineBufferActive', 'bg')
+           or get_hl_attr('CokeLineBufferInactive', 'bg')
       end,
     },
 
@@ -29,8 +28,8 @@ local opts = function()
       components = {
         {
           text = ' ' .. icon.file_tree .. ' File Explorer',
-          fg = get_hex('Directory', 'fg'),
-          bg = get_hex('WinSeparator', 'fg'),
+          fg = get_hl_attr('Directory', 'fg'),
+          bg = get_hl_attr('WinSeparator', 'fg'),
           style = 'bold',
         },
       },
@@ -44,7 +43,7 @@ local opts = function()
           --return '' 
           return (buffer.index == 1 and neo_tree_open) and '▋' or ''
         end,
-        fg = get_hex('WinSeparator', 'fg'),
+        fg = get_hl_attr('WinSeparator', 'fg'),
       },
       {
         text = function(buffer) return (buffer.index ~= 1) and icon.buf_separator or ' ' end,
