@@ -48,6 +48,8 @@ return {
 
   -- misc
   ui = '󰌪',
+  quit = '',
+  search = '',
   terminal = '󰆍',
   telescope = '󰭎',
   win_separator = '┃',
