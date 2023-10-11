@@ -8,6 +8,7 @@ symlinks() {
     nvim
     tmux
     kitty
+    ags
   )
 
   for dir in "${dirs[@]}"; do
