@@ -19,6 +19,8 @@ local opts = {
     'cpp',
     'rust',
     'python',
+    'javascript',
+    'typescript',
 
     -- utils
     'comment',
