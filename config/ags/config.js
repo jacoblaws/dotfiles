@@ -1,3 +1,5 @@
+import Bar from './js/bar/Bar.js'
+
 export default {
   maxStreamVolume: 1.05,
   cacheNotificationActions: false,
@@ -8,5 +10,6 @@ export default {
   },
 
   windows: [
+    Bar(),
   ],
 };
