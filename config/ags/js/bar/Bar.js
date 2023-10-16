@@ -1,5 +1,7 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
+import Clock from './components/Clock.js';
+
 const Start = () => Widget.Box({
   className: 'start',
   children: [
@@ -9,6 +11,7 @@ const Start = () => Widget.Box({
 const Center = () => Widget.Box({
   className: 'center',
   children: [
+    Clock(),
   ],
 });
 
