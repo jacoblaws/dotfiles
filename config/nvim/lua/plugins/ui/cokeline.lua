@@ -76,6 +76,10 @@ local config = function(_, opts)
   require('cokeline').setup(opts)
 end
 
+local init = function()
+  require('core.utils').load_keymaps('buffer')
+end
+
 local dependencies = {
   'nvim-lua/plenary.nvim',
   'nvim-tree/nvim-web-devicons',
@@ -86,6 +90,7 @@ local plugin_spec = {
 
   lazy = false,
 
+  init = init,
   opts = opts,
   config = config,
   dependencies = dependencies,
