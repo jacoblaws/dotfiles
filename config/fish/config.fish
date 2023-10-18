@@ -17,3 +17,7 @@ set -g tide_time_format ' %H:%M:%S'
 
 # aliases
 alias lg='lazygit'
+alias ls='eza -F   --icons --color=always --sort=ext --group-directories-first'
+alias la='eza -aF  --icons --color=always --sort=ext --group-directories-first'
+alias ll='eza -laF --icons --color=always --sort=ext --group-directories-first'
+alias lt='eza -TF  --icons --color=always --sort=ext --group-directories-first'
