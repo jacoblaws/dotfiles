@@ -67,8 +67,9 @@ M.buffer = {
   plugin = true,
 
   n = {
-    ['<tab>']   = { buffer.cycle_next, 'Cycle buffer next' },
-    ['<S-tab>'] = { buffer.cycle_prev, 'Cycle buffer prev' },
+    ['<tab>']     = { buffer.cycle_next, 'Cycle buffer next' },
+    ['<S-tab>']   = { buffer.cycle_prev, 'Cycle buffer prev' },
+    ['<leader>c'] = { buffer.close,      'Close buffer' },
   },
 }
 
