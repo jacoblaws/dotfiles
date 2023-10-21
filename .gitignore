@@ -5,4 +5,5 @@ config/fish/completions/*
 config/fish/conf.d/*
 
 # neovim
+.luarc.json
 lazy-lock.json
