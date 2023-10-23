@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# handles opening and moving between various configured tmux sessions
+
+in_tmux() {
+  [[ ! -z "${TMUX}" ]]
+}
+
+main() {
+  local -a session_names=()
+  local -A sessions=()
+  for session in "${HOME}/.config/tmux/sessions"/*; do
+    local session_name=("$(basename ${session} | sed 's/\.[^.]*$//')")
+
+    session_names+=(${session_name})
+    sessions["${session_name}"]="${session}"
+  done
+
+  local selected_session="$(printf "%s\n" ${session_names[@]} \
+    | fzf --prompt=' Select Session: ' --height=~50% --layout=reverse --border --exit-0)"
+
+  if [[ -z "${selected_session}" ]]; then
+    printf "No session selected\n"
+    exit 0
+  fi
+
+  if tmux has-session -t "${selected_session}" >/dev/null 2>&1; then
+    if in_tmux; then
+      tmux switch-client -t "${selected_session}"
+    else
+      tmux attach-session -t "${selected_session}"
+    fi
+    exit 0
+  fi
+
+  "$(${sessions[${selected_session}]})" >/dev/null 2>&1 || exit 1
+}
+
+main "$@"
