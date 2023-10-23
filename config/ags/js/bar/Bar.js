@@ -1,6 +1,5 @@
-import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-
 import Clock from './components/Clock.js';
+import { Widget } from '../imports.js';
 
 const Start = () => Widget.Box({
   className: 'start',
