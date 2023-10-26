@@ -1,4 +1,4 @@
-import Clock from './components/Clock.js';
+import Clock from './buttons/Clock.js';
 import { Widget } from '../imports.js';
 
 const Start = () => Widget.Box({
