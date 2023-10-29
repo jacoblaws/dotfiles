@@ -4,6 +4,8 @@ return {
   file_modified = '',
   file_readonly = '',
   file_tree = '󰙅',
+  file_recent = '',
+  file_new = '',
 
   -- folder
   folder_open = '󰝰',
@@ -38,7 +40,7 @@ return {
   python = '󰌠',
   haskell = '',
 
-    -- statusline
+  -- statusline
   vim = '',
   lsp = '󰣖',
   location = '',
@@ -48,8 +50,10 @@ return {
 
   -- misc
   ui = '󰌪',
-  quit = '',
+  quit = '',
+  grep = '',
   search = '',
+  plugins = '',
   terminal = '󰆍',
   telescope = '󰭎',
   win_separator = '┃',
