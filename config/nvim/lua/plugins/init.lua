@@ -27,5 +27,6 @@ local plugins = {
   require('plugins.ui.cokeline'),
   require('plugins.ui.which-key'),
   require('plugins.ui.lualine'),
+  require('plugins.ui.dashboard-nvim'),
 }
 return plugins
