@@ -14,6 +14,7 @@ local opts = {
 
     section_separators = { left = '', right = '', },
     component_separators = { left = '', right = '' },
+    disabled_filetypes = { statusline = { 'dashboard' } },
   },
 
   sections = {
@@ -94,7 +95,17 @@ local config = function(_, opts)
     opts.options.theme = require('plugins.themes.lualine.everforest')
   end
 
+  vim.o.laststatus = vim.g.lualine_laststatus
   require('lualine').setup(opts)
+end
+
+local init = function()
+  vim.g.lualine_laststatus = vim.o.laststatus
+  if vim.fn.argc(-1) > 0 then
+    vim.o.statusline = ''
+  else
+    vim.o.laststatus = 0
+  end
 end
 
 local dependencies = {
@@ -109,6 +120,7 @@ local plugin_spec = {
   lazy = true,
   event = 'VeryLazy',
 
+  init = init,
   opts = opts,
   config = config,
   dependencies = dependencies,
