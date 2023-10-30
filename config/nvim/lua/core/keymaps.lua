@@ -8,7 +8,6 @@ local buffer = require('core.utils.buffer')
 
 M.find = {
   plugin = true,
-
   n = {
     ["<leader>f'"] = { find.marks,           'Find marks' },
     ['<leader>fa'] = { find.all_files,       'Find all files' },
@@ -31,7 +30,6 @@ M.find = {
 
 M.git = {
   plugin = true,
-
   n = {
     ['<leader>gb'] = { git.branches,     'Git branches' },
     ['<leader>gC'] = { git.file_commits, 'Git commits (current file)' },
@@ -52,7 +50,6 @@ M.git = {
 
 M.ui = {
   plugin = false,
-
   n = {
     ['<leader>ul'] = { ui.toggle_statusline,  'Toggle statusline' },
     ['<leader>un'] = { ui.toggle_numbers,     'Toggle numbers' },
@@ -65,7 +62,6 @@ M.ui = {
 
 M.buffer = {
   plugin = true,
-
   n = {
     ['<tab>']     = { buffer.cycle_next, 'Cycle buffer next' },
     ['<S-tab>']   = { buffer.cycle_prev, 'Cycle buffer prev' },
@@ -75,7 +71,6 @@ M.buffer = {
 
 M.toggleterm = {
   plugin = true,
-
   n = {
     ['<leader>tl'] = { function() utils.toggleterm_cmd('lazygit') end, 'ToggleTerm lazygit' },
     ['<leader>tb'] = { function() utils.toggleterm_cmd('btm') end,     'ToggleTerm btm' },
@@ -96,7 +91,6 @@ M.toggleterm = {
 
 M.neo_tree = {
   plugin = true,
-
   n = {
     ['<leader>e'] = {
       function()
@@ -116,5 +110,4 @@ M.neo_tree = {
     },
   },
 }
-
 return M

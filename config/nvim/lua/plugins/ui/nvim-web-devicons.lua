@@ -18,6 +18,7 @@ local opts = {
 local config = function(_, opts)
   require('nvim-web-devicons').setup(opts)
 end
+
 local plugin_spec = {
   'nvim-tree/nvim-web-devicons',
 

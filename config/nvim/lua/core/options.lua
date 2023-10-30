@@ -11,7 +11,7 @@ local options = {
     shiftround = true,          -- round indent to multiple of 'shiftwidth'
     expandtab = true,           -- convert tabs to spaces
     smartindent = true,         -- insert indents automatically
-    
+
     -- searching
     hlsearch = false,           -- don't highlight all search matches
     smartcase = true,	          -- don't ignore case when searching with capitals
@@ -29,7 +29,7 @@ local options = {
     -- wrap
     wrap = false,               -- disable wrapping on long lines of text
     linebreak = true,           -- only wrap lines at characters defined by 'breakat'
-   
+
     -- status/buffer lines
     showmode = false,           -- disable mode notifications in the command line
     cmdheight = 0,              -- hide command line unless needed
