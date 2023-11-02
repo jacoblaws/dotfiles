@@ -16,6 +16,9 @@ local plugins = {
   require('plugins.lang.lsp.mason-lspconfig'),
   require('plugins.lang.lsp.nvim-lspconfig'),
 
+  -- language tools
+  require('plugins.lang.markdown-preview'),
+
   -- editor
   require('plugins.editor.treesitter'),
   require('plugins.editor.gitsigns'),
