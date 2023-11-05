@@ -88,7 +88,8 @@ local dependencies = {
 local plugin_spec = {
   'willothy/nvim-cokeline',
 
-  lazy = false,
+  lazy = true,
+  event = 'VeryLazy',
 
   init = init,
   opts = opts,
