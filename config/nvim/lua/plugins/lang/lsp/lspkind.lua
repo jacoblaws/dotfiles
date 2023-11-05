@@ -2,17 +2,19 @@
 --
 -- adds vscode-like icons to neovim built-in lsp
 
-local init = function()
-  require('lspkind').init({
-    mode   = "symbol_text",
-    preset = "default",
-  })
+local opts = {
+  mode   = "symbol_text",
+  preset = "default",
+}
+
+local config = function(_, opts)
+  require('lspkind').init(opts)
 end
 
 local plugin_spec = {
   'onsails/lspkind.nvim',
 
   lazy = true,
-  init = init,
+  config = config,
 }
 return plugin_spec
