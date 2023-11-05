@@ -13,7 +13,7 @@ end
 local plugin_spec = {
   'williamboman/mason-lspconfig.nvim',
 
-  lazy = false,
+  lazy = true,
 
   opts = opts,
   config = config,

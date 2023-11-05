@@ -12,7 +12,7 @@ end
 local plugin_spec = {
   'williamboman/mason.nvim',
 
-  lazy = false,
+  lazy = true,
 
   opts = opts,
   config = config,
