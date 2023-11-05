@@ -27,7 +27,8 @@ local plugin_spec = {
   'neovim/nvim-lspconfig',
 
   lazy = true,
-  cmd = { 'BufReadPre', 'BufNewFile' },
+  cmd = { 'LspInfo', 'LspInstall' },
+  event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
 
   opts = opts,
   config = config,
