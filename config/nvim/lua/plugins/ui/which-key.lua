@@ -50,8 +50,9 @@ local plugin_spec = {
   'folke/which-key.nvim',
 
   lazy = true,
-  keys = keys,
+  event = 'VeryLazy',
 
+  keys = keys,
   opts = opts,
   config = config,
 }
