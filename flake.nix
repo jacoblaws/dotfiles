@@ -1,16 +1,31 @@
 {
-  description = "nixos config";
+  description = "nixos and home-manager config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }@inputs:
+  let
+    username = "jvl";
+    system = "x86_64-linux";
+  in
+  {
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         modules = [ ./config/nixos/configuration.nix ];
+        specialArgs = { inherit inputs username system; };
       };
+    };
+
+    homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [ ./home.nix ];
+      extraSpecialArgs = { inherit inputs username; };
     };
   };
 }
