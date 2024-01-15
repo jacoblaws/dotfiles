@@ -6,6 +6,7 @@
   };
 
   xdg.configFile = {
+    hypr.source = ../hypr;
     kitty.source = ../kitty;
   };
 }
