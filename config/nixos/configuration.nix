@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./hyprland.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
