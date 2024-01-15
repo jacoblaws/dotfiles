@@ -1,6 +1,8 @@
 { username, ... }:
 
 {
+  imports = [ ./config/home-manager ];
+
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
 
