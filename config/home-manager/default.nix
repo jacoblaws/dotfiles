@@ -1,5 +1,8 @@
 {
-  imports = [ ./neovim.nix ];
+  imports = [
+    ./neovim.nix
+    ./packages.nix
+  ];
 
   programs = {
     kitty.enable = true;
