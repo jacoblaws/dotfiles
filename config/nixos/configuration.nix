@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./audio.nix
     ./nvidia.nix
     ./hyprland.nix
   ];
@@ -54,6 +55,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
   };
 
