@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nvidia.nix
     ./hyprland.nix
   ];
 
