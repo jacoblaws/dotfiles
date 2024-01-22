@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fish.nix
     ./neovim.nix
     ./packages.nix
   ];
