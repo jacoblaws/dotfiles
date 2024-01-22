@@ -22,6 +22,7 @@
     spotify
     discord
     obsidian
+    pavucontrol
   ];
 
   nixpkgs.config.permittedInsecurePackages =
