@@ -20,6 +20,8 @@
     wget
   ];
 
+  programs.fish.enable = true;
+
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -53,6 +55,7 @@
 
   users.users.jvl = {
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
