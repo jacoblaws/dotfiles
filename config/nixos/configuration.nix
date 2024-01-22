@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -21,6 +21,7 @@
   ];
 
   programs.fish.enable = true;
+  programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
   boot.loader = {
     systemd-boot.enable = true;
