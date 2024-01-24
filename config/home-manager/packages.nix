@@ -23,6 +23,7 @@
     discord
     obsidian
     pavucontrol
+    prismlauncher
   ];
 
   nixpkgs.config.permittedInsecurePackages =
