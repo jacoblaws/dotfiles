@@ -9,11 +9,13 @@
 
   programs = {
     kitty.enable = true;
+    tmux.enable = true;
   };
 
   xdg.configFile = {
     hypr.source = ../hypr;
     kitty.source = ../kitty;
+    tmux.source = ../tmux;
   };
 
   xdg.userDirs = {
