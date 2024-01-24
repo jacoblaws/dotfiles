@@ -21,6 +21,7 @@
   ];
 
   programs.fish.enable = true;
+  programs.steam.enable = true;
   programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
   boot.loader = {
