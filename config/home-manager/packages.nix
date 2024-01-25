@@ -24,6 +24,7 @@
     obsidian
     pavucontrol
     prismlauncher
+    r2modman
   ];
 
   nixpkgs.config.permittedInsecurePackages =
