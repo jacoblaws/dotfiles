@@ -25,6 +25,7 @@
     pavucontrol
     prismlauncher
     r2modman
+    calibre
   ];
 
   nixpkgs.config.permittedInsecurePackages =
