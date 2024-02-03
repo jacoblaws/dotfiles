@@ -6,7 +6,6 @@
     plugins =  [
       { name = "z"; src = pkgs.fishPlugins.z.src; }
       { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
-      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
       { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
       { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
