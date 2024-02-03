@@ -25,6 +25,7 @@
     prismlauncher
     r2modman
     calibre
+    lutris
   ];
 
   nixpkgs.config.permittedInsecurePackages =
