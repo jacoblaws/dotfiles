@@ -6,7 +6,6 @@
     # cli
     lf
     fd
-    gh
     fzf
     eza
     bat
