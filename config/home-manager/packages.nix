@@ -1,4 +1,4 @@
-{ nixpkgs, pkgs, ... }:
+{ nixpkgs, pkgs, inputs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -26,6 +26,10 @@
     r2modman
     calibre
     lutris
+
+    # wine
+    winetricks
+    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
   ];
 
   nixpkgs.config.permittedInsecurePackages =
