@@ -26,6 +26,7 @@
     r2modman
     calibre
     lutris
+    tauon
 
     # wine
     winetricks
