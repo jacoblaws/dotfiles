@@ -10,6 +10,7 @@
   programs = {
     kitty.enable = true;
     tmux.enable = true;
+    starship.enable = true;
   };
 
   xdg.configFile = {
