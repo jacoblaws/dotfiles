@@ -27,6 +27,7 @@
     calibre
     lutris
     tauon
+    picard
 
     # wine
     winetricks
