@@ -15,6 +15,7 @@
     };
 
     nix-gaming.url = "github:fufexan/nix-gaming";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
