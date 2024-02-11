@@ -1,7 +1,7 @@
 { username, ... }:
 
 {
-  imports = [ ./config/home-manager ];
+  imports = [ ./home ];
 
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";

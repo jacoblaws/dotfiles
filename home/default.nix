@@ -14,9 +14,10 @@
   };
 
   xdg.configFile = {
-    hypr.source = ../hypr;
-    kitty.source = ../kitty;
-    tmux.source = ../tmux;
+    hypr.source = ../config/hypr;
+    kitty.source = ../config/kitty;
+    tmux.source = ../config/tmux;
+    "starship.toml".source = ../config/starship.toml;
   };
 
   xdg.userDirs = {
