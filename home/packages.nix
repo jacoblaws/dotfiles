@@ -28,6 +28,7 @@
     lutris
     tauon
     picard
+    rofi-wayland
 
     # wine
     winetricks
