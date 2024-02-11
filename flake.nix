@@ -33,7 +33,7 @@
 
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./home.nix ];
+      modules = [ ./home ];
       extraSpecialArgs = { inherit inputs username; };
     };
   };

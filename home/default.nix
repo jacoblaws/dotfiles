@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, username, ... }:
 
 {
   imports = [
@@ -7,10 +7,17 @@
     ./packages.nix
   ];
 
+  home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "23.11";
+  };
+
   programs = {
     kitty.enable = true;
     tmux.enable = true;
     starship.enable = true;
+    home-manager.enable = true;
   };
 
   xdg.configFile = {
