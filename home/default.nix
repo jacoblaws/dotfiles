@@ -11,6 +11,10 @@
     username = "${username}";
     homeDirectory = "/home/${username}";
     stateVersion = "23.11";
+
+    file = {
+      ".local/share/TauonMusicBox/theme/".source = ../config/tauon;
+    };
   };
 
   programs = {
