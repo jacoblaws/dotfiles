@@ -29,6 +29,7 @@
     tauon
     picard
     rofi-wayland
+    sioyek
 
     # wine
     winetricks
