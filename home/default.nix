@@ -4,6 +4,7 @@
   imports = [
     ./fish.nix
     ./neovim.nix
+    ./vscodium.nix
     ./packages.nix
   ];
 
