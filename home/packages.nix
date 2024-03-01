@@ -30,6 +30,7 @@
     picard
     rofi-wayland
     sioyek
+    drawio
 
     # wine
     winetricks
