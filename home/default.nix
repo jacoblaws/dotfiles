@@ -22,6 +22,7 @@
     kitty.enable = true;
     tmux.enable = true;
     starship.enable = true;
+    waybar.enable = true;
     home-manager.enable = true;
   };
 
