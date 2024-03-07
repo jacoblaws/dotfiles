@@ -22,6 +22,7 @@
       unzip
       tree-sitter
       clang-tools
+      cmake-language-server
       lua-language-server
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
