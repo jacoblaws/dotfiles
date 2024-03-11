@@ -15,6 +15,7 @@
     zip
     unzip
     unrar
+    cliphist
 
     # gui
     firefox
