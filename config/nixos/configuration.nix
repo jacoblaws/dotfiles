@@ -52,9 +52,9 @@
     };
   };
 
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   users.users.jvl = {
