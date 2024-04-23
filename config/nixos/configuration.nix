@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./audio.nix
     ./nvidia.nix
+    ./substituters.nix
     ./fonts.nix
     ./gnome.nix
     ./hyprland.nix
