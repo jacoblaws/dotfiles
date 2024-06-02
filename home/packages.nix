@@ -32,6 +32,7 @@
     rofi-wayland
     sioyek
     drawio
+    xivlauncher
 
     # wine
     winetricks
