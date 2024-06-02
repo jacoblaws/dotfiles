@@ -24,6 +24,11 @@
     starship.enable = true;
     waybar.enable = true;
     home-manager.enable = true;
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 
   xdg.configFile = {
