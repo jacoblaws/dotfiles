@@ -1,7 +1,7 @@
-{ pkgs, inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
   programs.neovim = {
     enable = true;
@@ -14,7 +14,7 @@
     withNodeJs = true;
     withPython3 = true;
 
-    package = pkgs.neovim-nightly;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
       wget
