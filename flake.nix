@@ -32,9 +32,14 @@
   in
   {
     nixosConfigurations = {
-      "nixos" = nixpkgs.lib.nixosSystem {
-        modules = [ ./config/nixos/configuration.nix ];
+      desktop = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts ./hosts/desktop];
         specialArgs = { inherit inputs username system; };
+      };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts ./hosts/laptop ];
+        specialArts = { inherit inputs username system; };
       };
     };
 
