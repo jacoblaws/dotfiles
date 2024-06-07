@@ -20,6 +20,7 @@
       wget
       curl
       unzip
+      clang
       tree-sitter
       clang-tools
       cmake-language-server
