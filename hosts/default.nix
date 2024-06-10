@@ -20,6 +20,16 @@
   programs.fish.enable = true;
   programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
+  virtualisation = {
+    containers.enable = true;
+
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enable = true;
+    };
+  };
+
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
