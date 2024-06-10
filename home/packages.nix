@@ -18,6 +18,7 @@
     cliphist
     dive
     podman-tui
+    podman-compose
 
     # gui
     firefox
