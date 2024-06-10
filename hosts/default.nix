@@ -20,6 +20,9 @@
   programs.fish.enable = true;
   programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
