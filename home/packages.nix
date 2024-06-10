@@ -16,6 +16,7 @@
     unzip
     unrar
     cliphist
+    dive
 
     # gui
     firefox
