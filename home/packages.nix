@@ -17,6 +17,7 @@
     unrar
     cliphist
     dive
+    podman-tui
 
     # gui
     firefox
