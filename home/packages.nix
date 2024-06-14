@@ -36,6 +36,7 @@
     sioyek
     drawio
     xivlauncher
+    zotero
 
     # wine
     winetricks
