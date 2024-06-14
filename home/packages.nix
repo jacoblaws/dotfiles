@@ -37,6 +37,7 @@
     drawio
     xivlauncher
     zotero
+    zathura
 
     # wine
     winetricks
