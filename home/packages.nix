@@ -19,6 +19,7 @@
     dive
     podman-tui
     podman-compose
+    bun
 
     # gui
     firefox
