@@ -38,6 +38,7 @@
     xivlauncher
     zotero
     zathura
+    r2modman
 
     # wine
     winetricks
