@@ -1,4 +1,4 @@
-{ config, username, ... }:
+{ inputs, pkgs, config, username, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ./neovim.nix
     ./vscodium.nix
     ./packages.nix
+    inputs.ags.homeManagerModules.default
   ];
 
   home = {
@@ -28,6 +29,16 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+    };
+
+    ags = {
+      enable = true;
+      configDir = ../config/ags;
+      extraPackages = with pkgs; [
+        gtksourceview
+        webkitgtk
+        accountsservice
+      ];
     };
   };
 
