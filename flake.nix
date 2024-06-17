@@ -20,6 +20,7 @@
       submodules = true;
     };
 
+    ags.url = "github:Aylur/ags";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
