@@ -20,6 +20,7 @@
     podman-tui
     podman-compose
     bun
+    texliveFull
 
     # gui
     firefox
