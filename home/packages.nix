@@ -41,6 +41,7 @@
     zotero
     zathura
     r2modman
+    libreoffice
 
     # wine
     winetricks
