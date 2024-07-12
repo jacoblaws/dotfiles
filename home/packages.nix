@@ -42,6 +42,7 @@
     zathura
     r2modman
     libreoffice
+    anki
 
     # wine
     winetricks
