@@ -49,6 +49,8 @@
     inputs.nix-gaming.packages.${pkgs.system}.wine-ge
 
     # misc
+    nwg-look
+    gnome-tweaks
     qogir-icon-theme
     papirus-icon-theme
   ];
