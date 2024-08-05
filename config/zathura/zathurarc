@@ -1,0 +1,47 @@
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+
+# Everforest colorscheme
+set notification-error-bg    "#2d353b" # bg0
+set notification-error-fg    "#e67e80" # red
+set notification-warning-bg  "#2d353b" # bg0
+set notification-warning-fg  "#369875" # orange
+set notification-bg          "#2d353b" # bg0
+set notification-fg          "#ac7080" # green
+
+set completion-bg            "#343d44" # bg1
+set completion-fg            "#d3c6aa" # fg
+set completion-group-bg      "#3d484d" # bg2
+set completion-group-fg      "#7a8478" # gray0
+set completion-highlight-bg  "#7fbbb3" # blue
+set completion-highlight-fg  "#3d484d" # bg2
+
+set index-bg                 "#2d353b" # bg0
+set index-fg                 "#d3c6aa" # fg
+set index-active-bg          "#343f44" # bg1
+set index-active-fg          "#dbbc7f" # yellow
+
+set inputbar-bg              "#232a2e" # bg_dim
+set inputbar-fg              "#d3c6aa" # fg
+
+set statusbar-bg             "#232a2e" # bg_dim
+set statusbar-fg             "#d3c6aa" # Foreground
+
+set highlight-color          "#ac7080" # green
+set highlight-active-color   "#dbbc7f" # yellow
+
+set default-bg               "#2d353b" # bg0
+set default-fg               "#d3c6aa" # fg
+
+set render-loading           true
+set render-loading-fg        "#2d353b" # Background
+set render-loading-bg        "#d3c6aa" # Foreground
+
+# Recolor mode settings
+set recolor-lightcolor       "#2d353b" # Background
+set recolor-darkcolor        "#d3c5aa" # Foreground
+
+# Startup options
+set adjust-open     width
+set recolor         "true"
+set recolor-keephue "true"
