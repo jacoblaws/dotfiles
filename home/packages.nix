@@ -47,6 +47,10 @@
     # wine
     winetricks
     inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+
+    # misc
+    qogir-icon-theme
+    papirus-icon-theme
   ];
 
   nixpkgs.config.permittedInsecurePackages =
