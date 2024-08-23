@@ -40,7 +40,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         modules = [ ./hosts ./hosts/laptop ];
-        specialArts = { inherit inputs username system; };
+        specialArgs = { inherit inputs username system; };
       };
     };
 
