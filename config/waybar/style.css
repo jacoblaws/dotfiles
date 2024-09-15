@@ -1,0 +1,98 @@
+@define-color fg        #d3c6aa;
+@define-color bg_dim    #232a2e;
+@define-color bg0       #2d353b;
+@define-color bg1       #343f44;
+@define-color bg2       #3d484d;
+@define-color bg3       #475258;
+@define-color bg4       #4f585e;
+@define-color bg5       #56635f;
+
+@define-color bg_red    #543a48;
+@define-color bg_orange #521045;
+@define-color bg_yellow #4d4c43;
+@define-color bg_green  #421047;
+@define-color bg_blue   #3a515d;
+
+@define-color red       #e67e80;
+@define-color orange    #e69875;
+@define-color yellow    #dbbc7f;
+@define-color green     #a7c080;
+@define-color blue      #7fbbb3;
+@define-color aqua      #83c092;
+@define-color purple    #d699b6;
+
+@define-color gray0     #7a8478;
+@define-color gray1     #859289;
+@define-color gray2     #9da9a0;
+
+* {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "JetBrains Mono", "Symbols Nerd Font";
+}
+
+window#waybar {
+  color: @fg;
+  background: @bg_dim;
+}
+
+.modules-left {
+  background: transparent;
+  margin: 3px;
+}
+
+.modules-center {
+  background: transparent;
+  margin: 3px;
+}
+
+.modules-right {
+  background: transparent;
+  margin: 3px;
+}
+
+#custom-launcher {
+  color: @green;
+  font-size: 21px;
+  margin: 0 3px 0 2px;
+}
+
+#workspaces button {
+  color: @fg;
+  margin: 0px 3px 0px 3px;
+}
+
+#workspaces button:first-child {
+  margin-left: 6px;
+}
+
+#workspaces button:hover {
+  color: @yellow;
+  background: transparent;
+
+  box-shadow: inherit;
+  text-shadow: inherit;
+
+  transition: none;
+  font-weight: bolder;
+}
+
+#workspaces button.active {
+  color: @yellow;
+  font-weight: 800;
+}
+
+#tray {
+  margin-right: 8px;
+}
+
+#custom-power {
+  color: @red;
+  font-weight: 700;
+}
+
+#custom-separator {
+  color: @gray0;
+}
