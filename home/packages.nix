@@ -21,6 +21,7 @@
     podman-compose
     bun
     texliveFull
+    yazi
 
     # gui
     firefox
