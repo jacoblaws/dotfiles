@@ -47,6 +47,7 @@
     hypr.source = ../config/hypr;
     kitty.source = ../config/kitty;
     tmux.source = ../config/tmux;
+    waybar.source = ../config/waybar;
     zathura.source = ../config/zathura;
     "starship.toml".source = ../config/starship.toml;
   };
