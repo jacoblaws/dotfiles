@@ -7,7 +7,6 @@
     ../../config/nixos/nvidia.nix
     ../../config/nixos/audio.nix
     ../../config/nixos/fonts.nix
-    ../../config/nixos/gnome.nix
     ../../config/nixos/hyprland.nix
   ];
 
