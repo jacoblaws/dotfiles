@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
-{
+let
+  homeDirectory = "${config.home.homeDirectory}";
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+in {
   nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
   programs.neovim = {
@@ -30,5 +33,7 @@
     ];
   };
 
-  xdg.configFile.nvim.source = ../config/nvim;
+  xdg.configFile.nvim = {
+    source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/config/nvim";
+  };
 }
