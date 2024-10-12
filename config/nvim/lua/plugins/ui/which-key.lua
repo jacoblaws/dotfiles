@@ -6,54 +6,32 @@
 local icon = require('core.utils.icons')
 
 local opts = {
-  defaults = {
-    mode = { 'n', 'v', },
+  preset = 'classic',
 
-    ['<leader>f'] = { name = icon.telescope .. ' Find' },
-    ['<leader>t'] = { name = icon.terminal  .. ' Terminal' },
-    ['<leader>g'] = { name = icon.git       .. ' Git' },
-    ['<leader>u'] = { name = icon.ui        .. ' UI' },
-  },
-
-  key_labels = {
-    ['<space>'] = 'SPC',
-    ['<cr>']    = 'RET',
-    ['<tab>']   = 'TAB',
-    ['<esc>']   = 'ESC',
-    ['<bs>']    = 'BKSPC',
+  spec = {
+    mode = { 'n', 'v' },
+    {'<leader>f', group = icon.telescope .. ' Find' },
+    {'<leader>t', group = icon.terminal  .. ' Terminal' },
+    {'<leader>g', group = icon.git       .. ' Git' },
+    {'<leader>u', group = icon.ui        .. ' UI' },
   },
 
   icons = {
+    mappings = false,
+
     breadcrumb = icon.whichkey_breadcrumb,
     separator  = icon.whichkey_separator,
     group      = '',
   },
 
-  window = {
-    border = 'none',
-    position = 'bottom',
-  },
-
-  layout = {
-    align = 'center',
-  },
+  show_keys = true,
+  show_help = false,
 }
 
-local keys = { '<leader>', '"', "'", 'c', 'v' }
-
-local config = function(_, opts)
-  require('which-key').setup(opts)
-  require('which-key').register(opts.defaults)
-end
-
-local plugin_spec = {
+return {
   'folke/which-key.nvim',
 
   lazy = true,
   event = 'VeryLazy',
-
-  keys = keys,
   opts = opts,
-  config = config,
 }
-return plugin_spec
