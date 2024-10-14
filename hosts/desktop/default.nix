@@ -9,6 +9,7 @@
     ../../config/nixos/fonts.nix
     ../../config/nixos/hyprland.nix
     ../../config/nixos/greetd.nix
+    ../../config/nixos/console.nix
   ];
 
   programs.steam.enable = true;
