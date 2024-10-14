@@ -26,6 +26,7 @@ in {
       clang
       tree-sitter
       clang-tools
+      rust-analyzer
       cmake-language-server
       lua-language-server
       nodePackages.bash-language-server
