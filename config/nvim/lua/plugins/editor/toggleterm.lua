@@ -2,7 +2,14 @@
 --
 -- toggle and persist multiple terminals during an editing session
 
-local opts = {
+local plugin = {
+  'akinsho/toggleterm.nvim',
+
+  cmd = { 'ToggleTerm', 'TermExec' },
+  version = '*',
+}
+
+plugin.opts = {
   shading_factor = 2,
 
   direction = 'float',
@@ -11,24 +18,12 @@ local opts = {
   }
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('toggleterm').setup(opts)
 end
 
-local init = function()
+plugin.init = function()
   require('core.utils').load_keymaps('toggleterm')
 end
 
-local plugin_spec = {
-  'akinsho/toggleterm.nvim',
-
-  lazy = true,
-  version = '*',
-
-  cmd = { 'ToggleTerm', 'TermExec' },
-
-  init = init,
-  opts = opts,
-  config = config,
-}
-return plugin_spec
+return plugin

@@ -4,7 +4,19 @@
 
 local icon = require('core.utils.icons')
 
-local opts = {
+local plugin = {
+  'nvim-neo-tree/neo-tree.nvim',
+
+  cmd = 'Neotree',
+  branch = 'v3.x',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'MunifTanjim/nui.nvim',
+  },
+}
+
+plugin.opts = {
   hide_root_node = true,
   close_if_last_window = false,
   retain_hidden_root_ident = true,
@@ -36,31 +48,12 @@ local opts = {
   },
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('neo-tree').setup(opts)
 end
 
-local init = function()
+plugin.init = function()
   require('core.utils').load_keymaps('neo_tree')
 end
 
-local dependencies = {
-  'nvim-lua/plenary.nvim',
-  'nvim-tree/nvim-web-devicons',
-  'MunifTanjim/nui.nvim',
-}
-
-local plugin_spec = {
-  'nvim-neo-tree/neo-tree.nvim',
-
-  lazy = true,
-  branch = 'v3.x',
-
-  cmd = 'Neotree',
-
-  init = init,
-  opts = opts,
-  config = config,
-  dependencies = dependencies
-}
-return plugin_spec
+return plugin

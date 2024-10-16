@@ -4,7 +4,11 @@
 
 local icon = require('core.utils.icons')
 
-local opts = {
+local plugin = {
+  'lewis6991/gitsigns.nvim',
+}
+
+plugin.opts = {
   numhl = false,
   linehl = false,
   word_diff = false,
@@ -20,19 +24,12 @@ local opts = {
   },
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('gitsigns').setup(opts)
 end
 
-local init = function()
+plugin.init = function()
   require('core.utils').load_keymaps('git')
 end
 
-local plugin_spec = {
-  'lewis6991/gitsigns.nvim',
-
-  init = init,
-  opts = opts,
-  config = config,
-}
-return plugin_spec
+return plugin

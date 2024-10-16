@@ -7,7 +7,15 @@
 -- it can build a concrete syntax tree for a source file and efficiently
 -- update the syntax tree as the source file is edited
 
-local opts = {
+local plugin = {
+  'nvim-treesitter/nvim-treesitter',
+
+  version = false,
+  build = ':TSUpdate',
+  event = { 'BufReadPost', 'BufNewFile' },
+}
+
+plugin.opts = {
   indent    = { enable = true },
   highlight = { enable = true },
   incremental_selection = { enable = true },
@@ -42,20 +50,8 @@ local opts = {
   },
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('nvim-treesitter.configs').setup(opts)
 end
 
-local plugin_spec = {
-  'nvim-treesitter/nvim-treesitter',
-
-  lazy = true,
-  version = false,
-
-  opts = opts,
-  config = config,
-
-  build = ':TSUpdate',
-  event = { 'BufReadPost', 'BufNewFile' },
-}
-return plugin_spec
+return plugin
