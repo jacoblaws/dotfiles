@@ -4,7 +4,11 @@
 
 local icon = require('core.utils.icons')
 
-local opts = {
+local plugin = {
+  'nvim-tree/nvim-web-devicons',
+}
+
+plugin.opts = {
   override_by_extension = {
     ['c']   = { icon = icon.c },
     ['cpp'] = { icon = icon.cpp },
@@ -15,16 +19,8 @@ local opts = {
   },
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('nvim-web-devicons').setup(opts)
 end
 
-local plugin_spec = {
-  'nvim-tree/nvim-web-devicons',
-
-  lazy = true,
-
-  opts = opts,
-  config = config,
-}
-return plugin_spec
+return plugin
