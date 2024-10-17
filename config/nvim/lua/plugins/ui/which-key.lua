@@ -5,7 +5,12 @@
 
 local icon = require('core.utils.icons')
 
-local opts = {
+local plugin = {
+  'folke/which-key.nvim',
+  event = 'VeryLazy',
+}
+
+plugin.opts = {
   preset = 'classic',
 
   spec = {
@@ -28,10 +33,4 @@ local opts = {
   show_help = false,
 }
 
-return {
-  'folke/which-key.nvim',
-
-  lazy = true,
-  event = 'VeryLazy',
-  opts = opts,
-}
+return plugin

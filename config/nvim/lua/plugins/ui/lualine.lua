@@ -5,7 +5,18 @@
 local icon = require('core.utils.icons')
 local statusline = require('core.utils.statusline')
 
-local opts = {
+local plugin = {
+  'nvim-lualine/lualine.nvim',
+
+  event = 'VeryLazy',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'lewis6991/gitsigns.nvim',
+  },
+}
+
+plugin.opts = {
   options = {
     theme = 'auto',
 
@@ -90,7 +101,7 @@ local opts = {
   }
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   if vim.g.colors_name == 'everforest' then
     opts.options.theme = require('plugins.themes.lualine.everforest')
   end
@@ -99,7 +110,7 @@ local config = function(_, opts)
   require('lualine').setup(opts)
 end
 
-local init = function()
+plugin.init = function()
   vim.g.lualine_laststatus = vim.o.laststatus
   if vim.fn.argc(-1) > 0 then
     vim.o.statusline = ''
@@ -108,21 +119,4 @@ local init = function()
   end
 end
 
-local dependencies = {
-  'nvim-lua/plenary.nvim',
-  'nvim-tree/nvim-web-devicons',
-  'lewis6991/gitsigns.nvim',
-}
-
-local plugin_spec = {
-  'nvim-lualine/lualine.nvim',
-
-  lazy = true,
-  event = 'VeryLazy',
-
-  init = init,
-  opts = opts,
-  config = config,
-  dependencies = dependencies,
-}
-return plugin_spec
+return plugin

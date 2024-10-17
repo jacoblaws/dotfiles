@@ -2,7 +2,17 @@
 --
 -- a highly customizable bufferline plugin
 
-local opts = function()
+local plugin = {
+  'willothy/nvim-cokeline',
+
+  event = 'VeryLazy',
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons',
+  },
+}
+
+plugin.opts = function()
   local icon = require('core.utils.icons')
   local get_hl_attr = require('cokeline.hlgroups').get_hl_attr
   return {
@@ -72,28 +82,12 @@ local opts = function()
   }
 end
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('cokeline').setup(opts)
 end
 
-local init = function()
+plugin.init = function()
   require('core.utils').load_keymaps('buffer')
 end
 
-local dependencies = {
-  'nvim-lua/plenary.nvim',
-  'nvim-tree/nvim-web-devicons',
-}
-
-local plugin_spec = {
-  'willothy/nvim-cokeline',
-
-  lazy = true,
-  event = 'VeryLazy',
-
-  init = init,
-  opts = opts,
-  config = config,
-  dependencies = dependencies,
-}
-return plugin_spec
+return plugin
