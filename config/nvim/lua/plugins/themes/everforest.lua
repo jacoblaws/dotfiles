@@ -2,7 +2,15 @@
 --
 -- a green-based color scheme; designed to be warm and soft
 
-local opts = {
+local plugin = {
+  'neanias/everforest-nvim',
+
+  lazy = false,
+  version = false,
+  priority = 1000,
+}
+
+plugin.opts = {
   background = 'medium',
   ui_contrast = 'low',
 
@@ -36,19 +44,9 @@ local opts = {
   end
 }
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('everforest').setup(opts)
   vim.cmd[[ colorscheme everforest ]]
 end
 
-local plugin_spec = {
-  'neanias/everforest-nvim',
-
-  lazy = false,
-  version = false,
-  priority = 1000,
-
-  opts = opts,
-  config = config,
-}
-return plugin_spec
+return plugin
