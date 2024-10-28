@@ -14,13 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/hyprland";
-      submodules = true;
-    };
-
     ags.url = "github:Aylur/ags";
+    hyprland.url = "github:hyprwm/hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
