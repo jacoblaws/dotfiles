@@ -3,7 +3,20 @@
 -- a completion engine for neovim
 -- completion sources are installed from external repositories
 
-local opts = function()
+local plugin = {
+  'hrsh7th/nvim-cmp',
+
+  event = 'InsertEnter',
+  dependencies = {
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'onsails/lspkind.nvim',
+  },
+}
+
+plugin.opts = function()
   local cmp = require('cmp')
   local luasnip = require('luasnip')
   local lspkind = require('lspkind')
@@ -18,6 +31,8 @@ local opts = function()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip'  },
+      { name = 'path'     },
+      { name = 'buffer'   },
     },
 
     snippet = {
@@ -80,23 +95,8 @@ local opts = function()
   }
 end
 
-local config = function(_, opts)
+plugin.config = function(_, opts)
   require('cmp').setup(opts)
 end
 
-local dependencies = {
-  'L3MON4D3/LuaSnip',
-  'onsails/lspkind.nvim',
-}
-
-local plugin_spec = {
-  'hrsh7th/nvim-cmp',
-
-  lazy = true,
-  event = 'InsertEnter',
-
-  opts = opts,
-  config = config,
-  dependencies = dependencies,
-}
-return plugin_spec
+return plugin
