@@ -15,6 +15,7 @@ local plugins = {
 
   -- language tools
   require('plugins.lang.markdown-preview'),
+  require('plugins.lang.rustaceanvim'),
 
   -- editor
   require('plugins.editor.treesitter'),
