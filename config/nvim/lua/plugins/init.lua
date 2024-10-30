@@ -13,8 +13,7 @@ local plugins = {
   require('plugins.lsp.nvim-lspconfig'),
   require('plugins.lsp.nvim-cmp'),
 
-  -- language tools
-  require('plugins.lang.markdown-preview'),
+  -- language
   require('plugins.lang.rustaceanvim'),
 
   -- editor
