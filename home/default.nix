@@ -6,6 +6,7 @@
     ./neovim.nix
     ./vscodium.nix
     ./packages.nix
+    ./cursor.nix
     inputs.ags.homeManagerModules.default
   ];
 
