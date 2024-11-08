@@ -3,10 +3,10 @@
 {
   imports = [
     ./fish.nix
-    ./neovim.nix
     ./vscodium.nix
     ./packages.nix
     ./cursor.nix
+    ./programs/editors/neovim
     inputs.ags.homeManagerModules.default
   ];
 

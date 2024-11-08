@@ -35,6 +35,6 @@ in {
   };
 
   xdg.configFile.nvim = {
-    source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/config/nvim";
+    source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/editors/neovim";
   };
 }
