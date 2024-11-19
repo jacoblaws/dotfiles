@@ -16,7 +16,7 @@
   programs.gamemode.enable = true;
 
   networking = {
-    hostName = "nixos-desktop";
+    hostName = "desktop";
     networkmanager.enable = true;
   };
 }

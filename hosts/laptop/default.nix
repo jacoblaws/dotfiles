@@ -13,7 +13,7 @@
   ];
 
   networking = {
-    hostName = "nixos-laptop";
+    hostName = "laptop";
     networkmanager.enable = true;
   };
 }
