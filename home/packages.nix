@@ -10,6 +10,7 @@
     eza
     bat
     tmux
+    just
     ripgrep
     lazygit
     zip
