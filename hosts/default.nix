@@ -20,6 +20,13 @@
   programs.fish.enable = true;
   programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep 5 --keep-since 1w";
+    flake = "/home/${username}/dotfiles";
+  };
+
   virtualisation = {
     containers.enable = true;
 
