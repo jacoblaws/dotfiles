@@ -5,6 +5,7 @@
     ./fish.nix
     ./packages.nix
     ./cursor.nix
+    ./programs/terminal
     ./programs/editors/neovim
     ./programs/editors/vscodium.nix
     inputs.ags.homeManagerModules.default
@@ -21,7 +22,6 @@
   };
 
   programs = {
-    kitty.enable = true;
     tmux.enable = true;
     starship.enable = true;
     waybar.enable = true;
@@ -46,7 +46,6 @@
 
   xdg.configFile = {
     hypr.source = ../config/hypr;
-    kitty.source = ../config/kitty;
     tmux.source = ../config/tmux;
     waybar.source = ../config/waybar;
     zathura.source = ../config/zathura;
