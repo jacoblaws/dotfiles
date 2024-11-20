@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./fish.nix
     ./packages.nix
     ./cursor.nix
     ./programs/terminal
