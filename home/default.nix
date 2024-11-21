@@ -21,7 +21,6 @@
   };
 
   programs = {
-    tmux.enable = true;
     waybar.enable = true;
     home-manager.enable = true;
     zathura.enable = true;
@@ -44,7 +43,6 @@
 
   xdg.configFile = {
     hypr.source = ../config/hypr;
-    tmux.source = ../config/tmux;
     waybar.source = ../config/waybar;
     zathura.source = ../config/zathura;
   };

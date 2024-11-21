@@ -9,7 +9,6 @@
     fzf
     eza
     bat
-    tmux
     just
     ripgrep
     lazygit
