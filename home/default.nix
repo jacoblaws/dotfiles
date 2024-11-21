@@ -22,7 +22,6 @@
 
   programs = {
     tmux.enable = true;
-    starship.enable = true;
     waybar.enable = true;
     home-manager.enable = true;
     zathura.enable = true;
@@ -48,7 +47,6 @@
     tmux.source = ../config/tmux;
     waybar.source = ../config/waybar;
     zathura.source = ../config/zathura;
-    "starship.toml".source = ../config/starship.toml;
   };
 
   xdg.userDirs = {
