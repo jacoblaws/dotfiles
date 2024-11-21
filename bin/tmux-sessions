@@ -9,7 +9,7 @@ in_tmux() {
 main() {
   local -a session_names=()
   local -A sessions=()
-  for session in "${HOME}/.config/tmux/sessions"/*; do
+  for session in "${HOME}/dotfiles/bin/sessions"/*; do
     local session_name=("$(basename ${session} | sed 's/\.[^.]*$//')")
 
     session_names+=(${session_name})
