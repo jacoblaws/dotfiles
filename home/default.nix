@@ -6,6 +6,7 @@
     ./cursor.nix
     ./programs/terminal
     ./programs/editors/neovim
+    ./programs/editors/zed.nix
     ./programs/editors/vscodium.nix
     inputs.ags.homeManagerModules.default
   ];
