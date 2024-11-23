@@ -8,6 +8,7 @@
     ./programs/editors/neovim
     ./programs/editors/zed.nix
     ./programs/editors/vscodium.nix
+    ./programs/office
     inputs.ags.homeManagerModules.default
   ];
 
@@ -24,7 +25,6 @@
   programs = {
     waybar.enable = true;
     home-manager.enable = true;
-    zathura.enable = true;
 
     direnv = {
       enable = true;
@@ -45,7 +45,6 @@
   xdg.configFile = {
     hypr.source = ../config/hypr;
     waybar.source = ../config/waybar;
-    zathura.source = ../config/zathura;
   };
 
   xdg.userDirs = {
