@@ -36,7 +36,6 @@
     tauon
     picard
     rofi-wayland
-    sioyek
     drawio
     xivlauncher
     zotero
