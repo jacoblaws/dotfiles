@@ -20,7 +20,7 @@ plugin.config = function()
   local lspconfig = require('lspconfig')
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  local servers = { 'clangd', 'cmake', 'lua_ls', 'bashls', 'ts_ls' }
+  local servers = { 'clangd', 'cmake', 'lua_ls', 'bashls', 'ts_ls', 'nil_ls' }
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup { capabilities = capabilities }
   end
