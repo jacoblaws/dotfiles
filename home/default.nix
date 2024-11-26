@@ -38,7 +38,6 @@
   };
 
   xdg.configFile = {
-    hypr.source = ../config/hypr;
     waybar.source = ../config/waybar;
   };
 
