@@ -39,10 +39,18 @@
       };
     };
 
-    homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./home ];
-      extraSpecialArgs = { inherit inputs username system; };
+    homeConfigurations = {
+      "${username}@desktop" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./home ./home/profiles/desktop ];
+        extraSpecialArgs = { inherit inputs username system; };
+      };
+
+      "${username}@laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./home ./home/profiles/laptop ];
+          extraSpecialArgs = { inherit inputs username system; };
+      };
     };
   };
 }

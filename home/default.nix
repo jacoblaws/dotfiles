@@ -4,11 +4,6 @@
   imports = [
     ./packages.nix
     ./cursor.nix
-    ./programs/terminal
-    ./programs/editors/neovim
-    ./programs/editors/zed.nix
-    ./programs/editors/vscodium.nix
-    ./programs/office
     inputs.ags.homeManagerModules.default
   ];
 
