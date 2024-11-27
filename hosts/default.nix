@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../config/nixos/substituters.nix
+    ../system/nix/substituters.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

@@ -3,12 +3,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../config/nixos/audio.nix
-    ../../config/nixos/nvidia.nix
-    ../../config/nixos/audio.nix
-    ../../config/nixos/fonts.nix
-    ../../config/nixos/greetd.nix
-    ../../config/nixos/console.nix
+    ../../system/core/audio.nix
+    ../../system/core/fonts.nix
+    ../../system/core/greetd.nix
+    ../../system/core/nvidia.nix
+    ../../system/core/console.nix
     ../../system/programs/wayland/hyprland.nix
   ];
 
