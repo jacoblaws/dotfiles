@@ -33,7 +33,6 @@
     r2modman
     calibre
     lutris
-    tauon
     picard
     rofi-wayland
     drawio

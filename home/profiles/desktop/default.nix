@@ -1,6 +1,7 @@
 {
   imports = [
     ../../programs/editors
+    ../../programs/media
     ../../programs/office
     ../../programs/terminal
     ../../programs/wayland/hyprland
