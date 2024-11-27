@@ -4,7 +4,6 @@
   imports = [
     ./packages.nix
     ./cursor.nix
-    inputs.ags.homeManagerModules.default
   ];
 
   home = {
@@ -19,16 +18,6 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-    };
-
-    ags = {
-      enable = true;
-      configDir = ../config/ags;
-      extraPackages = with pkgs; [
-        gtksourceview
-        webkitgtk
-        accountsservice
-      ];
     };
   };
 

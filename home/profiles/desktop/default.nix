@@ -4,6 +4,7 @@
     ../../programs/media
     ../../programs/office
     ../../programs/terminal
+    ../../programs/wayland/ags
     ../../programs/wayland/hyprland
     ../../programs/wayland/waybar
   ];
