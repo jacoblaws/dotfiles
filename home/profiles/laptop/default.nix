@@ -4,6 +4,7 @@
     ../../programs/office
     ../../programs/terminal
     ../../programs/wayland/hyprland
+    ../../programs/wayland/waybar
   ];
 
   wayland.windowManager.hyprland.settings = {

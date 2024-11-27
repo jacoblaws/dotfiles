@@ -18,7 +18,6 @@
   };
 
   programs = {
-    waybar.enable = true;
     home-manager.enable = true;
 
     direnv = {
@@ -35,10 +34,6 @@
         accountsservice
       ];
     };
-  };
-
-  xdg.configFile = {
-    waybar.source = ../config/waybar;
   };
 
   xdg.userDirs = {
