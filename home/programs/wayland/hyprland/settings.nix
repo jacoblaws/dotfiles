@@ -22,14 +22,6 @@
     decoration = {
       rounding = 14;                 # rounded corners' radius (in layout px)
 
-      # shadows
-      drop_shadow = true;            # enables drop shadows on windows
-      shadow_range = 10;             # shadow range ('size'), in layout px
-      shadow_render_power = 3;       # in what power to render the shadow falloff (1 - 4)
-      shadow_ignore_window = true;   # if true, the shadow will not be rendered behind the window itself
-      shadow_offset = "0 0";         # shadow rendering offset
-      shadow_scale = 1.0;            # shadow scale
-
       # window opacity
       active_opacity = 1.0;          # opacity of active windows (0.0 - 1.0)
       inactive_opacity = 1.0;        # opacity of inactive windows (0.0 - 1.0)
@@ -42,15 +34,24 @@
       dim_around = 0.4;              # how much the 'dimaround' window rule should dim by (0.0 - 1.0)
 
       blur = {
-        enabled = false;               # enable kawase window background blur
-        size = 8;                      # blur size (distance)
-        passes = 1;                    # the amount of passes to perform
-        ignore_opacity = false;        # make the blur layer ignore the opacity of the window
-        new_optimizations = true;      # enable further optimizations to the blur
-        xray = false;                  # if true, floating windows will ignore tiled windows in their blur
-        noise = 0.0117;                # how much noise to apply (0.0 - 1.0)
-        contrast = 0.8916;             # contrast modulation for blur (0.0 - 2.0)
-        brightness = 0.8172;           # brightness modulation for blur (0.0 - 2.0)
+        enabled = false;             # enable kawase window background blur
+        size = 8;                    # blur size (distance)
+        passes = 1;                  # the amount of passes to perform
+        ignore_opacity = false;      # make the blur layer ignore the opacity of the window
+        new_optimizations = true;    # enable further optimizations to the blur
+        xray = false;                # if true, floating windows will ignore tiled windows in their blur
+        noise = 0.0117;              # how much noise to apply (0.0 - 1.0)
+        contrast = 0.8916;           # contrast modulation for blur (0.0 - 2.0)
+        brightness = 0.8172;         # brightness modulation for blur (0.0 - 2.0)
+      };
+
+      shadow = {
+        enabled = true;              # enables drop shadows on windows
+        range = 10;                  # shadow range ('size'), in layout px
+        render_power = 3;            # in what power to render the shadow falloff (1 - 4)
+        ignore_window = true;        # if true, the shadow will not be rendered behind the window itself
+        offset = "0 0";              # shadow rendering offset
+        scale = 1.0;                 # shadow scale
       };
     };
 
