@@ -7,7 +7,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       jetbrains-mono
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
     ];
 
     enableDefaultPackages = false;
