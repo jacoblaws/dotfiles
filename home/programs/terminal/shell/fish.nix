@@ -13,6 +13,7 @@
     shellInit = ''
       set -U fish_greeting
       fish_add_path $HOME/dotfiles/bin
+      fish_add_path $HOME/.local/share/doom-emacs/bin
       starship init fish | source
     '';
 
@@ -23,6 +24,9 @@
       la = "eza -aF  --icons --color=always --sort=ext --group-directories-first";
       ll = "eza -laF --icons --color=always --sort=ext --group-directories-first";
       lt = "eza -TF  --icons --color=always --sort=ext --group-directories-first";
+
+      # emacs distributions
+      dm = "emacs --init-dir ~/.local/share/doom-emacs";
     };
   };
 }
