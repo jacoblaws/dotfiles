@@ -30,6 +30,11 @@
       gs = "git stash";
       gsp = "git stash pop";
 
+      # neovim distributions
+      lazy = "NVIM_APPNAME=lazy nvim";
+      chad = "NVIM_APPNAME=nvchad nvim";
+      astro = "NVIM_APPNAME=astro nvim";
+
       # emacs distributions
       dm = "emacs --init-dir ~/.local/share/doom-emacs";
       sm = "emacs --init-dir ~/.local/share/spacemacs";
