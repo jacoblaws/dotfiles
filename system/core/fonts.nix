@@ -3,6 +3,9 @@
 {
   fonts = {
     packages = with pkgs; [
+      inter
+      roboto
+      libertinus
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
