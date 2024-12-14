@@ -1,25 +1,68 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   fonts = {
     packages = with pkgs; [
-      inter
-      roboto
+      alegreya
+      alegreya-sans
+      commit-mono
+      fira
+      fira-go
+      fira-code
+      jetbrains-mono
       libertinus
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      jetbrains-mono
       nerd-fonts.symbols-only
+      recursive
+      roboto
+      inter
     ];
 
+    fontDir.enable = true;
     enableDefaultPackages = false;
+    enableGhostscriptFonts = false;
 
-    fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" ];
-      sansSerif = [ "Noto Sans" ];
-      monospace = [ "JetBrainsMono" "SymbolsNerdFontMono" ];
-      emoji = [ "Noto Color Emoji" ];
+    fontconfig = {
+      enable = true;
+      antialias = true;
+
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
+
+      hinting = {
+        enable = true;
+        autohint = false;
+        style = "slight";
+      };
+
+      defaultFonts = {
+        serif = [ "Libertinus Serif" ];
+        sansSerif = [ "Recursive Sans Casual" ];
+        monospace = [ "Recursive Mono Casual" "SymbolsNerdFontMono" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
+
+      localConf = ''
+        <match target="font">
+          <test name="family" compare="eq" ignore-blanks="true">
+            <string>Recursive</string>
+          </test>
+          <edit name="fontfeatures" mode="append">
+            <string>dlig on</string> <!-- code ligatures -->
+            <string>ss01 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss02 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss03 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss04 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss05 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss06 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss07 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss08 on</string> <!-- no-serif 'L' and 'Z' -->
+            <string>ss12 on</string> <!-- simplified mono 'at' -->
+          </edit>
+        </match>
+      '';
     };
   };
 }
