@@ -4,7 +4,7 @@
 
     font = {
       size = 15;
-      name = "JetBrainsMono";
+      name = "Recursive Mono Casual";
     };
 
     keybindings = {
