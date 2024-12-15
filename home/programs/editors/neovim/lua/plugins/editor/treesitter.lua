@@ -29,6 +29,7 @@ plugin.opts = {
     'python',
     'javascript',
     'typescript',
+    'nix',
 
     -- utils
     'comment',
