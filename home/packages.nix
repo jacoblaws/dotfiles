@@ -22,6 +22,7 @@
     bun
     texliveFull
     yazi
+    appimage-run
 
     # gui
     firefox
