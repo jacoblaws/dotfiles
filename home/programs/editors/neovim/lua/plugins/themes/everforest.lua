@@ -41,6 +41,12 @@ plugin.opts = {
     -- lualine
     hl.StatusLine = { bg = palette.bg0 }
     hl.StatusLineNC = { }
+
+    -- blink.cmp
+    hl.BlinkCmpMenu = { bg = palette.bg0 }
+    hl.BlinkCmpMenuBorder = { fg = palette.fg, bg = palette.bg0 }
+    hl.BlinkCmpMenuSelection = { bg = palette.bg1 }
+    hl.BlinkCmpScrollBarThumb = { bg = palette.grey0 }
   end
 }
 
