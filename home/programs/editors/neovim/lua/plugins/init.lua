@@ -8,10 +8,10 @@ local plugins = {
   require('plugins.themes.everforest'),
 
   -- lsp
+  require('plugins.lsp.blink'),
   require('plugins.lsp.mason'),
   require('plugins.lsp.mason-lspconfig'),
   require('plugins.lsp.nvim-lspconfig'),
-  require('plugins.lsp.nvim-cmp'),
 
   -- language
   require('plugins.lang.rustaceanvim'),
