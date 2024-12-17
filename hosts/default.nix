@@ -27,6 +27,11 @@
     flake = "/home/${username}/dotfiles";
   };
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   virtualisation = {
     containers.enable = true;
 
