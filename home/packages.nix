@@ -42,6 +42,8 @@
     r2modman
     libreoffice
     anki
+    nautilus
+    gnome-calculator
 
     # wine
     winetricks
