@@ -23,6 +23,7 @@
     texliveFull
     yazi
     appimage-run
+    protonvpn-cli
 
     # gui
     firefox
@@ -44,6 +45,7 @@
     anki
     nautilus
     gnome-calculator
+    protonvpn-gui
 
     # wine
     winetricks
