@@ -9,6 +9,7 @@
     ../../system/core/nvidia.nix
     ../../system/core/console.nix
     ../../system/programs/wayland/hyprland.nix
+    ../../system/services/keyd.nix
   ];
 
   networking = {
