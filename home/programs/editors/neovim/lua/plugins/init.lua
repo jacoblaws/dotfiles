@@ -22,6 +22,7 @@ local plugins = {
   require('plugins.editor.neo-tree'),
   require('plugins.editor.telescope'),
   require('plugins.editor.toggleterm'),
+  require('plugins.editor.mini-pairs'),
 
   -- ui
   require('plugins.ui.cokeline'),
