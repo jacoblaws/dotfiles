@@ -14,7 +14,29 @@ local plugin = {
 }
 
 plugin.opts = {
-  keymap = { preset = 'default' },
+  keymap = {
+    ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+    ['<C-e'] = { 'hide', 'fallback' },
+    ['<CR>'] = { 'accept', 'fallback' },
+
+    ['<Tab>'] = {
+      function(cmp)
+        if cmp.snippet_active() then return cmp.accept()
+        else return cmp.select_and_accept() end
+      end,
+      'snippet_forward',
+      'fallback',
+    },
+    ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+
+    ['<Up>'] = { 'select_prev', 'fallback' },
+    ['<Down>'] = { 'select_next', 'fallback' },
+    ['<C-p>'] = { 'select_prev', 'fallback' },
+    ['<C-n>'] = { 'select_next', 'fallback' },
+
+    ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+    ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+  },
 
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -31,6 +53,19 @@ plugin.opts = {
 
         columns = { { 'kind_icon' }, { 'label', 'label_description', gap = 1 } },
       },
+    },
+
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500,
+      update_delay_ms = 50,
+      window = {
+        border = 'rounded',
+      },
+    },
+
+    list = {
+      selection = 'manual' or 'auto_insert',
     },
   },
 
