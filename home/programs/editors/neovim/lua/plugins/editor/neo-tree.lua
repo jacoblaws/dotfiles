@@ -17,13 +17,21 @@ local plugin = {
 }
 
 plugin.opts = {
-  hide_root_node = true,
+  hide_root_node = false,
   close_if_last_window = false,
   retain_hidden_root_ident = true,
   auto_clean_after_session_restore = true,
 
+  filesystem = {
+    bind_to_cwd = false,
+    follow_current_file = { enabled = true },
+    use_libuv_file_watcher = true,
+  },
+
   default_component_configs = {
-    modified = { symbol = icon.file_modified },
+    modified = {
+      symbol = icon.file_modified,
+    },
 
     icon = {
       default = icon.file_default,
