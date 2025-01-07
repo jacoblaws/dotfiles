@@ -22,6 +22,11 @@ plugin.opts = {
   on_highlights = function(hl, palette)
     -- neovim
     hl.WinSeparator = { fg = palette.bg_dim, bg = palette.bg0 }
+    hl.NormalFloat = { bg = palette.bg0 }
+    hl.Float = { bg = palette.bg0 }
+    hl.FloatTitle = { bg = palette.bg0 }
+    hl.FloatFooter = { bg = palette.bg0 }
+    hl.FloatBorder = { fg = palette.fg, bg = palette.bg0 }
 
     -- neo-tree
     hl.NeoTreeNormal = { bg = palette.bg0 }
@@ -47,6 +52,9 @@ plugin.opts = {
     hl.BlinkCmpMenuBorder = { fg = palette.fg, bg = palette.bg0 }
     hl.BlinkCmpMenuSelection = { bg = palette.bg1 }
     hl.BlinkCmpScrollBarThumb = { bg = palette.grey0 }
+    hl.BlinkCmpDoc = { bg = palette.bg0 }
+    hl.BlinkCmpDocBorder = { fg = palette.fg, bg = palette.bg0 }
+    hl.BlinkCmpDocSeparator = { fg = palette.fg, bg = palette.bg0 }
   end
 }
 
