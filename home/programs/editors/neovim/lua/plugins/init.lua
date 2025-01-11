@@ -23,6 +23,7 @@ local plugins = {
   require('plugins.editor.telescope'),
   require('plugins.editor.toggleterm'),
   require('plugins.editor.mini-pairs'),
+  require('plugins.editor.mini-surround'),
 
   -- ui
   require('plugins.ui.cokeline'),
