@@ -9,11 +9,6 @@ local plugin = {
 }
 
 plugin.opts = {
-  numhl = false,
-  linehl = false,
-  word_diff = false,
-  signcolumn = true,
-
   signs = {
     add          = { text = icon.git_sign },
     change       = { text = icon.git_sign },
@@ -21,6 +16,25 @@ plugin.opts = {
     topdelete    = { text = icon.git_sign },
     changedelete = { text = icon.git_sign },
     untracked    = { text = icon.git_sign_untracked },
+  },
+
+  signs_staged = {
+    add          = { text = icon.git_sign },
+    change       = { text = icon.git_sign },
+    delete       = { text = icon.git_sign },
+    topdelete    = { text = icon.git_sign },
+    changedelete = { text = icon.git_sign },
+    untracked    = { text = icon.git_sign_untracked },
+  },
+  signs_staged_enable = true,
+
+  signcolumn = true,
+  numhl = false,
+  linehl = false,
+  word_diff = false,
+
+  preview_config = {
+    border = 'rounded',
   },
 }
 
