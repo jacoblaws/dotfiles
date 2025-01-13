@@ -19,7 +19,6 @@ local plugins = {
   -- editor
   require('plugins.editor.treesitter'),
   require('plugins.editor.gitsigns'),
-  require('plugins.editor.neo-tree'),
   require('plugins.editor.telescope'),
   require('plugins.editor.toggleterm'),
   require('plugins.editor.mini-pairs'),
@@ -30,5 +29,6 @@ local plugins = {
   require('plugins.ui.which-key'),
   require('plugins.ui.lualine'),
   require('plugins.ui.dashboard-nvim'),
+  require('plugins.ui.neo-tree'),
 }
 return plugins
