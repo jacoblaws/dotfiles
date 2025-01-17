@@ -2,7 +2,7 @@
 --
 -- for browsing the file system or other tree-like structures
 
-local icon = require('core.utils.icons')
+local icon = require('utils.icons')
 
 local plugin = {
   'nvim-neo-tree/neo-tree.nvim',
@@ -16,11 +16,14 @@ local plugin = {
   },
 }
 
+plugin.keys = {
+  { '<leader>e', '<cmd>Neotree toggle left<cr>', desc = 'File Explorer' },
+  { '<leader>ge', '<cmd>Neotree toggle git_status<cr>', desc = 'Git Explorer' },
+  { '<leader>be', '<cmd>Neotree toggle buffers<cr>', desc = 'Buffer Explorer'}
+}
+
 plugin.opts = {
-  hide_root_node = false,
-  close_if_last_window = false,
-  retain_hidden_root_ident = true,
-  auto_clean_after_session_restore = true,
+  popup_border_style = 'rounded',
 
   filesystem = {
     bind_to_cwd = false,
@@ -28,29 +31,53 @@ plugin.opts = {
     use_libuv_file_watcher = true,
   },
 
+  window = {
+    mappings = {
+      ['l'] = 'open',
+      ['h'] = 'close_node',
+      ['P'] = "toggle_preview",
+    },
+  },
+
   default_component_configs = {
-    modified = {
-      symbol = icon.file_modified,
+    indent = {
+      with_markers = true,
+      indent_marker = icon.box.vertical.light,
+      last_indent_marker = icon.box.corner.up_right.light,
+      indent_size = 2,
+
+      with_expanders = true,
+      expander_collapsed = icon.expander.collapsed,
+      expander_expanded = icon.expander.expanded,
+      expander_highlight = 'NeoTreeExpander',
     },
 
     icon = {
-      default = icon.file_default,
-      folder_open = icon.folder_open,
-      folder_closed = icon.folder_closed,
-      folder_empty = icon.folder_empty,
+      folder_closed = icon.folder.closed,
+      folder_open = icon.folder.open,
+      folder_empty = icon.folder.empty,
     },
 
     git_status = {
       symbols = {
-        added = icon.git_add,
-        deleted = icon.git_delete,
-        modified = icon.git_modified,
-        renamed = icon.git_renamed,
-        untracked = icon.git_untracked,
-        ignored = icon.git_ignored,
-        staged = icon.git_staged,
-        unstaged = icon.git_unstaged,
-        conflict = icon.git_conflict,
+        added = icon.git.added,
+        deleted = icon.git.removed,
+        modified = icon.git.modified,
+        renamed = icon.git.renamed,
+        untracked = icon.git.untracked,
+        ignored = icon.git.ignored,
+        unstaged = icon.git.unstaged,
+        staged = icon.git.staged,
+        conflict = icon.git.conflict,
+      },
+    },
+
+    diagnostics = {
+      symbols = {
+        hint = icon.diagnostics.hint,
+        info = icon.diagnostics.info,
+        warn = icon.diagnostics.warn,
+        error = icon.diagnostics.error,
       },
     },
   },
@@ -58,10 +85,6 @@ plugin.opts = {
 
 plugin.config = function(_, opts)
   require('neo-tree').setup(opts)
-end
-
-plugin.init = function()
-  require('core.utils').load_keymaps('neo_tree')
 end
 
 return plugin
