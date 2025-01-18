@@ -9,8 +9,6 @@ local plugin = {
   event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
   dependencies = {
     'saghen/blink.cmp',
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
   },
 }
 

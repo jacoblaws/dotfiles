@@ -9,8 +9,6 @@ local plugins = {
 
   -- lsp
   require('plugins.lsp.blink'),
-  require('plugins.lsp.mason'),
-  require('plugins.lsp.mason-lspconfig'),
   require('plugins.lsp.nvim-lspconfig'),
 
   -- language
