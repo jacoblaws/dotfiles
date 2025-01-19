@@ -35,14 +35,26 @@ return {
   },
 
   git = {
-    added = '',
-    removed = '',
-    modified = '',
+    added = '',
+    removed = '',
+    modified = '',
     renamed = '',
     staged = '',
     unstaged = '',
     untracked = '',
     ignored = '',
     conflict = '',
+    branch = '',
+  },
+
+  logo = {
+    vim = '',
+  },
+
+  statusline = {
+    lsp = '',
+    progress = '',
+    left_separator = '',
+    right_separator = '',
   },
 }

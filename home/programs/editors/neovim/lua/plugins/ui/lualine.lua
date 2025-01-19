@@ -2,8 +2,8 @@
 --
 -- a blazing fast neovim statusline plugin
 
-local icon = require('core.utils.icons')
-local statusline = require('core.utils.statusline')
+local icon = require('utils.icons')
+local statusline = require('utils.statusline')
 
 local plugin = {
   'nvim-lualine/lualine.nvim',
@@ -32,10 +32,10 @@ plugin.opts = {
     lualine_a = {
       {
         'mode',
-        icon = { icon.vim },
+        icon = { icon.logo.vim },
         separator = {
-          left = icon.left_separator,
-          right = icon.right_separator
+          left = icon.statusline.left_separator,
+          right = icon.statusline.right_separator,
         },
       },
     },
@@ -49,17 +49,22 @@ plugin.opts = {
       {
         'filename',
         file_status = false,
-        padding = { left = 1, right = 0 },
+        padding = { left = 0, right = 0 },
       },
     },
     lualine_c = {
       {
         'b:gitsigns_head',
-        icon = { icon.git_branch },
+        icon = { icon.git.branch },
         padding = { left = 2, right = 0 },
       },
       {
         'diff',
+        symbols = {
+          added = icon.git.added .. ' ',
+          modified = icon.git.modified .. ' ',
+          removed = icon.git.removed .. ' ',
+        },
         source = statusline.diff_source,
         padding = { left = 2, right = 0 },
       },
@@ -68,34 +73,33 @@ plugin.opts = {
       {
         'diagnostics',
         sources = { 'nvim_diagnostic' },
-        padding = { left = 0, right = 2 },
+        padding = { left = 0, right = 1 },
       },
       {
         statusline.lsp_name,
-        icon = { icon.lsp },
+        icon = { icon.statusline.lsp },
         padding = { left = 0, right = 2 },
       },
-
     },
     lualine_y = {},
     lualine_z = {
       {
         statusline.get_cwd,
-        icon = { icon.folder_open, align = 'left' },
-        padding = { left = 1, right = 2 },
+        icon = { icon.folder.open, align = 'left' },
+        padding = { left = 1, right = 1 },
         separator = {
-          left = icon.left_separator,
+          left = icon.statusline.left_separator,
           right = '',
         },
       },
       {
         'progress',
-        icon = { icon.progress, align = 'left' },
+        icon = { icon.statusline.progress, align = 'left' },
         padding = { left = 0, right = 1 },
         separator = {
           left = '',
-          right = icon.right_separator,
-        },
+          right = icon.statusline.right_separator,
+        }
       },
     },
   }
