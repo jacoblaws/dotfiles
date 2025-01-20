@@ -4,7 +4,6 @@ local utils = require('core.utils')
 local find = require('core.utils.find')
 local git = require('core.utils.git')
 local ui = require('core.utils.ui')
-local buffer = require('core.utils.buffer')
 
 M.find = {
   plugin = true,
@@ -57,15 +56,6 @@ M.ui = {
     ['<leader>us'] = { ui.toggle_spell,       'Toggle spell' },
     ['<leader>ut'] = { ui.toggle_tabline,     'Toggle tabline' },
     ['<leader>uw'] = { ui.toggle_wrap,        'Toggle wrap' },
-  },
-}
-
-M.buffer = {
-  plugin = true,
-  n = {
-    ['<tab>']     = { buffer.cycle_next, 'Cycle buffer next' },
-    ['<S-tab>']   = { buffer.cycle_prev, 'Cycle buffer prev' },
-    ['<leader>c'] = { buffer.close,      'Close buffer' },
   },
 }
 

@@ -11,6 +11,13 @@ return {
     },
   },
 
+  buffer = {
+    close = '',
+    readonly = '',
+    modified = '',
+    explorer = '',
+  },
+
   diagnostics = {
     error = '',
     warn = '',

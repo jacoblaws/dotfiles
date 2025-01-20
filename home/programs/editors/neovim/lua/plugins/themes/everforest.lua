@@ -41,7 +41,8 @@ plugin.opts = {
     -- cokeline
     hl.CokeLineFill = { bg = palette.bg_dim }
     hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
-    hl.CokeLineBufferInactive = { fg = palette.grey0, bg = '#262d32' }
+    --hl.CokeLineBufferInactive = { fg = palette.grey0, bg = '#262d32' }
+    hl.CokeLineBufferInactive = { fg = palette.grey0, bg = palette.bg_dim }
 
     -- lualine
     hl.StatusLine = { bg = palette.bg0 }
