@@ -56,6 +56,13 @@ plugin.opts = {
     hl.BlinkCmpDoc = { bg = palette.bg0 }
     hl.BlinkCmpDocBorder = { fg = palette.fg, bg = palette.bg0 }
     hl.BlinkCmpDocSeparator = { fg = palette.fg, bg = palette.bg0 }
+
+    -- snacks.dashboard
+    hl.SnacksDashboardHeader =  { fg = palette.yellow }
+    hl.SnacksDashboardIcon = { fg = palette.yellow }
+    hl.SnacksDashboardDesc = { fg = palette.fg }
+    hl.SnacksDashboardKey = { fg = palette.green }
+    hl.SnacksDashboardFooter = { fg = palette.orange }
   end
 }
 

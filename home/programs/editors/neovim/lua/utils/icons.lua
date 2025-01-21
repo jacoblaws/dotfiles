@@ -18,6 +18,15 @@ return {
     explorer = '',
   },
 
+  dashboard = {
+    file = '',
+    find = '',
+    recent = '',
+    text = '',
+    plugins = '',
+    quit = '',
+  },
+
   diagnostics = {
     error = '',
     warn = '',

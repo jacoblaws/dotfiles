@@ -7,6 +7,9 @@ local plugins = {
   -- colorschemes
   require('plugins.themes.everforest'),
 
+  -- bundles
+  require('plugins.bundle.snacks'),
+
   -- lsp
   require('plugins.lsp.blink'),
   require('plugins.lsp.nvim-lspconfig'),
