@@ -63,6 +63,10 @@ plugin.opts = {
     hl.SnacksDashboardDesc = { fg = palette.fg }
     hl.SnacksDashboardKey = { fg = palette.green }
     hl.SnacksDashboardFooter = { fg = palette.orange }
+
+    -- snacks.indent
+    hl.SnacksIndent = { fg = palette.bg2 }
+    hl.SnacksIndentScope = { fg = palette.bg2 }
   end
 }
 
