@@ -8,6 +8,7 @@ local plugins = {
   require('plugins.themes.everforest'),
 
   -- bundles
+  require('plugins.bundle.mini'),
   require('plugins.bundle.snacks'),
 
   -- lsp
@@ -22,8 +23,6 @@ local plugins = {
   require('plugins.editor.gitsigns'),
   require('plugins.editor.telescope'),
   require('plugins.editor.toggleterm'),
-  require('plugins.editor.mini-pairs'),
-  require('plugins.editor.mini-surround'),
 
   -- ui
   require('plugins.ui.cokeline'),
