@@ -28,8 +28,8 @@ in {
       "window.menuBarVisibility" = "toggle";
       "workbench.startupEditor" = "none";
       "workbench.colorTheme" = "Everforest Dark";
-      "editor.fontSize" = 16;
-      "editor.fontFamily" = "'JetBrainsMono', 'SymbolsNerdFontMono'";
+      "editor.fontSize" = 18;
+      "editor.fontFamily" = "'Rec Mono Casual', 'Symbols Nerd Font'";
       "extensions.experimental.affinity" = {
         "asvetliakov.vscode-neovim" = 1;
       };
