@@ -6,6 +6,6 @@ return {
     find_left = 'gsF', -- find surrounding (to the left)
     highlight = 'gsh', -- highlight surrounding
     replace = 'gsr', -- replace surrounding
-    upate_n_lines = 'gsn', -- update 'n_lines'
+    update_n_lines = 'gsn', -- update 'n_lines'
   },
 }
