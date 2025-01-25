@@ -61,6 +61,8 @@ return {
     ignored = '',
     conflict = '',
     branch = '',
+    sign = '▎',
+    sign_untracked = '┆',
   },
 
   logo = {
