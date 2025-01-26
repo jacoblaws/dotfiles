@@ -1,19 +1,6 @@
 local M = {}
 
 local utils = require('core.utils')
-local ui = require('core.utils.ui')
-
-M.ui = {
-  plugin = false,
-  n = {
-    ['<leader>ul'] = { ui.toggle_statusline,  'Toggle statusline' },
-    ['<leader>un'] = { ui.toggle_numbers,     'Toggle numbers' },
-    ['<leader>ur'] = { ui.toggle_rel_numbers, 'Toggle relative numbers' },
-    ['<leader>us'] = { ui.toggle_spell,       'Toggle spell' },
-    ['<leader>ut'] = { ui.toggle_tabline,     'Toggle tabline' },
-    ['<leader>uw'] = { ui.toggle_wrap,        'Toggle wrap' },
-  },
-}
 
 M.toggleterm = {
   plugin = true,
