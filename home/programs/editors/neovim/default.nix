@@ -21,6 +21,7 @@ in {
 
     extraPackages = with pkgs; [
       nil
+      fzf
       wget
       curl
       unzip
