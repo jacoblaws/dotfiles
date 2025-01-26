@@ -8,7 +8,7 @@ local plugin = {
   'saghen/blink.cmp',
 
   lazy = false, -- lazy loading handled internally
-  version = 'v0.*', -- release tag used to download pre-built binaries
+  version = '*', -- release tag used to download pre-built binaries
   dependencies = 'rafamadriz/friendly-snippets',
   opts_extend = { 'sources.default' }
 }
@@ -57,21 +57,19 @@ plugin.opts = {
 
     documentation = {
       auto_show = true,
-      auto_show_delay_ms = 500,
-      update_delay_ms = 50,
       window = {
         border = 'rounded',
       },
     },
 
     list = {
-      selection = 'manual' or 'auto_insert',
+      selection = { preselect = false, auto_insert = true },
     },
   },
 
   appearance = {
     use_nvim_cmp_as_default = true,
-    nerd_font_variant = 'mono',
+    nerd_font_variant = 'normal',
 
     kind_icons = {
       Text = kinds.text,
