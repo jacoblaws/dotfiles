@@ -1,21 +1,5 @@
 local M = {}
 
-function M.branches()
-  require('telescope.builtin').git_branches()
-end
-
-function M.file_commits()
-  require('telescope.builtin').git_bcommits()
-end
-
-function M.repo_commits()
-  require('telescope.builtin').git_commits()
-end
-
-function M.status()
-  require('telescope.builtin').git_status()
-end
-
 function M.view_diff()
   require('gitsigns').diffthis()
 end

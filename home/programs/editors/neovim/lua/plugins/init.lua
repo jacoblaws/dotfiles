@@ -21,7 +21,6 @@ local plugins = {
   -- editor
   require('plugins.editor.treesitter'),
   require('plugins.editor.gitsigns'),
-  require('plugins.editor.telescope'),
   require('plugins.editor.toggleterm'),
 
   -- ui
