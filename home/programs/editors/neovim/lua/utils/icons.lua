@@ -75,4 +75,70 @@ return {
     left_separator = '',
     right_separator = '',
   },
+
+  whichkey = {
+    buffer = '',
+    find = '',
+    git = '󰊢',
+    search = '',
+    terminal = '',
+    ui = '',
+    code = '',
+    diagnostics = '',
+    windows = '',
+  },
+
+  ui = {
+    arrow = {
+      up = '',
+      down = '',
+      left = '',
+      right = '',
+    },
+    chevron = {
+      up = '',
+      down = '',
+      left = '',
+      right = '',
+      double = {
+        up = '󰄿',
+        down = '󰄼',
+        left = '󰄽',
+        right = '󰄾',
+      }
+    },
+    ellipsis = '',
+    breadcrumb = '',
+  },
+
+  key = {
+    enter = '󰌑',
+    command = '󰘳',
+    esc = '󱊷',
+    ctrl = '󰘴',
+    shift = '󰘶',
+    option = '󰘵',
+    space = '󱁐',
+    backspace = '',
+    tab = '󰌒',
+    f1 = '󱊫',
+    f2 = '󱊬',
+    f3 = '󱊭',
+    f4 = '󱊮',
+    f5 = '󱊯',
+    f6 = '󱊰',
+    f7 = '󱊱',
+    f8 = '󱊲',
+    f9 = '󱊳',
+    f10 = '󱊴',
+    f11 = '󱊵',
+    f12 = '󱊶',
+  },
+
+  mouse = {
+    scroll = {
+      up = '󱕑',
+      down = '󱕐',
+    }
+  }
 }
