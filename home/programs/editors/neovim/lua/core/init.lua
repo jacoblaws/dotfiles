@@ -1,6 +1,4 @@
-local utils = require('core.utils')
-
-utils.load_options()
+require('core.options')
 require('core.keymaps')
 
 -- bootstrap lazy.nvim plugin manager

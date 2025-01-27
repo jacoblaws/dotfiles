@@ -78,4 +78,10 @@ local options = {
     localleader = ' ',
   },
 }
-return options
+
+-- load the options
+for scope, opt in pairs(options) do
+  for setting, value in pairs(opt) do
+    vim[scope][setting] = value
+  end
+end
