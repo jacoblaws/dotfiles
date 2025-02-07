@@ -75,7 +75,7 @@
     cursor = {
       no_hardware_cursors = true;     # disables hardware cursors
       no_break_fs_vrr = true;         # disables scheduling new frames on cursor movement
-      enable_hyprcursor = false;      # enables hyprcursor support
+      enable_hyprcursor = true;       # enables hyprcursor support
     };
 
     dwindle = {

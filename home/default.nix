@@ -3,7 +3,6 @@
 {
   imports = [
     ./packages.nix
-    ./cursor.nix
   ];
 
   home = {

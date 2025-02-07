@@ -54,7 +54,6 @@
     # misc
     nwg-look
     gnome-tweaks
-    qogir-icon-theme
     papirus-icon-theme
   ];
 
