@@ -43,7 +43,7 @@
     r2modman
     libreoffice
     anki
-    nautilus
+    nemo
     gnome-calculator
     protonvpn-gui
 
@@ -54,7 +54,6 @@
     # misc
     nwg-look
     gnome-tweaks
-    papirus-icon-theme
   ];
 
   nixpkgs.config.permittedInsecurePackages =
