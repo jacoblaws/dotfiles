@@ -31,4 +31,16 @@
     templates = "${config.home.homeDirectory}/templates";
     videos = "${config.home.homeDirectory}/media/videos";
   };
+
+  xdg.mimeApps = {
+    enable = true;
+
+    associations.added = {
+      "application/pdf" = [ "zathura.desktop" "sioyek.desktop" ];
+    };
+
+    defaultApplications = {
+      "application/pdf" = [ "zathura.desktop" "sioyek.desktop" ];
+    };
+  };
 }
