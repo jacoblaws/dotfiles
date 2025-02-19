@@ -1,6 +1,10 @@
 local M = {}
 
 function M.neo_tree_open()
+  if not package.loaded['neo-tree'] then
+    return nil
+  end
+
   local get_state = require('neo-tree.sources.manager').get_state
   local renderer = require('neo-tree.ui.renderer')
 
