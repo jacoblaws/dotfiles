@@ -39,8 +39,8 @@
 
       defaultFonts = {
         serif = [ "Libertinus Serif" ];
-        sansSerif = [ "Recursive Sans Casual" ];
-        monospace = [ "Recursive Mono Casual" "Symbols Nerd Font" ];
+        sansSerif = [ "Recursive Sans Casual Static" ];
+        monospace = [ "Rec Mono Casual" "Symbols Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
 
