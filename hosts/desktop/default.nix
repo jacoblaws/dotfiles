@@ -10,10 +10,8 @@
     ../../system/core/console.nix
     ../../system/programs/wayland/hyprland.nix
     ../../system/services/keyd.nix
+     ../../system/programs/games.nix
   ];
-
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
 
   networking = {
     hostName = "desktop";
