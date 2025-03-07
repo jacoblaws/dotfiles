@@ -10,6 +10,8 @@
     ../../system/core/console.nix
     ../../system/programs/wayland/hyprland.nix
     ../../system/services/keyd.nix
+    ../../system/services/xorg
+    ../../system/services/xorg/awesome.nix
   ];
 
   networking = {
