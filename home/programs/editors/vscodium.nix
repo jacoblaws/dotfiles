@@ -4,36 +4,38 @@ in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-
     mutableExtensionsDir = false;
-    extensions = with extensions; [
-      open-vsx.sainnhe.everforest
-      open-vsx.asvetliakov.vscode-neovim
 
-      # rust support
-      open-vsx.rust-lang.rust-analyzer
+    profiles.default = {
+      extensions = with extensions; [
+        open-vsx.sainnhe.everforest
+        open-vsx.asvetliakov.vscode-neovim
 
-      # python support
-      open-vsx.ms-python.python
-      open-vsx.ms-python.debugpy
-      open-vsx.detachhead.basedpyright
+        # rust support
+        open-vsx.rust-lang.rust-analyzer
 
-      # nix & direnv support
-      open-vsx.jnoortheen.nix-ide
-      open-vsx.mkhl.direnv
-      open-vsx.arrterian.nix-env-selector
-    ];
+        # python support
+        open-vsx.ms-python.python
+        open-vsx.ms-python.debugpy
+        open-vsx.detachhead.basedpyright
 
-    userSettings = {
-      "window.menuBarVisibility" = "toggle";
-      "workbench.startupEditor" = "none";
-      "workbench.colorTheme" = "Everforest Dark";
-      "editor.fontSize" = 18;
-      "editor.fontFamily" = "'Rec Mono Casual', 'Symbols Nerd Font'";
-      "extensions.experimental.affinity" = {
-        "asvetliakov.vscode-neovim" = 1;
+        # nix & direnv support
+        open-vsx.jnoortheen.nix-ide
+        open-vsx.mkhl.direnv
+        open-vsx.arrterian.nix-env-selector
+      ];
+
+      userSettings = {
+        "window.menuBarVisibility" = "toggle";
+        "workbench.startupEditor" = "none";
+        "workbench.colorTheme" = "Everforest Dark";
+        "editor.fontSize" = 18;
+        "editor.fontFamily" = "'Rec Mono Casual', 'Symbols Nerd Font'";
+        "extensions.experimental.affinity" = {
+          "asvetliakov.vscode-neovim" = 1;
+        };
+        "nix.enableLanguageServer" = true;
       };
-      "nix.enableLanguageServer" = true;
     };
   };
 }
