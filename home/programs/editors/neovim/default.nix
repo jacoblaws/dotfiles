@@ -4,8 +4,6 @@ let
   homeDirectory = "${config.home.homeDirectory}";
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in {
-  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
-
   programs.neovim = {
     enable = true;
 

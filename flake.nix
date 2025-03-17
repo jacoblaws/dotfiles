@@ -21,7 +21,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
   let
     username = "jvl";
     system = "x86_64-linux";
@@ -29,27 +29,33 @@
   {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts ./hosts/desktop ];
         specialArgs = { inherit inputs username system; };
+        modules = [
+          ./hosts
+          ./hosts/desktop
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home/profiles/desktop;
+            home-manager.extraSpecialArgs = { inherit inputs username system; };
+          }
+        ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts ./hosts/laptop ];
         specialArgs = { inherit inputs username system; };
-      };
-    };
-
-    homeConfigurations = {
-      "${username}@desktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home ./home/profiles/desktop ];
-        extraSpecialArgs = { inherit inputs username system; };
-      };
-
-      "${username}@laptop" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./home ./home/profiles/laptop ];
-          extraSpecialArgs = { inherit inputs username system; };
+        modules = [
+          ./hosts
+          ./hosts/laptop
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home/profiles/laptop;
+            home-manager.extraSpecialArgs = { inherit inputs username system; };
+          }
+        ];
       };
     };
   };

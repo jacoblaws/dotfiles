@@ -1,7 +1,4 @@
-{ nixpkgs, pkgs, inputs, ... }:
-
-{
-  nixpkgs.config.allowUnfree = true;
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     # cli
     lf
@@ -67,7 +64,4 @@
       meta.mainProgram = "orca-slicer";
     })
   ];
-
-  nixpkgs.config.permittedInsecurePackages =
-    pkgs.lib.optional (pkgs.obsidian.version == "1.5.3") "electron-25.9.0";
 }

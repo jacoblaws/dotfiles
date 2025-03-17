@@ -1,5 +1,6 @@
 {
   imports = [
+    ../../.
     ../../programs/editors
     ../../programs/media
     ../../programs/office
