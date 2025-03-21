@@ -1,3 +1,6 @@
+# direnv
+.direnv
+
 # fish
 fish_variables
 config/fish/functions/*
