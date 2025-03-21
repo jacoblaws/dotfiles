@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, username, ... }:
+{ config, ... }:
 
 {
   imports = [
@@ -6,8 +6,8 @@
   ];
 
   home = {
-    username = "${username}";
-    homeDirectory = "/home/${username}";
+    username = "jvl";
+    homeDirectory = "/home/jvl";
     stateVersion = "23.11";
   };
 

@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../system/core
     ../../system/core/audio.nix
     ../../system/core/fonts.nix
     ../../system/core/greetd.nix

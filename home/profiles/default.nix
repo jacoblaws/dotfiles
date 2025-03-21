@@ -1,0 +1,11 @@
+{
+  desktop = [
+    ../.
+    ./desktop
+  ];
+
+  laptop = [
+    ../.
+    ./laptop
+  ];
+}
