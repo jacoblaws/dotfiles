@@ -1,15 +1,7 @@
 { inputs, pkgs, ... }: {
   imports = [
-    ../nix/home-manager.nix
-    ../nix/nh.nix
-    ../nix/substituters.nix
+    ../nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
-  };
 
   environment.systemPackages = with pkgs; [
     vim
