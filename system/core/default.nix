@@ -1,8 +1,4 @@
 { inputs, pkgs, ... }: {
-  imports = [
-    ../nix
-  ];
-
   environment.systemPackages = with pkgs; [
     vim
     git

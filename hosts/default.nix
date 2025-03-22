@@ -1,6 +1,8 @@
 { self, inputs, ... }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
+    inherit (import "${self}/system") desktop laptop;
+
     importHome = import "${self}/home/profiles";
     specialArgs = {
       inherit self inputs;
@@ -9,7 +11,7 @@
   in {
     desktop = nixosSystem {
       inherit specialArgs;
-      modules = [
+      modules = desktop ++ [
         ./desktop
         {
           home-manager = {
@@ -22,7 +24,7 @@
 
     laptop = nixosSystem {
       inherit specialArgs;
-      modules = [
+      modules = laptop ++ [
         ./laptop
         {
           home-manager = {
