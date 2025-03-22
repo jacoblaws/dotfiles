@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
+    ../nix/home-manager.nix
     ../nix/nh.nix
     ../nix/substituters.nix
   ];

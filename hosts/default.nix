@@ -11,11 +11,8 @@
       inherit specialArgs;
       modules = [
         ./desktop
-        inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.jvl.imports = importHome.desktop;
           };
@@ -27,11 +24,8 @@
       inherit specialArgs;
       modules = [
         ./laptop
-        inputs.home-manager.nixosModules.home-manger
         {
           home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
             extraSpecialArgs = specialArgs;
             users.jvl.imports = importHome.laptop;
           };
