@@ -18,6 +18,7 @@ plugin.opts = {
   disable_italic_comments = false,
 
   show_eob = false,
+  float_type = "dim",
 
   on_highlights = function(hl, palette)
     -- neovim
@@ -39,7 +40,7 @@ plugin.opts = {
     hl.NeoTreeTabSeparatorInactive = { fg = palette.bg_dim, bg = palette.bg_dim }
 
     -- cokeline
-    hl.CokeLineFill = { bg = palette.bg_dim }
+    hl.CokeLineFill = { fg = palette.bg_dim, bg = palette.bg_dim }
     hl.CokeLineBufferActive = { fg = palette.fg, bg = palette.bg0 }
     --hl.CokeLineBufferInactive = { fg = palette.grey0, bg = '#262d32' }
     hl.CokeLineBufferInactive = { fg = palette.grey0, bg = palette.bg_dim }
@@ -71,8 +72,9 @@ plugin.opts = {
 }
 
 plugin.config = function(_, opts)
-  require('everforest').setup(opts)
-  vim.cmd[[ colorscheme everforest ]]
+  local everforest = require('everforest')
+  everforest.setup(opts)
+  everforest.load()
 end
 
 return plugin

@@ -45,8 +45,8 @@ plugin.opts = function()
       components = {
         {
           text = ' ' .. icon.buffer.explorer .. ' File Explorer',
-          fg = get_hl_attr('Directory', 'fg'),
-          bg = get_hl_attr('WinSeparator', 'fg'),
+          fg = 'Directory',
+          bg = 'CokeLineFill',
           style = 'bold',
         },
       },
@@ -58,7 +58,7 @@ plugin.opts = function()
           local neo_tree_open = require('utils.ui').neo_tree_open()
           return (buffer.index == 1 and neo_tree_open) and '▋' or ''
         end,
-        fg = get_hl_attr('WinSeparator', 'fg'),
+        fg = 'CokeLineFill',
       },
       {
         text = function(buffer) return ' ' .. buffer.devicon.icon end,
