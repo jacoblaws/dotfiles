@@ -10,7 +10,7 @@
       # launcher
       "SUPER, Return, exec, kitty"
       "SUPER, r, exec, rofi -show drun"
-      "SUPER, e, exec, nautilus"
+      "SUPER, e, exec, nemo"
       "SUPER, b, exec, firefox"
       "SUPER, s, exec, spotify"
       "SUPER, o, exec, WAYLAND_DISPLAY= obsidian"

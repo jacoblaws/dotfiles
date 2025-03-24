@@ -43,6 +43,7 @@
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/about" = [ "firefox.desktop" ];
       "x-scheme-handler/unkown" = [ "firefox.desktop" ];
+      "inode/directory" = [ "nemo.desktop" ];
     };
 
     defaultApplications = {
@@ -53,6 +54,7 @@
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "x-scheme-handler/about" = [ "firefox.desktop" ];
       "x-scheme-handler/unkown" = [ "firefox.desktop" ];
+      "inode/directory" = [ "nemo.desktop" ];
     };
   };
 }
