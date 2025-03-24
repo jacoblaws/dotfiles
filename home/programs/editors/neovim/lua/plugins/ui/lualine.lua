@@ -106,10 +106,6 @@ plugin.opts = {
 }
 
 plugin.config = function(_, opts)
-  if vim.g.colors_name == 'everforest' then
-    opts.options.theme = require('plugins.themes.lualine.everforest')
-  end
-
   vim.o.laststatus = vim.g.lualine_laststatus
   require('lualine').setup(opts)
 end
@@ -121,6 +117,17 @@ plugin.init = function()
   else
     vim.o.laststatus = 0
   end
+
+  vim.api.nvim_create_autocmd('OptionSet', {
+    pattern = 'background',
+    callback = function()
+      local opts = { options = { theme = 'auto' } }
+      if vim.g.colors_name == 'everforest' then
+        opts.options.theme = dofile(vim.env.HOME .. '/.config/nvim/lua/plugins/themes/lualine/everforest.lua')
+      end
+      require('lualine').setup(opts)
+    end,
+  })
 end
 
 return plugin
