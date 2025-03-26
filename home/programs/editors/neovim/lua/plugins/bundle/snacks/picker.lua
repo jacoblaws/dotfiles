@@ -9,6 +9,7 @@ plugin.keys = {
   { '<leader>fa', pick.all_files, desc = 'All files' },
   { '<leader>fb', pick.buffers, desc = 'Buffers' },
   { '<leader>ff', pick.files, desc = 'Files' },
+  { '<leader>fh', pick.highlights, desc = 'Highlights' },
   { '<leader>fr', pick.recent, desc = 'Recent' },
 
   { '<leader>gb', pick.git_branches, desc = 'Branches' },

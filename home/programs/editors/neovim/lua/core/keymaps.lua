@@ -1,3 +1,5 @@
+local toggle = require('utils.toggle')
+
 local map = function(mode, lhs, rhs, opts)
   opts = opts or {}
   opts.silent = opts.silent ~= false
@@ -33,3 +35,14 @@ map('v', '>', '>gv')
 -- add comments above/below
 map('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add comment below' })
 map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add comment above' })
+
+-- diagnostics
+map('n', '<leader>cd', function() vim.diagnostic.open_float({ border = 'rounded' }) end, { desc = 'Line diagnostic' })
+
+-- toggle
+map('n', '<leader>ub', toggle.background, { desc = 'Toggle background' })
+map('n', '<leader>uc', function() toggle.option('cursorline') end, { desc = 'Toggle cursorline' })
+map('n', '<leader>un', toggle.cycle_number_options, { desc = 'Toggle line numbers' })
+map('n', '<leader>uw', function() toggle.option('wrap') end, { desc = 'Toggle wrap'})
+map('n', '<leader>ul', toggle.virtual_lines, { desc = 'Toggle virtual lines' })
+map('n', '<leader>ut', toggle.virtual_text, { desc = 'Toggle virtual text' })
