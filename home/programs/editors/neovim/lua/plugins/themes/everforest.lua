@@ -15,7 +15,7 @@ plugin.opts = {
   ui_contrast = 'low',
 
   italics = false,
-  disable_italic_comments = false,
+  disable_italic_comments = true,
 
   show_eob = false,
   float_type = "dim",
