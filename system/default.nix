@@ -5,8 +5,8 @@ let
     ./core/audio.nix
     ./core/console.nix
     ./core/fonts.nix
-    ./core/greetd.nix
 
+    ./services
     ./hardware/nvidia.nix
     ./programs/wayland/hyprland.nix
 
