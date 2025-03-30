@@ -2,9 +2,6 @@ let
   core = [
     ./nix
     ./core
-    ./core/console.nix
-    ./core/fonts.nix
-
     ./services
     ./hardware/nvidia.nix
     ./programs

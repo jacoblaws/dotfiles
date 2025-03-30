@@ -1,16 +1,20 @@
-{ inputs, pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    wget
-  ];
+{ pkgs, ... }: {
+  imports = [ ./fonts.nix ];
 
+  environment.systemPackages = [ pkgs.git ];
 
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
+
+  security = { rtkit.enable = true; };
 
   virtualisation = {
     containers.enable = true;
-
     podman = {
       enable = true;
       dockerCompat = true;
@@ -18,13 +22,10 @@
     };
   };
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
+  users.users.jvl = {
+    isNormalUser = true;
+    shell = pkgs.bash;
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
 
   time.timeZone = "America/Los_Angeles";
@@ -43,13 +44,24 @@
     };
   };
 
-  users.users.jvl = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "audio"
+  console = {
+    colors = [
+      "2d353b" # black
+      "e67e80" # red
+      "a7c080" # green
+      "dbbc7f" # yellow
+      "7fbbb3" # blue
+      "d699b6" # magenta
+      "83c092" # cyan
+      "859289" # gray
+      "7a8478" # dark gray
+      "e67e80" # light red
+      "a7c080" # light green
+      "dbbc7f" # light yellow
+      "7fbbb3" # light blue
+      "d699b6" # light magenta
+      "83c092" # light cyan
+      "d3c6aa" # white
     ];
   };
 
