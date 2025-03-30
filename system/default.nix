@@ -2,7 +2,6 @@ let
   core = [
     ./nix
     ./core
-    ./core/audio.nix
     ./core/console.nix
     ./core/fonts.nix
 
