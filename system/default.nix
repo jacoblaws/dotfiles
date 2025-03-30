@@ -8,10 +8,6 @@ let
     ./services
     ./hardware/nvidia.nix
     ./programs/wayland/hyprland.nix
-
-    ./services/keyd.nix
-    ./services/xorg
-    ./services/xorg/awesome.nix
   ];
 
   desktop = core ++ [
