@@ -5,12 +5,7 @@
     wget
   ];
 
-  programs.fish.enable = true;
-  programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
   };
 
   virtualisation = {

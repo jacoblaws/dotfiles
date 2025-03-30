@@ -7,6 +7,7 @@ let
 
     ./services
     ./hardware/nvidia.nix
+    ./programs
     ./programs/wayland/hyprland.nix
   ];
 
