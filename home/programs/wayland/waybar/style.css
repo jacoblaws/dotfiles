@@ -36,6 +36,7 @@
 window#waybar {
   color: @fg;
   background: @bg_dim;
+  border-radius: 15px;
 }
 
 .modules-left {
