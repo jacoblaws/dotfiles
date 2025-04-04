@@ -10,6 +10,7 @@
   services = {
     gvfs.enable = true;
     udisks2.enable = true;
+    geoclue2.enable = true;
 
     avahi = {
       enable = true;
