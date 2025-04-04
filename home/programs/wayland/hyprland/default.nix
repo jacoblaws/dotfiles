@@ -14,7 +14,7 @@
       "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
-      "swww init"
+      "hyprpaper"
       "waybar"
     ];
 
