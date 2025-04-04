@@ -35,6 +35,9 @@
           name = "dotfiles";
           packages = with pkgs; [
             nil
+            nixfmt-classic
+            lua-language-server
+            stylua
           ];
         };
       };
