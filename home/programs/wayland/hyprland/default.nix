@@ -19,9 +19,9 @@
     ];
 
     windowrule = [
-      "float, ^(pavucontrol)$"
-      "float, ^(org.gnome.Nautilus)$"
-      "float, ^(org.gnome.Calculator)$"
+      "float, class:nemo"
+      "float, class:org.pulseaudio.pavucontrol"
+      "float, class:org.gnome.Calculator"
     ];
 
     env = [
