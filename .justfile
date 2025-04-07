@@ -18,7 +18,7 @@ build:
 [group('Update Configuration')]
 [doc('Update flake inputs')]
 flake:
-  nix flake update .
+  nix flake update --flake .
 
 [group('Update Configuration')]
 [doc('Update flake inputs and switch to new configuration')]
