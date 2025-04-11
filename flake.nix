@@ -26,6 +26,7 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         ./hosts
+        ./modules
       ];
 
       systems = [ "x86_64-linux" ];

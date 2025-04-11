@@ -19,6 +19,7 @@
             users.jvl.imports = importHome.desktop;
           };
         }
+        self.nixosModules.theme
       ];
     };
 
@@ -32,6 +33,7 @@
             users.jvl.imports = importHome.laptop;
           };
         }
+        self.nixosModules.theme
       ];
     };
   };
