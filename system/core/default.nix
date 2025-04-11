@@ -1,5 +1,8 @@
 { pkgs, ... }: {
-  imports = [ ./fonts.nix ];
+  imports = [
+    ./fonts.nix
+    ./themes.nix
+  ];
 
   environment.systemPackages = [ pkgs.git ];
 
