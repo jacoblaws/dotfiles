@@ -27,7 +27,7 @@
 
   users.users.jvl = {
     isNormalUser = true;
-    shell = pkgs.bash;
+    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
 
