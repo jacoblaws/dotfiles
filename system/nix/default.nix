@@ -1,4 +1,4 @@
-{
+{ inputs, ... }: {
   imports = [
     ./home-manager.nix
     ./nh.nix
@@ -10,5 +10,12 @@
     auto-optimise-store = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        zjstatus = inputs.zjstatus.packages.${prev.system}.default;
+      })
+    ];
+  };
 }

@@ -16,6 +16,7 @@
     };
 
     ags.url = "github:Aylur/ags";
+    zjstatus.url = "github:dj95/zjstatus";
     hyprland.url = "github:hyprwm/hyprland";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";

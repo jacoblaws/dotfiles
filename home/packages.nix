@@ -21,6 +21,7 @@
     yazi
     appimage-run
     protonvpn-cli
+    zjstatus
 
     # gui
     firefox
