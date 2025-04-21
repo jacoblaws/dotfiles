@@ -5,7 +5,7 @@
       variant = "dark";
       colors = {
         fg      = "d3c6aa";
-        bgd     = "232a3e";
+        bgd     = "232a2e";
         bg0     = "2d353b";
         bg1     = "343f44";
         bg2     = "3d484d";
