@@ -19,7 +19,7 @@ in {
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     extraPackages = with pkgs; [
-      nil
+      nixd
       fzf
       wget
       curl

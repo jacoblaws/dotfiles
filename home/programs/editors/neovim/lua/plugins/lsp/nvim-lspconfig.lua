@@ -52,7 +52,7 @@ plugin.config = function(_, opts)
 
   local lspconfig = require('lspconfig')
   local capabilities = require('blink.cmp').get_lsp_capabilities()
-  local servers = { 'clangd', 'cmake', 'lua_ls', 'bashls', 'ts_ls', 'nil_ls' }
+  local servers = { 'clangd', 'cmake', 'lua_ls', 'bashls', 'ts_ls', 'nixd' }
 
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup { capabilities = capabilities }
