@@ -15,6 +15,7 @@
       "SUPER, s, exec, spotify"
       "SUPER, o, exec, WAYLAND_DISPLAY= obsidian"
       "SUPER, d, exec, discord"
+      "SUPER, v, exec, kitty --class clipse -e 'clipse'"
 
       # close window | exit hyprland | reload hyprland
       "SUPER, q, killactive"
@@ -43,7 +44,7 @@
 
       # pseudo/split windows
       "SUPER, c, pseudo"
-      "SUPER, v, togglesplit"
+      "SUPER, z, togglesplit"
 
       # workspace cycle
       "SUPER, Tab, workspace, e+1"

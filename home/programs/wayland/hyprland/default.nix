@@ -12,8 +12,7 @@
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-      "wl-paste --type text --watch cliphist store"
-      "wl-paste --type image --watch cliphist store"
+      "clipse -listen"
       "hyprpaper"
       "waybar"
     ];
@@ -22,6 +21,11 @@
       "float, class:nemo"
       "float, class:org.pulseaudio.pavucontrol"
       "float, class:org.gnome.Calculator"
+
+      # clipse
+      "float, class:(clipse)"
+      "size 622 652, class:(clipse)"
+      "stayfocused, class:(clipse)"
     ];
 
     env = [
