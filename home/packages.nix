@@ -12,7 +12,6 @@
     zip
     unzip
     unrar
-    cliphist
     dive
     podman-tui
     podman-compose
@@ -22,6 +21,8 @@
     appimage-run
     protonvpn-cli
     zjstatus
+    wl-clipboard
+    clipse
 
     # gui
     firefox
