@@ -20,6 +20,7 @@
     yazi
     appimage-run
     protonvpn-cli
+    typst
     zjstatus
     wl-clipboard
     clipse
