@@ -18,8 +18,8 @@
     };
 
     iconTheme = {
-      name = "Everforest-Dark";
-      package = pkgs.everforest-gtk-theme;
+      name = "Papirus Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     gtk3.extraConfig = {
