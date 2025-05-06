@@ -12,6 +12,7 @@ in {
     ../../programs/wayland/ags
     ../../programs/wayland/hyprland
     ../../programs/wayland/waybar
+    ../../programs/wayland/anyrun.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
