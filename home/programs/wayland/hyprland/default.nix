@@ -11,7 +11,7 @@
 
   wayland.windowManager.hyprland.settings = {
     exec-once = [
-      "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+      "systemctl --user start "
       "clipse -listen"
       "hyprpaper"
       "waybar"

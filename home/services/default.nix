@@ -6,4 +6,6 @@
       splash = false;
     };
   };
+  services.hyprpolkitagent.enable = true;
+  services.swaync.enable = true;
 }
