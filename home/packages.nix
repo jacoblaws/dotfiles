@@ -36,7 +36,6 @@
     calibre
     lutris
     picard
-    rofi-wayland
     drawio
     xivlauncher
     zotero
