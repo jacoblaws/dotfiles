@@ -1,11 +1,10 @@
-{
-  desktop = [
+let
+  core = [
     ../.
-    ./desktop
+    ../services
+    ../programs
   ];
-
-  laptop = [
-    ../.
-    ./laptop
-  ];
+in {
+  desktop = core ++ [ ./desktop ];
+  laptop = core ++ [ ./laptop ];
 }

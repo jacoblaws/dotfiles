@@ -1,58 +1,34 @@
-{ pkgs, inputs, ... }: {
-  home.packages = with pkgs; [
-    # cli
-    lf
-    fd
-    fzf
-    eza
-    bat
-    just
-    ripgrep
-    lazygit
-    zip
-    unzip
-    unrar
-    dive
-    podman-tui
-    podman-compose
-    bun
-    texliveFull
-    yazi
-    appimage-run
-    protonvpn-cli
-    typst
-    zjstatus
-    wl-clipboard
-    clipse
+{ inputs, pkgs, ... }: {
+  imports = [
+    ./editors
+    ./media
+    ./office
+    ./terminal
+    ./themes
+    ./wayland
+  ];
 
-    # gui
-    firefox
-    spotify
+  home.packages = with pkgs; [
+    anki
+    calibre
     discord
+    drawio
+    firefox
+    gnome-calculator
+    libreoffice
+    lutris
+    nemo
     obsidian
     pavucontrol
-    prismlauncher
-    r2modman
-    calibre
-    lutris
     picard
-    drawio
+    prismlauncher
+    protonvpn-gui
+    r2modman
+    spotify
     xivlauncher
     zotero
-    r2modman
-    libreoffice
-    anki
-    nemo
-    gnome-calculator
-    protonvpn-gui
-
-    # wine
     winetricks
     inputs.nix-gaming.packages.${pkgs.system}.wine-ge
-
-    # misc
-    nwg-look
-    gnome-tweaks
 
     (pkgs.symlinkJoin {
       name = "orca-slicer";
@@ -65,5 +41,6 @@
       '';
       meta.mainProgram = "orca-slicer";
     })
+
   ];
 }

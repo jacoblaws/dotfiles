@@ -1,9 +1,4 @@
 { pkgs, config, ... }: {
-  home.packages = with pkgs; [
-    gtk-engine-murrine
-    gnome-themes-extra
-  ];
-
   gtk = {
     enable = true;
 
@@ -22,18 +17,14 @@
       package = pkgs.papirus-icon-theme;
     };
 
-    gtk3.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
+    gtk3.extraConfig.settings = ''
+      gtk-application-prefer-dark-theme=1
+    '';
 
-    gtk4.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-        gtk-cursor-theme-name=Qogir
-      '';
-    };
+    gtk4.extraConfig.settings = ''
+      gtk-application-prefer-dark-theme=1
+      gtk-cursor-theme-name=Qogir
+    '';
   };
 
   xdg.configFile = {

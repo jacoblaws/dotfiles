@@ -1,20 +1,6 @@
 { config, ... }: let
   homeDir = config.home.homeDirectory;
 in {
-  imports = [
-    ../../.
-    ../../services
-    ../../programs/editors
-    ../../programs/media
-    ../../programs/office
-    ../../programs/terminal
-    ../../programs/theme
-    ../../programs/wayland/ags
-    ../../programs/wayland/hyprland
-    ../../programs/wayland/waybar
-    ../../programs/wayland/anyrun.nix
-  ];
-
   wayland.windowManager.hyprland.settings = {
     monitor = "eDP-1, 1920x1080@60, auto, 1";
   };
