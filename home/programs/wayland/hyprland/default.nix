@@ -29,22 +29,19 @@
     ];
 
     env = [
-      "XDG_SESSIONS_TYPE, wayland"
-      "XDG_SESSION_DESKTOP, Hyprland"
-      "XDG_CURRENT_DESKTOP, Hyprland"
-
-      "GBM_BACKEND, nvidia"
-      "LIBVA_DRIVER_NAME, nvidia-drm"
+      # nvidia
+      "LIBVA_DRIVER_NAME, nvidia"
       "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+      "NVD_BACKEND, direct"
 
-      "XCUROSOR_SIZE, 24"
-      "WLR_NO_HARDWARE_CURSORS, 1"
+      # electron apps
+      "ELECTRON_OZONE_PLATFORM_HINT, auto"
 
-      "GDK_BACKEND, wayland"
-      "QT_QPA_PLATFORM, wayland"
-      "QT_QPA_PLATFORMTHEME, qt5ct"
-      "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
-      "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
+      # cursor
+      "HYPRCURSOR_THEME,Qogir"
+      "HYPRCURSOR_SIZE,24"
+      "XCURSOR_THEME,Qogir"
+      "XCURSOR_SIZE,24"
     ];
   };
 }
