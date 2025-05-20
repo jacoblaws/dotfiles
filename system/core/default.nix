@@ -17,6 +17,7 @@
   security = { rtkit.enable = true; };
 
   virtualisation = {
+    libvirtd.enable = true;
     containers.enable = true;
     podman = {
       enable = true;
