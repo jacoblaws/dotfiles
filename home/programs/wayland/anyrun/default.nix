@@ -2,10 +2,6 @@
   theme = osConfig.theme;
   colors = theme.palette.${theme.name}.colors;
 in {
-  imports = [
-    inputs.anyrun.homeManagerModules.default
-  ];
-
   programs.anyrun = {
     enable = true;
 
