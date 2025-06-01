@@ -1,6 +1,6 @@
 { osConfig, ... }: let
-  inherit (osConfig) theme;
-  palette = theme.palette.${theme.name}.colors;
+  inherit (osConfig) theme currentTheme;
+  palette = theme.${currentTheme}.dark;
 in {
   xdg.configFile."zellij/theme/custom.kdl".text = ''
     custom {

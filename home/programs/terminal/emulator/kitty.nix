@@ -1,6 +1,6 @@
 { osConfig, ... }: let
-  theme = osConfig.theme;
-  palette = theme.palette.${theme.name}.colors;
+  inherit (osConfig) theme currentTheme;
+  palette = theme.${currentTheme}.dark;
 in {
   programs.kitty = {
     enable = true;

@@ -1,6 +1,6 @@
 { inputs, pkgs, osConfig, ... }: let
-  theme = osConfig.theme;
-  colors = theme.palette.${theme.name}.colors;
+  inherit (osConfig) theme currentTheme;
+  colors = theme.${currentTheme}.dark;
 in {
   programs.anyrun = {
     enable = true;
