@@ -21,5 +21,25 @@
       blue    = "7fbbb3";
       magenta = "d699b6";
     };
+    light = {
+      fg      = "5c6a72";
+      bgd     = "efebd4";
+      bg0     = "fdf6e3";
+      bg1     = "f4f0d9";
+      bg2     = "efebd4";
+      bg3     = "e6e2cc";
+      bg4     = "e0dcc7";
+      bg5     = "bdc3af";
+      grey0   = "a6b0a0";
+      grey1   = "939f91";
+      grey2   = "829181";
+      red     = "f85552";
+      orange  = "f57d26";
+      yellow  = "dfa000";
+      green   = "8da101";
+      cyan    = "35a77c";
+      blue    = "da94c5";
+      magenta = "df69ba";
+    };
   };
 }
