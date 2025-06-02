@@ -29,7 +29,7 @@
   users.users.jvl = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "kvm" ];
   };
 
   time.timeZone = "America/Los_Angeles";
