@@ -1,8 +1,8 @@
 {
   imports = [
     ./emacs
+    ./jetbrains
     ./neovim
-    ./android-studio.nix
     ./vscodium.nix
     ./zed.nix
   ];
