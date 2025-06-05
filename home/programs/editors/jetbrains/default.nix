@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./ideavimrc.nix
+  ];
+
   # packages for android studio
   home.packages = with pkgs; [
     android-studio
