@@ -3,7 +3,7 @@
     ./tools
     ./shell/fish.nix
     ./shell/starship.nix
-    ./emulator/kitty.nix
+    ./emulator/kitty
   ];
 
   home.packages = with pkgs; [
