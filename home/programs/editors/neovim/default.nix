@@ -1,7 +1,5 @@
-{ inputs, config, pkgs, ... }:
-
-let
-  homeDirectory = "${config.home.homeDirectory}";
+{ inputs, config, pkgs, ... }: let
+  inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in {
   programs.neovim = {
@@ -17,21 +15,19 @@ in {
     withPython3 = true;
 
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-
     extraPackages = with pkgs; [
-      nixd
-      fzf
-      wget
-      curl
-      unzip
-      clang
-      tree-sitter
+      basedpyright
+      bash-language-server
       clang-tools
-      rust-analyzer
-      cmake-language-server
+      curl
+      fzf
+      gopls
       lua-language-server
-      nodePackages.bash-language-server
-      nodePackages.typescript-language-server
+      nixd
+      rust-analyzer
+      tree-sitter
+      unzip
+      wget
     ];
   };
 
