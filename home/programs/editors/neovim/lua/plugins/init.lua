@@ -14,7 +14,6 @@ local plugins = {
   -- lsp
   require('plugins.lsp.blink'),
   require('plugins.lsp.conform'),
-  require('plugins.lsp.nvim-lspconfig'),
 
   -- language
   require('plugins.lang.rustaceanvim'),
