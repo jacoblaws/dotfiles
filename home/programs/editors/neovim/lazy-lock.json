@@ -13,6 +13,7 @@
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "nui.nvim": { "branch": "main", "commit": "8d3bce9764e627b62b07424e0df77f680d47ffdb" },
   "nvim-cokeline": { "branch": "main", "commit": "9fbed130683b7b6f73198c09e35ba4b33f547c08" },
+  "nvim-lilypond-suite": { "branch": "main", "commit": "8227b50451d60aa370e67cc5f8bad8b14783551c" },
   "nvim-treesitter": { "branch": "master", "commit": "205faba1768a6e4c854f156bc6a21a41b242599c" },
   "nvim-web-devicons": { "branch": "master", "commit": "57dfa947cc88cdf1baa2c7e13ed31edddd8fb1d1" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
