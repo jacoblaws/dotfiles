@@ -8,6 +8,11 @@
     };
   };
 
+  services.fluidsynth = {
+    enable = true;
+    soundService = "pipewire-pulse";
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {
