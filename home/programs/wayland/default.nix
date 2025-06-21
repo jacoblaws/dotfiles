@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    ./ags
     ./anyrun
     ./hyprland
     ./waybar

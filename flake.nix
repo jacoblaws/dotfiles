@@ -15,7 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags.url = "github:Aylur/ags";
     anyrun.url = "github:anyrun-org/anyrun";
     zjstatus.url = "github:dj95/zjstatus";
     hyprland.url = "github:hyprwm/hyprland";
