@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./editors
     ./media
@@ -10,25 +10,14 @@
 
   home.packages = with pkgs; [
     anki
-    calibre
-    discord
     drawio
     firefox
     gnome-calculator
     libreoffice
-    lutris
     nemo
     obsidian
-    pavucontrol
-    picard
-    prismlauncher
     protonvpn-gui
-    r2modman
-    spotify
-    xivlauncher
     zotero
-    winetricks
-    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
 
     (pkgs.symlinkJoin {
       name = "orca-slicer";
