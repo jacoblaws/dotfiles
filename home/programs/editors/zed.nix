@@ -4,7 +4,7 @@
     package = pkgs.zed-editor;
 
     extraPackages = with pkgs; [
-      nil
+      nixd
       rust-analyzer
       libgcc
     ];
@@ -63,8 +63,6 @@
           };
         };
       };
-
-      languages.Nix.language_servers = [ "nil" "!nixd" ];
     };
   };
 }
