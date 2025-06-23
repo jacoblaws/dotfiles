@@ -66,8 +66,5 @@
 
       languages.Nix.language_servers = [ "nil" "!nixd" ];
     };
-
-    userKeymaps = {
-    };
   };
 }
