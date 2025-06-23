@@ -135,10 +135,32 @@ return {
     f12 = '󱊶',
   },
 
+  markdown = {
+    -- list bullets
+    b1 = '',
+    b2 = '',
+    b3 = '◆',
+    b4 = '◇',
+
+    -- check boxes
+    box = {
+      checked = '',
+      unchecked = '',
+    },
+
+    -- headings
+    h1 = '✱ ',
+    h2 = '✲ ',
+    h3 = '✣ ',
+    h4 = '✜ ',
+    h5 = '✦ ',
+    h6 = '✧ ',
+  },
+
   mouse = {
     scroll = {
       up = '󱕑',
       down = '󱕐',
     }
-  }
+  },
 }

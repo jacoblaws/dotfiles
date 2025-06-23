@@ -18,6 +18,7 @@ local plugins = {
   -- language
   require('plugins.lang.rustaceanvim'),
   require('plugins.lang.lilypond'),
+  require('plugins.lang.markdown'),
 
   -- editor
   require('plugins.editor.treesitter'),
