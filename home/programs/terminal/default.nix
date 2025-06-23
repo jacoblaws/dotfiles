@@ -25,6 +25,7 @@
     protonvpn-cli
     yazi
     appimage-run
+    lilypond
   ];
 
   programs.direnv = {
