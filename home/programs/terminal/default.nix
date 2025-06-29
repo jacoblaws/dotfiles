@@ -1,31 +1,30 @@
 { pkgs, ... }: {
   imports = [
+    ./emulator
+    ./shell
     ./tools
-    ./shell/fish.nix
-    ./shell/starship.nix
-    ./emulator/kitty
   ];
 
   home.packages = with pkgs; [
-    lf
+    appimage-run
+    bat
+    clipse
+    dive
+    eza
     fd
     fzf
-    eza
-    bat
     just
-    ripgrep
     lazygit
-    zip
-    unzip
-    unrar
-    dive
-    podman-tui
-    podman-compose
-    clipse
-    protonvpn-cli
-    yazi
-    appimage-run
+    lf
     lilypond
+    podman-compose
+    podman-tui
+    protonvpn-cli
+    ripgrep
+    unrar
+    unzip
+    yazi
+    zip
   ];
 
   programs.direnv = {
