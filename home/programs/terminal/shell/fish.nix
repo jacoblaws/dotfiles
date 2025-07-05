@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.fish = {
     enable = true;
+    generateCompletions = false;
 
     plugins = [
       { name = "z"; src = pkgs.fishPlugins.z.src; }
@@ -10,7 +11,7 @@
       { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
     ];
 
-    shellInit = ''
+    interactiveShellInit = ''
       set -U fish_greeting
       fish_add_path $HOME/dotfiles/bin
       fish_add_path $HOME/.local/share/doom-emacs/bin
