@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     appimage-run
     bat
+    brightnessctl
     clipse
     dive
     eza
