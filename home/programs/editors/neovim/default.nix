@@ -24,6 +24,7 @@ in {
       gopls
       lua-language-server
       nixd
+      ormolu
       rust-analyzer
       tree-sitter
       unzip
