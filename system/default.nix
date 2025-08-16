@@ -3,6 +3,7 @@ let
     ./nix
     ./core
     ./services
+    ./themes
     ./hardware/nvidia.nix
     ./programs
     ./programs/wayland/hyprland.nix
