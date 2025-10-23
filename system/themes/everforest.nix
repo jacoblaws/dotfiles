@@ -9,6 +9,12 @@
       bg3 = "475258";
       bg4 = "4f585e";
       bg5 = "56635f";
+      bgr = "514045";
+      bgy = "4d4c43";
+      bgg = "425047";
+      bgb = "3a515d";
+      bgp = "4a444e";
+      bgv = "543a48";
       grey0 = "7a8478";
       grey1 = "859289";
       grey2 = "9da9a0";
@@ -19,6 +25,9 @@
       magenta = "d699b6";
       cyan = "83c092";
       orange = "e69875";
+      sl1 = "a7c080";
+      sl2 = "d3c6aa";
+      sl3 = "e67e80";
     };
     light = {
       fg = "5c6a72";
@@ -29,6 +38,12 @@
       bg3 = "e6e2cc";
       bg4 = "e0dcc7";
       bg5 = "bdc3af";
+      bgr = "fde3da";
+      bgy = "faedcd";
+      bgg = "f0f1d2";
+      bgb = "e9f0e9";
+      bgp = "fae8e2";
+      bgv = "eaedc8";
       grey0 = "a6b0a0";
       grey1 = "939f91";
       grey2 = "829181";
@@ -39,6 +54,9 @@
       magenta = "df69ba";
       cyan = "35a77c";
       orange = "f57d26";
+      sl1 = "93b259";
+      sl2 = "708089";
+      sl3 = "e66868";
     };
   };
 }
