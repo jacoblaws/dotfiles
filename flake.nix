@@ -10,15 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    programsdb = {
-      url = "github:wamserma/flake-programs-sqlite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    anyrun.url = "github:anyrun-org/anyrun";
     zjstatus.url = "github:dj95/zjstatus";
-    hyprland.url = "github:hyprwm/hyprland";
-    nix-gaming.url = "github:fufexan/nix-gaming";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };

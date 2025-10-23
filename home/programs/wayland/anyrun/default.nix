@@ -1,4 +1,5 @@
-{ inputs, pkgs, osConfig, ... }: let
+{ osConfig, pkgs, ... }:
+let
   inherit (osConfig) theme currentTheme;
   colors = theme.${currentTheme}.dark;
 in {
@@ -17,10 +18,10 @@ in {
       showResultsImmediately = false;
       maxEntries = null;
 
-      plugins = with inputs.anyrun.packages.${pkgs.system}; [
-        applications
-        rink
-        shell
+      plugins = [
+        "${pkgs.anyrun}/lib/libapplications.so"
+        "${pkgs.anyrun}/lib/librink.so"
+        "${pkgs.anyrun}/lib/libshell.so"
       ];
     };
 

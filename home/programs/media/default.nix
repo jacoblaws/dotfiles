@@ -8,7 +8,6 @@
     discord
     ffmpeg
     fluidsynth
-    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
     lutris
     mpv
     pavucontrol
