@@ -17,7 +17,6 @@
     just
     lazygit
     lf
-    lilypond
     podman-compose
     podman-tui
     protonvpn-cli
