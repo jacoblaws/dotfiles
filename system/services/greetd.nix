@@ -5,13 +5,11 @@
       default_session = let
         tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
         hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
-        awesome-session = "${pkgs.awesome}/share/xsessions";
         tuigreet-options = [
           "--time"
           "--remember"
           "--remember-session"
           "--sessions ${hyprland-session}"
-          "--xsessions ${awesome-session}"
           "--theme 'text=white'"
         ];
         flags = lib.concatStringsSep " " tuigreet-options;

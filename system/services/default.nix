@@ -1,7 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    ./xorg
-    ./xorg/awesome.nix
     ./greetd.nix
     ./keyd.nix
     ./pipewire.nix
