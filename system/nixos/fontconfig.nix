@@ -1,23 +1,5 @@
-{ pkgs, ... }: {
+{
   fonts = {
-    packages = with pkgs; [
-      alegreya
-      alegreya-sans
-      commit-mono
-      fira
-      fira-go
-      fira-code
-      jetbrains-mono
-      libertinus
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      nerd-fonts.symbols-only
-      recursive
-      roboto
-      inter
-    ];
-
     fontDir.enable = true;
     enableDefaultPackages = false;
     enableGhostscriptFonts = false;

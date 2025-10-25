@@ -3,13 +3,14 @@
     enable = true;
     settings = {
       default_session = let
-        tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+        tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
         hyprland-session = "${pkgs.hyprland}/share/wayland-sessions";
+        niri-session = "${pkgs.niri}/share/wayland-sessions";
         tuigreet-options = [
           "--time"
           "--remember"
           "--remember-session"
-          "--sessions ${hyprland-session}"
+          "--sessions ${hyprland-session}:${niri-session}"
           "--theme 'text=white'"
         ];
         flags = lib.concatStringsSep " " tuigreet-options;

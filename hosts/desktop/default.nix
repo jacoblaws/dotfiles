@@ -1,10 +1,4 @@
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
-  networking = {
-    hostName = "desktop";
-    networkmanager.enable = true;
-  };
+  imports = [ ./hardware-configuration.nix ];
+  networking.hostName = "desktop";
 }

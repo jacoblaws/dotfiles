@@ -4,18 +4,13 @@
     protontricks.enable = true;
     gamescopeSession.enable = true;
 
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
 
   programs.gamescope = {
     enable = true;
     capSysNice = false;
-    args = [
-      "--rt"
-      "--expose-wayland"
-    ];
+    args = [ "--rt" "--expose-wayland" ];
   };
 
   programs.gamemode = {
@@ -27,11 +22,9 @@
     enable = true;
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-cpp;
-    extraRules = [
-      {
-        "name" = "gamescope";
-        "nice" = -20;
-      }
-    ];
+    extraRules = [{
+      "name" = "gamescope";
+      "nice" = -20;
+    }];
   };
 }
