@@ -1,8 +1,4 @@
 { inputs, pkgs, ... }: {
-  imports = [
-    ./tauon
-  ];
-
   home.packages = with pkgs; [
     calibre
     discord
