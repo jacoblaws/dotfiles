@@ -1,6 +1,5 @@
 {
   imports = [
-    ./emacs
     ./jetbrains
     ./neovim
     ./vscodium.nix

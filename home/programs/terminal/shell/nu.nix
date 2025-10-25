@@ -18,9 +18,6 @@
       alias chad = NVIM_APPNAME=nvchad nvim
       alias astro = NVIM_APPNAME=astro nvim
 
-      alias dm = emacs --init-dir ~/.local/share/doom-emacs
-      alias sm = emacs --init-dir ~/.local/share/spacemacs
-
       def ls [] { eza -F   --icons --color=always --sort=ext --group-directories-first }
       def la [] { eza -aF  --icons --color=always --sort=ext --group-directories-first }
       def ll [] { eza -laF --icons --color=always --sort=ext --group-directories-first }

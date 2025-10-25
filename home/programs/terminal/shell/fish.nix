@@ -14,7 +14,6 @@
     interactiveShellInit = ''
       set -U fish_greeting
       fish_add_path $HOME/dotfiles/bin
-      fish_add_path $HOME/.local/share/doom-emacs/bin
       starship init fish | source
     '';
 
@@ -35,10 +34,6 @@
       lazy = "NVIM_APPNAME=lazy nvim";
       chad = "NVIM_APPNAME=nvchad nvim";
       astro = "NVIM_APPNAME=astro nvim";
-
-      # emacs distributions
-      dm = "emacs --init-dir ~/.local/share/doom-emacs";
-      sm = "emacs --init-dir ~/.local/share/spacemacs";
     };
 
     functions = {
