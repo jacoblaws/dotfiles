@@ -33,8 +33,9 @@ map('n', '<C-Up>',    '"<cmd>resize +"          . v:count1 . "<cr>"', 'Increase 
 map('n', '<C-Right>', '"<cmd>vertical resize +" . v:count1 . "<cr>"', 'Increase window width',  { expr = true, replace_keycodes = false })
 
 -- <Leader> Keymaps --------------------------------------------------------------------------------
-map('n', '<leader>_', '<C-w>s', '󰤼 Horizontal split')
-map('n', '<leader>|', '<C-w>v', '󰤻 Vertical split')
+map('n', '<leader>e', '<cmd>Fyler<cr>', '󰅟 Fyler')
+map('n', '<leader>_', '<C-w>s',         '󰤼 Horizontal split')
+map('n', '<leader>|', '<C-w>v',         '󰤻 Vertical split')
 
 -- Buffer
 map('n', '<leader>bd', '<cmd>lua MiniBufremove.delete()<cr>',        'Delete')
