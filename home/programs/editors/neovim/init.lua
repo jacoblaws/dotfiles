@@ -3,3 +3,4 @@ require('config.options')
 require('config.keymaps')
 
 require('plugins.mini')
+require('plugins.snacks')
