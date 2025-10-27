@@ -36,6 +36,13 @@ map('n', '<C-Right>', '"<cmd>vertical resize +" . v:count1 . "<cr>"', 'Increase 
 map('n', '<leader>_', '<C-w>s', '󰤼 Horizontal split')
 map('n', '<leader>|', '<C-w>v', '󰤻 Vertical split')
 
+-- Buffer
+map('n', '<leader>bd', '<cmd>lua MiniBufremove.delete()<cr>',        'Delete')
+map('n', '<leader>bD', '<cmd>lua MiniBufremove.delete(0, true)<cr>', 'Force Delete')
+
+-- Git
+map('n', '<leader>gd', '<cmd>lua MiniDiff.toggle_overylay()<cr>', 'Diff')
+
 -- Toggle
 map('n', '<leader>tc', '<cmd>setlocal cursorline!<cr>',     'cursorline')
 map('n', '<leader>tC', '<cmd>setlocal cursorcolumn!<cr>',   'cursorcolumn')
