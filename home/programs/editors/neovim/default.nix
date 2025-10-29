@@ -12,6 +12,24 @@ in {
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+
+    extraPackages = with pkgs; [
+      # Language servers
+      bash-language-server
+      clang-tools
+      haskell-language-server
+      lua-language-server
+      marksman
+      nixd
+      nodePackages.purescript-language-server
+      nushell
+      rust-analyzer
+      taplo
+      texlab
+      tinymist
+      ty
+      typescript-language-server
+    ];
   };
 
   xdg.configFile.nvim.source = mkOutOfStoreSymlink

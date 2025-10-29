@@ -65,6 +65,16 @@ map('n', '<leader>gf', '<cmd>lua Snacks.picker.git_log_file()<cr>', 'File histor
 map('n', '<leader>gg', '<cmd>lua Snacks.lazygit()<cr>',             'LazyGit')
 map('n', '<leader>gl', '<cmd>lua Snacks.picker.git_log()<cr>',      'Log (cwd)')
 
+-- Language
+map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>',     'Actions')
+map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>',   'Diagnostics')
+map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<cr>',  'Implementation')
+map('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>',           'Hover')
+map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>',          'Rename')
+map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>',      'References')
+map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.definition()<cr>',      'Source definition')
+map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', 'Type Definition')
+
 -- Toggle
 map('n', '<leader>tc', '<cmd>setlocal cursorline!<cr>',     'cursorline')
 map('n', '<leader>tC', '<cmd>setlocal cursorcolumn!<cr>',   'cursorcolumn')
