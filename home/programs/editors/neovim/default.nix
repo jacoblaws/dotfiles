@@ -14,6 +14,9 @@ in {
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
+      # Dependencies
+      tree-sitter
+
       # Language servers
       bash-language-server
       clang-tools
