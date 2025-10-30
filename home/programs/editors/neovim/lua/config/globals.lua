@@ -45,5 +45,17 @@ _G.Config = {
       Value = '',
       Variable = '',
     },
+
+    status = {
+      added = '+',
+      modified = '~',
+      deleted = '-',
+      renamed = '→',
+      untracked = '?',
+      ignored = '∅',
+      unstaged = '✗',
+      staged = '✓',
+      conflict = '󰘭',
+    },
   },
 }
