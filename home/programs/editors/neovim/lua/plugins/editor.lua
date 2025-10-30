@@ -3,6 +3,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = 'main' },
   { src = 'https://github.com/stevearc/conform.nvim' },
+  { src = 'https://github.com/folke/lazydev.nvim' },
 })
 
 -- stylua: ignore start
@@ -64,3 +65,9 @@ require('conform').setup({
 })
 
 -- stylua: ignore end
+
+require('lazydev').setup({
+  library = {
+    { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+  },
+})
