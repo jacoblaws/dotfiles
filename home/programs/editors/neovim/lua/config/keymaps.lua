@@ -68,6 +68,7 @@ map('n', '<leader>gl', '<cmd>lua Snacks.picker.git_log()<cr>',      'Log (cwd)')
 -- Language
 map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>',     'Actions')
 map('n', '<leader>ld', '<cmd>lua vim.diagnostic.open_float()<cr>',   'Diagnostics')
+map('n', '<leader>lf', '<cmd>lua require("conform").format()<cr>',   'Format')
 map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<cr>',  'Implementation')
 map('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<cr>',           'Hover')
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>',          'Rename')

@@ -32,6 +32,17 @@ in {
       tinymist
       ty
       typescript-language-server
+
+      # Formatters
+      fourmolu
+      ruff
+      stylua
+      nixfmt-classic
+      shfmt
+      rustfmt
+      nufmt
+      typstyle
+      nodePackages.purs-tidy
     ];
   };
 

@@ -2,6 +2,7 @@ vim.pack.add({
   { src = 'https://github.com/neovim/nvim-lspconfig' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = 'main' },
+  { src = 'https://github.com/stevearc/conform.nvim' },
 })
 
 -- stylua: ignore start
@@ -35,6 +36,30 @@ require('nvim-treesitter.configs').setup({
     'json', 'json', 'jsonc',      'kdl',        'latex',  'lua',     'markdown', 'markdown_inline',
     'nix',  'nu',   'printf',     'purescript', 'python', 'regex',   'rust',     'scss',
     'toml', 'tsx',  'typescript', 'typst',      'vim',    'vimdoc',  'xml',      'yaml',
+  },
+})
+
+require('conform').setup({
+  formatters_by_ft = {
+    bash       = { 'shfmt' },
+    haskell    = { 'fourmolu' },
+    lua        = { 'stylua' },
+    nix        = { 'nixfmt' },
+    python     = { 'ruff_format' },
+    rust       = { 'rustfmt' },
+    toml       = { 'taplo' },
+    nu         = { 'nufmt' },
+    typst      = { 'typstyle' },
+    purescript = { 'purs-tidy' },
+  },
+
+  default_format_opts = {
+    lsp_format = 'fallback',
+  },
+
+  format_on_save = {
+    lsp_format = 'fallback',
+    timeout_ms = 500,
   },
 })
 
