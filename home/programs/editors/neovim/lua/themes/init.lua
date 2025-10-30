@@ -8,6 +8,12 @@ M.hl = function(fg, bg, ...)
   return hl
 end
 
+M.invert_hl = function(tbl)
+  local hl = vim.deepcopy(tbl)
+  hl.fg, hl.bg = hl.bg, hl.fg
+  return hl
+end
+
 M.set_hl = function(hl_tbl)
   for group, data in pairs(hl_tbl) do
     vim.api.nvim_set_hl(0, group, data)
