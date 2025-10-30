@@ -1,3 +1,6 @@
+require('themes')
+vim.cmd('colorscheme everforest')
+
 require('config.globals')
 require('config.options')
 require('config.keymaps')
