@@ -5,7 +5,6 @@ vim.pack.add({ 'https://github.com/folke/snacks.nvim' })
 require('snacks').setup({
   dim     = { enabled = true }, -- Dim inactive scopes
   image   = { enabled = true }, -- Image viewer using Kitty Graphics Protocol
-  lazygit = { enabled = true }, -- Open LazyGit in a floating window
   input   = { enabled = true }, -- Better vim.ui.input
   picker  = { enabled = true }, -- Picker for selecting items
 
@@ -34,6 +33,23 @@ require('snacks').setup({
       { icon = '󰌌 ', title = 'Keymaps',      section = 'keys',         indent = 1, padding = 1 },
       { icon = '󰈢 ', title = 'Recent Files', section = 'recent_files', indent = 1, padding = 1 },
       { icon = '󰉓 ', title = 'Projects',     section = 'projects',     indent = 1, padding = 1 },
+    },
+  },
+
+  -- Open LazyGit in a floating window
+  lazygit = {
+    enabled = true,
+    theme = {
+      [241]                      = { fg = "Special" },
+      activeBorderColor          = { fg = 'Function', bold = true },
+      cherryPickedCommitBgColor  = { fg = 'Default' },
+      cherryPickedCommitFgColor  = { fg = 'Number' },
+      defaultFgColor             = { fg = 'Normal' },
+      inactiveBorderColor        = { fg = 'FloatBorder' },
+      optionsTextColor           = { fg = 'Identifier' },
+      searchingActiveBorderColor = { fg = 'String', bold = true },
+      selectedLineBgColor        = { bg = 'CursorLine' },
+      unstagedChangesColor       = { fg = 'DiagnosticError' },
     },
   },
 
