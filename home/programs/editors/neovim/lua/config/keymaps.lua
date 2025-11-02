@@ -77,6 +77,13 @@ map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>',      'References
 map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.definition()<cr>',      'Source definition')
 map('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', 'Type Definition')
 
+-- Notifications
+map('n', '<leader>na', '<cmd>Noice all<cr>', 'All')
+map('n', '<leader>nd', '<cmd>Noice dismiss<cr>', 'Dismiss')
+map('n', '<leader>nh', '<cmd>Noice history<cr>', 'History')
+map('n', '<leader>nl', '<cmd>Noice last<cr>', 'Last')
+map('n', '<leader>np', '<cmd>Noice pick<cr>', 'Pick')
+
 -- Toggle
 map('n', '<leader>tc', '<cmd>setlocal cursorline!<cr>',     'cursorline')
 map('n', '<leader>tC', '<cmd>setlocal cursorcolumn!<cr>',   'cursorcolumn')

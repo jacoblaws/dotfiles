@@ -7,6 +7,7 @@ vim.pack.add({
   { src = 'https://github.com/A7Lavinraj/fyler.nvim', version = 'stable' },
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range('3') },
   { src = 'https://github.com/willothy/nvim-cokeline' },
+  { src = 'https://github.com/folke/noice.nvim' },
 })
 
 require('which-key').setup({
@@ -22,6 +23,7 @@ require('which-key').add({
   { '<leader>f', group = '󰍉 Find' },
   { '<leader>g', group = '󰊢 Git' },
   { '<leader>l', group = '󰅴 Language' },
+  { '<leader>n', group = '󰂚 Notifications' },
   { '<leader>t', group = '󰔡 Toggle' },
 })
 
@@ -159,5 +161,40 @@ require('cokeline').setup({
     {
       text = ' ',
     },
+  },
+})
+
+require('noice').setup({
+  cmdline = {
+    view = 'cmdline',
+    format = {
+      cmdline = { icon = '' },
+      search_down = { icon = '󰍉 ' },
+      search_up = { icon = '󰍉 ' },
+      lua = { icon = '󰢱' },
+      help = { icon = '?' },
+      input = { icon = '󰌌' },
+    },
+  },
+
+  lsp = {
+    progress = { view = 'notify' },
+    override = {
+      ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+      ['vim.lsp.util.stylize_markdown'] = true,
+      ['cmp.entry.get_documentation'] = true,
+    },
+  },
+
+  presets = {
+    bottom_search = true,
+    command_palette = false,
+    long_message_to_split = true,
+    inc_rename = false,
+    lsp_doc_border = true,
+  },
+
+  views = {
+    notify = { backend = 'snacks', replace = true, merge = true },
   },
 })
