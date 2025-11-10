@@ -83,10 +83,8 @@
       preserve_split = true;          # the split will not change regardless of what happens to the container
     };
 
-    gestures = {
-      workspace_swipe = true;         # enable swipe between workspaces
-      workspace_swipe_fingers = 3;    # use three fingers to swipe between workspaces
-    };
+    # Use three fingers to swipe between workspaces
+    gesture = "3, horizontal, workspace";
 
     misc = {
       disable_hyprland_logo = true;

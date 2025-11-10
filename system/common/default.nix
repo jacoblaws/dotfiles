@@ -23,7 +23,7 @@
     libertinus
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     nerd-fonts.symbols-only
     recursive
     roboto
@@ -34,7 +34,8 @@
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        zjstatus = inputs.zjstatus.packages.${prev.system}.default;
+        zjstatus =
+          inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
       })
     ];
   };

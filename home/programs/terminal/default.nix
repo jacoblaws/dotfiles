@@ -1,9 +1,5 @@
 { pkgs, ... }: {
-  imports = [
-    ./emulator
-    ./shell
-    ./tools
-  ];
+  imports = [ ./emulator ./shell ./tools ];
 
   home.packages = with pkgs; [
     appimage-run
@@ -19,7 +15,6 @@
     lf
     podman-compose
     podman-tui
-    protonvpn-cli
     ripgrep
     unrar
     unzip

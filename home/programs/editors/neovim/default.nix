@@ -3,10 +3,11 @@ let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
   neovim-nightly = inputs.neovim-nightly-overlay;
+  systemPkgs = pkgs.stdenv.hostPlatform.system;
 in {
   programs.neovim = {
     enable = true;
-    package = neovim-nightly.packages.${pkgs.system}.default;
+    package = neovim-nightly.packages.${systemPkgs}.default;
 
     defaultEditor = true;
     viAlias = true;
