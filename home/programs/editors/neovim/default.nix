@@ -1,38 +1,51 @@
-{ inputs, config, pkgs, ... }: let
+{ config, inputs, pkgs, ... }:
+let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
+  neovim-nightly = inputs.neovim-nightly-overlay;
 in {
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    package = neovim-nightly.packages.${pkgs.system}.default;
 
+    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
 
-    withRuby = true;
-    withNodeJs = true;
-    withPython3 = true;
-
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     extraPackages = with pkgs; [
-      basedpyright
+      # Dependencies
+      tree-sitter
+
+      # Language servers
       bash-language-server
       clang-tools
-      curl
-      fzf
-      gopls
+      haskell-language-server
       lua-language-server
+      marksman
       nixd
-      ormolu
+      nodePackages.purescript-language-server
+      nushell
       rust-analyzer
-      tree-sitter
-      unzip
-      wget
+      taplo
+      texlab
+      tinymist
+      ty
+      typescript-language-server
+
+      # Formatters
+      fourmolu
+      ruff
+      stylua
+      nixfmt-classic
+      shfmt
+      rustfmt
+      nufmt
+      typstyle
+      nodePackages.purs-tidy
     ];
   };
 
-  xdg.configFile.nvim = {
-    source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/editors/neovim";
-  };
+  xdg.configFile.nvim.source = mkOutOfStoreSymlink
+    "${homeDirectory}/dotfiles/home/programs/editors/neovim";
 }
