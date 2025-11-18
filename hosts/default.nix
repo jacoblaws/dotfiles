@@ -4,7 +4,9 @@ let
   inherit (import "${self}/system") nixos;
 
   user = "jvl";
-  specialArgs = { inherit self inputs user; };
+  lib = inputs.nixpkgs.lib.extend
+    (final: prev: (import "${self}/lib" final) // inputs.home-manager.lib);
+  specialArgs = { inherit self inputs lib user; };
 
   hmModule = host: system: {
     home-manager = {
