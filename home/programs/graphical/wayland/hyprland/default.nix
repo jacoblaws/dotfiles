@@ -1,5 +1,7 @@
-{
+{ pkgs, ... }: {
   imports = [ ./keybinds.nix ./settings.nix ];
+
+  home.packages = with pkgs; [ hyprpolkitagent wl-clipboard ];
 
   wayland.windowManager.hyprland = {
     enable = true;

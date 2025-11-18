@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./emulator ./shell ./tools ];
+  imports = [ ./shell ./tools ];
 
   home.packages = with pkgs; [
     appimage-run
