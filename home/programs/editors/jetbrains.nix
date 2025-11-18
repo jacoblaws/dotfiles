@@ -1,4 +1,12 @@
-{
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    android-studio
+    android-studio-tools
+    android-tools
+    gradle
+    jdk
+  ];
+
   xdg.configFile."ideavim/ideavimrc".text = ''
     " General options
     set clipboard=unnamedplus
