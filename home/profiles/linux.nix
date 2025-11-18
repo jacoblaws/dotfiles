@@ -1,6 +1,12 @@
-{ config, ... }: let
-  homeDir = config.home.homeDirectory;
+{ user, ... }:
+let homeDir = "/home/${user}";
 in {
+  home = {
+    username = user;
+    homeDirectory = homeDir;
+    stateVersion = "23.11";
+  };
+
   xdg.userDirs = {
     enable = true;
     desktop = "${homeDir}/desktop";

@@ -1,10 +1,5 @@
-let
-  core = [
-    ../.
-    ../services
-    ../programs
-  ];
+let linux = [ ./linux.nix ../programs ../services ];
 in {
-  desktop = core ++ [ ./desktop ];
-  laptop = core ++ [ ./laptop ];
+  desktop = linux ++ [ ./desktop ];
+  laptop = linux ++ [ ./laptop ];
 }
