@@ -3,7 +3,7 @@
 
   nix = {
     optimise.automatic = true;
-    settings.experimental-features = "nix-command flakes";
+    settings.experimental-features = "flakes nix-command pipe-operators";
   };
 
   programs = {
