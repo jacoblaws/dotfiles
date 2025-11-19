@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
-  imports = [ ./emulator ./shell ./tools ];
-
+{ lib, pkgs, ... }:
+let modulePaths = lib.extended.fs.modulePaths;
+in {
+  imports = modulePaths [ ./tools ];
   home.packages = with pkgs; [
     appimage-run
     bat
@@ -21,10 +22,4 @@
     yazi
     zip
   ];
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-  programs.zoxide.enable = true;
 }
