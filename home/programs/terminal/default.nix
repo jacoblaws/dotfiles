@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
-  imports = [ ./tools ];
-
+{ lib, pkgs, ... }:
+let modulePaths = lib.extended.fs.modulePaths;
+in {
+  imports = modulePaths [ ./tools ];
   home.packages = with pkgs; [
     appimage-run
     bat
