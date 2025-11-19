@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./shell ./tools ];
+  imports = [ ./tools ];
 
   home.packages = with pkgs; [
     appimage-run
@@ -21,10 +21,4 @@
     yazi
     zip
   ];
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-  programs.zoxide.enable = true;
 }
