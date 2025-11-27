@@ -1,10 +1,11 @@
 { lib, pkgs, ... }: {
   imports = [ ./greetd.nix ];
-
   services = {
     geoclue2.enable = true;
     gvfs.enable = true;
+    tuned.enable = true;
     udisks2.enable = true;
+    upower.enable = true;
 
     avahi = {
       enable = true;
