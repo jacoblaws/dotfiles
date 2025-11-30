@@ -9,7 +9,6 @@
     bind = [
       # launcher
       "SUPER, Return, exec, kitty"
-      "SUPER, r, exec, anyrun"
       "SUPER, e, exec, nemo"
       "SUPER, b, exec, firefox"
       "SUPER, s, exec, spotify"
