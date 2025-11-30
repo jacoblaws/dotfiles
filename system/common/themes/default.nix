@@ -1,5 +1,5 @@
 { self, ... }: {
-  imports = [ self.nixosModules.theme ./everforest.nix ];
-  currentTheme = "everforest";
+  imports = [ self.nixosModules.themes ./everforest.nix ];
+  defaultTheme = "everforest";
 }
 

@@ -26,19 +26,19 @@ let
   '';
 
   b = builtins;
-  inherit (osConfig) theme;
-  themes = b.attrNames osConfig.theme;
+  inherit (osConfig) themes;
+  themeNames = b.attrNames themes;
 
   attrPaths = let
     dir = ".config/ghostty/themes";
     paths = theme: [ theme "text" ];
     modes = theme: [ "${dir}/${theme}-dark" "${dir}/${theme}-light" ];
-    names = b.concatMap modes themes;
+    names = b.concatMap modes themeNames;
   in b.map paths names;
 
   attrValues = let
-    genSpec = name: b.map genTheme [ theme.${name}.dark theme.${name}.light ];
-  in b.concatMap genSpec themes;
+    genSpec = name: b.map genTheme [ themes.${name}.dark themes.${name}.light ];
+  in b.concatMap genSpec themeNames;
 
   genThemes = let
     zipTransform = name: value: { inherit name value; };

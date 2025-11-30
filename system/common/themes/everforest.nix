@@ -1,5 +1,5 @@
 {
-  theme.everforest = {
+  themes.everforest = {
     dark = {
       red = "e67e80";
       yellow = "dbbc7f";

@@ -1,6 +1,7 @@
-{ osConfig, ... }: let
-  inherit (osConfig) currentTheme theme;
-  inherit (theme.${currentTheme}) dark light;
+{ osConfig, ... }:
+let
+  inherit (osConfig) themes defaultTheme;
+  inherit (themes.${defaultTheme}) dark light;
 in {
   home.file.".config/kitty/themes/everforest-dark.conf".text = ''
     foreground              #${dark.fg}

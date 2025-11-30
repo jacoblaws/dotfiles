@@ -1,6 +1,7 @@
-{ osConfig, pkgs, ... }: let
-  inherit (osConfig) currentTheme theme;
-  palette = theme.${currentTheme}.dark;
+{ osConfig, pkgs, ... }:
+let
+  inherit (osConfig) themes defaultTheme;
+  palette = themes.${defaultTheme}.dark;
 in {
   xdg.configFile."zellij/layouts/default.kdl".text = ''
     layout {

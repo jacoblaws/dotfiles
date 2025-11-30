@@ -1,20 +1,20 @@
-{ lib, ... }: let
-  inherit (lib) mkOption types literalExpression;
+{ lib, ... }:
+let inherit (lib) mkOption types literalExpression;
 in {
-  options.currentTheme = mkOption {
+  options.defaultTheme = mkOption {
     type = types.str;
     default = "everforest";
     description = ''
-      Name of the current system colorscheme
+      Name of the default system colorscheme
     '';
   };
 
-  options.theme = mkOption {
+  options.themes = mkOption {
     type = types.attrsOf (types.submodule {
       options = {
         dark = mkOption {
           type = types.attrsOf types.str;
-          default = {};
+          default = { };
           example = literalExpression ''
             {
               fg = "ffffff";
@@ -25,7 +25,7 @@ in {
 
         light = mkOption {
           type = types.attrsOf types.str;
-          default = {};
+          default = { };
           example = literalExpression ''
             {
               fg = "000000";
@@ -35,6 +35,7 @@ in {
         };
       };
     });
+
     description = ''
       Colorscheme colors separated into light and dark palettes
     '';
