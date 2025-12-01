@@ -1,6 +1,8 @@
 { osConfig, lib, ... }:
 let
-  genTheme = pal: ''
+  inherit (osConfig) themes;
+  inherit (lib.extended.theme) genFiles;
+  spec = pal: ''
     background = #${pal.bg0}
     foreground = #${pal.fg}
     cursor-color = #${pal.fg}
@@ -24,25 +26,4 @@ let
     palette = 14=#${pal.cyan}
     palette = 15=#${pal.fg}
   '';
-
-  b = builtins;
-  inherit (osConfig) themes;
-  themeNames = b.attrNames themes;
-
-  attrPaths = let
-    dir = ".config/ghostty/themes";
-    paths = theme: [ theme "text" ];
-    modes = theme: [ "${dir}/${theme}-dark" "${dir}/${theme}-light" ];
-    names = b.concatMap modes themeNames;
-  in b.map paths names;
-
-  attrValues = let
-    genSpec = name: b.map genTheme [ themes.${name}.dark themes.${name}.light ];
-  in b.concatMap genSpec themeNames;
-
-  genThemes = let
-    zipTransform = name: value: { inherit name value; };
-    zipped = lib.zipListsWith zipTransform attrPaths attrValues;
-    list = b.map (set: lib.attrsets.setAttrByPath set.name set.value) zipped;
-  in { home.file = lib.attrsets.mergeAttrsList list; };
-in genThemes
+in genFiles ".config/ghostty/themes" "" spec themes
