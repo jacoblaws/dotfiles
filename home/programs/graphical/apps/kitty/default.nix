@@ -1,6 +1,5 @@
 {
-  imports = [ ./themes ];
-
+  imports = [ ./themes.nix ];
   programs.kitty = {
     enable = true;
 
