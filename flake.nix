@@ -6,15 +6,27 @@
       imports = [ ./hosts ./modules ];
       systems = [ "x86_64-linux" ];
       perSystem = { pkgs, ... }: {
-        devShells.default = pkgs.mkShell {
-          name = "dotfiles";
-          packages = with pkgs; [
-            lua-language-server
-            nixd
-            nixfmt-classic
-            statix
-            stylua
-          ];
+        devShells = let nixTools = with pkgs; [ nixd nixfmt-classic statix ];
+        in {
+          default = pkgs.mkShell {
+            name = "dotfiles";
+            packages = nixTools;
+          };
+
+          haskell = pkgs.mkShell {
+            name = "dotfiles-haskell";
+            packages = with pkgs.haskell.packages.ghc912;
+              [
+                (ghc.withPackages (p: [ optparse-applicative ]))
+                haskell-language-server
+                fourmolu
+              ] ++ nixTools;
+          };
+
+          lua = pkgs.mkShell {
+            name = "dotfiles-lua";
+            packages = with pkgs; [ lua-language-server stylua ] ++ nixTools;
+          };
         };
       };
     };
