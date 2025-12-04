@@ -22,7 +22,7 @@
       defaultFonts = {
         serif = [ "Libertinus Serif" ];
         sansSerif = [ "Recursive Sans Casual Static" ];
-        monospace = [ "Rec Mono Casual" "Symbols Nerd Font Mono" ];
+        monospace = [ "Recursive Mono Casual Static" "Symbols Nerd Font" ];
         emoji = [ "Noto Color Emoji" ];
       };
 
