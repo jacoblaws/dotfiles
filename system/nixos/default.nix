@@ -1,4 +1,6 @@
-{ pkgs, inputs, user, ... }: {
+{ config, pkgs, inputs, user, ... }:
+let theme = config.themes.everforest.dark;
+in {
   imports = [
     ./programs
     ./services
@@ -49,6 +51,25 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
+
+  console.colors = [
+    "${theme.bg0}"
+    "${theme.red}"
+    "${theme.green}"
+    "${theme.yellow}"
+    "${theme.blue}"
+    "${theme.magenta}"
+    "${theme.cyan}"
+    "${theme.fg}"
+    "${theme.bg3}"
+    "${theme.red}"
+    "${theme.green}"
+    "${theme.yellow}"
+    "${theme.blue}"
+    "${theme.magenta}"
+    "${theme.cyan}"
+    "${theme.fg}"
+  ];
 
   system.stateVersion = "23.11";
 }
