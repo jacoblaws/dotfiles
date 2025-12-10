@@ -1,5 +1,6 @@
-{ lib, pkgs, ... }: {
-  imports = [ ./greetd.nix ];
+{ config, lib, pkgs, ... }:
+let theme = config.themes.everforest.dark;
+in {
   services = {
     geoclue2.enable = true;
     gvfs.enable = true;
@@ -10,6 +11,27 @@
     avahi = {
       enable = true;
       nssmdns4 = true;
+    };
+
+    displayManager.ly = {
+      enable = true;
+      settings = {
+        bigclock = "en";
+        brightness_down_key = "null";
+        brightness_up_key = "null";
+        bugclock_12hr = true;
+        default_input = "password";
+        hide_key_hints = true;
+        hide_version_string = true;
+        text_in_center = true;
+        xinitrc = "null";
+
+        bg = "0x${theme.bg0}";
+        fg = "0x${theme.fg}";
+        error_bg = "0x${theme.bg0}";
+        error_fg = "0x${theme.red}";
+        border_fg = "0x${theme.grey0}";
+      };
     };
 
     keyd = {
