@@ -25,7 +25,6 @@ in {
       lua-language-server
       marksman
       nixd
-      nodePackages.purescript-language-server
       nushell
       rust-analyzer
       taplo
@@ -43,7 +42,6 @@ in {
       rustfmt
       nufmt
       typstyle
-      nodePackages.purs-tidy
     ];
   };
 
