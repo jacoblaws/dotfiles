@@ -14,7 +14,7 @@ in {
     godot
     libreoffice
     lutris
-    nemo
+    nemo-with-extensions
     obsidian
     orca-slicer
     pavucontrol
