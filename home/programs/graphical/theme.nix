@@ -1,16 +1,5 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [ gnome-themes-extra gtk-engine-murrine nwg-look ];
-  home.pointerCursor = {
-    name = "Qogir";
-    package = pkgs.qogir-icon-theme;
-
-    size = 24;
-    gtk.enable = true;
-    hyprcursor.enable = true;
-    hyprcursor.size = 24;
-    x11.enable = true;
-    x11.defaultCursor = "Qogir";
-  };
 
   gtk = {
     enable = true;
