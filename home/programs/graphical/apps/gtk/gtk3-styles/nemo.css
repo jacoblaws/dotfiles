@@ -1,0 +1,64 @@
+@import url("../themes/current.css");
+
+.nemo-window * {
+  color: #d3c6aa;
+  background-color: #232a2e;
+  border: unset;
+}
+
+* {
+  background-color: green;
+  outline-width: 0;
+  outline-offset: 0px;
+}
+
+.nemo-window * {
+  border-color: red;
+  outline-color: blue;
+}
+
+.nemo-window button {
+  box-shadow: unset;
+  background-image: unset;
+}
+
+.nemo-window button:hover label,
+.nemo-window button:hover image {
+  color: #dbbc7f;
+}
+
+.nemo-window #File:hover,
+.nemo-window #Edit:hover,
+.nemo-window #View:hover,
+.nemo-window #Go:hover,
+.nemo-window #Bookmarks:hover,
+.nemo-window #Help:hover
+ {
+  box-shadow: 0 -3px #dbbc7f;
+}
+
+.nemo-window .sidebar * {
+  color: #d3c6aa;
+  background-color: #2d353b;
+}
+
+.nemo-window .nemo-window-pane * {
+  color: #d3c6aa;
+  background-color: #2d353b;
+}
+
+.nemo-window separator {
+  all: unset;
+}
+
+.nemo-window scale slider {
+  background-image: image(#d3c6aa);
+}
+
+.nemo-window scale trough {
+  color: blue;
+  background-color: red;
+  border-color: green;
+  border-width: 5px;
+  border-radius: 5px;
+}

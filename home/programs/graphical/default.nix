@@ -17,6 +17,7 @@ in {
     nemo-with-extensions
     obsidian
     orca-slicer
+    papirus-icon-theme
     pavucontrol
     picard
     prismlauncher
