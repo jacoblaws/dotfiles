@@ -19,7 +19,6 @@ in {
         bigclock = "en";
         brightness_down_key = "null";
         brightness_up_key = "null";
-        bugclock_12hr = true;
         default_input = "password";
         hide_key_hints = true;
         hide_version_string = true;
