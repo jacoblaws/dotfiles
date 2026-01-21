@@ -7,6 +7,7 @@ in {
     ./fontconfig.nix
     ./graphics.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.musnix.nixosModules.musnix
   ];
 
   security.rtkit.enable = true;
@@ -29,6 +30,12 @@ in {
       dockerCompat = true;
       defaultNetwork.settings.dns_enable = true;
     };
+  };
+
+  musnix = {
+    enable = true;
+    alsaSeq.enable = true;
+    rtcqs.enable = true;
   };
 
   users.users.${user} = {
