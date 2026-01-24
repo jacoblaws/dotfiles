@@ -12,7 +12,12 @@ in {
 
   security.rtkit.enable = true;
   networking.networkmanager.enable = true;
-  hardware.bluetooth.enable = true;
+
+  hardware = {
+    bluetooth.enable = true;
+    opentabletdriver.enable = true;
+    uinput.enable = true;
+  };
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
