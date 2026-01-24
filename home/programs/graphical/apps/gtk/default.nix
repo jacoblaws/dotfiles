@@ -1,4 +1,4 @@
-{ config, osConfig, lib, pkgs, ... }:
+{ config, osConfig, lib, ... }:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles toCss toGtkCss;
@@ -9,14 +9,6 @@ let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in {
-  home.programs = with pkgs; [
-    adw-gtk3
-    glib
-    gnome-themes-extra
-    gtk-engine-murrine
-    nwg-look
-  ];
-
   xdg.configFile = {
     "gtk-3.0/gtk.css".text = ''@import url("styles/main.css");'';
     "gtk-4.0/gtk.css".text = ''@import url("styles/main.css");'';
