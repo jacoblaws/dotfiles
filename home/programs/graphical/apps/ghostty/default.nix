@@ -11,6 +11,8 @@
       font-feature =
         [ "dlig" "ss01" "ss02" "ss04" "ss05" "ss06" "ss07" "ss08" "ss12" ];
       theme = "current";
+      window-padding-x = 7;
+      window-padding-y = 0;
       window-padding-balance = true;
       window-padding-color = "extend";
     };
