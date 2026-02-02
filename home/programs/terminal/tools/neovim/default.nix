@@ -22,7 +22,7 @@ in {
       bash-language-server
       clang-tools
       haskell-language-server
-      lua-language-server
+      emmylua-ls
       marksman
       nixd
       nushell

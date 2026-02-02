@@ -25,7 +25,7 @@
 
           lua = pkgs.mkShell {
             name = "dotfiles-lua";
-            packages = with pkgs; [ lua-language-server stylua ] ++ nixTools;
+            packages = with pkgs; [ emmylua-ls stylua ] ++ nixTools;
           };
         };
       };

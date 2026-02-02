@@ -12,8 +12,8 @@ vim.pack.add({
 vim.lsp.enable({
   'bashls',        -- Bash
   'clangd',        -- C, C++
+  'emmylua_ls',    -- Lua
   'hls',           -- Haskell
-  'lua_ls',        -- Lua
   'marksman',      -- Markdown
   'nixd',          -- Nix
   'nushell',       -- NuShell
