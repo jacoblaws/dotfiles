@@ -1,44 +1,53 @@
+local M = {}
+
 local icons = _G.Config.icons
-local mini_icons = require('mini.icons')
 local modes = require('config.ui').modes
-local lsep, rsep = '', ''
+local mini_icons = require('mini.icons')
+
+local function pad(width) return string.rep(' ', width) end
 
 local function mode()
   local current_mode = vim.api.nvim_get_mode().mode
-  local text = modes[current_mode].text
   local mhl = '%#' .. modes[current_mode].hl .. '#'
-  local shl = '%#' .. modes[current_mode].hl .. 'Sep#'
-  return string.format('%s%s%s %s %s%s', shl, lsep, mhl, text, shl, rsep)
+  return mhl .. '╼'
 end
 
-local function current_file()
+local function file()
   local name = vim.fn.expand('%:t')
+  local ft = vim.bo.filetype
   local icon = mini_icons.get('filetype', vim.bo.filetype)
-  return string.format(' %s %s ', icon, name)
+  return string.format('%s %s', icon, name)
 end
 
-local function branch()
-  local summary = vim.b.minigit_summary
-  if not summary then return '' end
-  return string.format(' %s %s ', '󰘬', summary.head_name)
+local function lsp()
+  local buf = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({ bufnr = buf })
+  if next(clients) == nil then return '' end
+
+  local names = {}
+  for _, client in ipairs(clients) do
+    table.insert(names, client.name)
+  end
+  if next(names) == nil then return '' end
+
+  return string.format('%s %s', '󱘖', table.concat(names, ', '))
 end
 
-local function diff()
-  local summary = vim.b.minidiff_summary_string
-  if not summary then return '' end
-  return string.format(' %s ', summary)
+local function ruler()
+  if not vim.o.ruler then return '' end
+  return string.format('%s %s', '󰟙', '%l:%c')
 end
 
 local function diagnostics()
-  if not vim.diagnostic.get(0) then return '' end
+  local diag = vim.diagnostic.get(0)
+  if not diag then return '' end
 
   local count = { 0, 0, 0, 0 }
-  for _, d in ipairs(vim.diagnostic.get(0)) do
+  for _, d in ipairs(diag) do
     count[d.severity] = count[d.severity] + 1
   end
 
-  local text = {}
-  local severity = vim.diagnostic.severity
+  local text, severity = {}, vim.diagnostic.severity
   if count[severity.ERROR] > 0 then
     table.insert(text, icons.diagnostics.error .. count[severity.ERROR])
   end
@@ -52,51 +61,45 @@ local function diagnostics()
     table.insert(text, icons.diagnostics.hint .. count[severity.HINT])
   end
   if not text then return '' end
-  return ' ' .. table.concat(text, ' ') .. ' '
+  return table.concat(text, ' ')
 end
 
-local function ruler()
-  if not vim.o.ruler then return '' end
-  return string.format(' %s %s ', '󰍎', '%l|%c%V')
+local function diff()
+  local summary = vim.b.minidiff_summary_string
+  if not summary then return '' end
+  return summary
 end
 
-local function lsp()
-  local buf = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_clients({ bufnr = buf })
-  if not clients then return '' end
-
-  local names = {}
-  for _, client in ipairs(clients) do
-    table.insert(names, client.name)
-  end
-  if not names then return '' end
-
-  return string.format(' %s %s ', '󰂾', table.concat(names, ', '))
+local function branch()
+  local summary = vim.b.minigit_summary
+  if not summary then return '' end
+  return '󰘬 ' .. tostring(summary.head_name)
 end
 
-local function cwd()
-  local current_mode = vim.api.nvim_get_mode().mode
-  local icon = '󰝰'
-  local dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-  local mhl = '%#' .. modes[current_mode].hl .. '#'
-  local shl = '%#' .. modes[current_mode].hl .. 'Sep#'
-  return string.format('%s%s%s %s %s %s%s', shl, lsep, mhl, icon, dir, shl, rsep)
+local function repo()
+  local summary = vim.b.minigit_summary
+  if not summary then return '' end
+  return '󰛓 ' .. vim.fs.basename(summary.root)
 end
-
-local M = {}
 
 function M.render()
   return table.concat({
     mode(),
     '%#StatusLine#',
-    current_file(),
-    branch(),
-    diff(),
-    '%=',
-    diagnostics(),
-    ruler(),
+    pad(2),
+    file(),
+    pad(1),
     lsp(),
-    cwd(),
+    pad(1),
+    diagnostics(),
+    pad(1),
+    ruler(),
+    '%=',
+    diff(),
+    pad(1),
+    branch(),
+    pad(1),
+    repo(),
   })
 end
 

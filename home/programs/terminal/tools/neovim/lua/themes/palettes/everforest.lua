@@ -92,7 +92,7 @@ function M.generate_spec(mode)
       question   = hl(pal.yellow),
       quickfix   = hl(pal.purple, nil, 'bold'),
       special    = hl(pal.yellow),
-      statusline = hl(pal.grey0, pal.bgd),
+      statusline = hl(pal.bg5, pal.bgd),
       tabline    = hl(pal.grey1, pal.bgd),
       title      = hl(pal.orange, nil, 'bold'),
       winbar     = hl(pal.grey1, pal.bgd),
@@ -117,12 +117,12 @@ function M.generate_spec(mode)
     },
 
     statusline = {
-      normal = hl(pal.bgd, pal.green),
-      visual = hl(pal.bgd, pal.red),
-      insert = hl(pal.bgd, pal.yellow),
-      replace = hl(pal.bgd, pal.orange),
-      command = hl(pal.bgd, pal.blue),
-      other = hl(pal.bgd, pal.purple),
+      normal = hl(pal.green, pal.bgd),
+      visual = hl(pal.red, pal.bgd),
+      insert = hl(pal.yellow, pal.bgd),
+      replace = hl(pal.orange, pal.bgd),
+      command = hl(pal.blue, pal.bgd),
+      other = hl(pal.purple, pal.bgd),
     },
 
     diagnostics = {

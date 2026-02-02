@@ -1,14 +1,13 @@
 _G.Config = {
   icons = {
     diagnostics = {
-      error = ' ',
-      warn = ' ',
-      info = ' ',
-      hint = ' ',
-      debug = ' ',
-      trace = ' ',
+      error = '󰅚 ',
+      warn = '󰗖 ',
+      info = '󰋽 ',
+      hint = '󰌶 ',
+      debug = '󰨰 ',
+      trace = '󰞁 ',
     },
-
     kind = {
       Array = '',
       Boolean = '',
