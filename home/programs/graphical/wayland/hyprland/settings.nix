@@ -5,8 +5,7 @@
       border_size = 0;               # width of window borders
       resize_on_border = true;       # enables resizing windows by dragging on borders and gap
       hover_icon_on_border = false;  # shows a cursor icon when hovering over borders (with resize_on_border enabled)
-      no_border_on_floating = false; # toggles borders for floating windows
-      extend_border_grab_area = 15;
+      extend_border_grab_area = 15;  # extends the area around the border where you can click and drag on
 
       # gaps
       gaps_in = 5;                   # gaps between windows

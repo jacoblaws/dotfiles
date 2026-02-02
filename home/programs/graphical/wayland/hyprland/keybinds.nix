@@ -8,18 +8,16 @@
 
     bind = [
       # launcher
-      "SUPER, Return, exec, kitty"
       "SUPER, e, exec, nemo"
       "SUPER, b, exec, firefox"
       "SUPER, s, exec, spotify"
-      "SUPER, o, exec, WAYLAND_DISPLAY= obsidian"
+      "SUPER, o, exec, obsidian"
       "SUPER, d, exec, discord"
-      "SUPER, v, exec, kitty --class clipse -e 'clipse'"
+      "SUPER, Space, exec, noctalia-shell ipc call launcher toggle"
+      "SUPER, Return, exec, ghostty"
 
       # close window | exit hyprland | reload hyprland
       "SUPER, q, killactive"
-      "SUPER, c, killactive"
-      "SUPER_SHIFT, c, exit"
       "SUPER_SHIFT, q, exit"
       "SUPER_SHIFT, r, exec, hyprctl reload"
 
@@ -36,7 +34,7 @@
       "SUPER_SHIFT, l, movewindow, r"
 
       # floating windows
-      "SUPER, Space, toggleFloating"
+      "SUPER, v, toggleFloating"
 
       # fullscreen windows
       "SUPER, f, fullscreen"
@@ -61,7 +59,6 @@
       "SUPER, 7, workspace, 7"
       "SUPER, 8, workspace, 8"
       "SUPER, 9, workspace, 9"
-      "SUPER, grave, workspace, togglespecialworkspace"
 
       # move active window to a workspace
       "SUPER_SHIFT, 1, movetoworkspace, 1"
@@ -73,7 +70,6 @@
       "SUPER_SHIFT, 7, movetoworkspace, 7"
       "SUPER_SHIFT, 8, movetoworkspace, 8"
       "SUPER_SHIFT, 9, movetoworkspace, 9"
-      "SUPER_SHIFT, grave, movetoworkspace, special"
     ];
   };
 }
