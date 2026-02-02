@@ -37,12 +37,17 @@ require('fyler').setup({
 })
 
 require('neo-tree').setup({
+  hide_root_node = true,
+  retain_hidden_root_indent = true,
   popup_border_style = '',
 
   default_component_configs = {
     indent = {
+      padding = 0,
       with_expanders = true,
       last_indent_marker = '╰',
+      expander_collapsed = '',
+      expander_expanded = '',
     },
 
     git_status = {
@@ -62,26 +67,6 @@ require('neo-tree').setup({
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
-    components = {
-      name = function(config, node, state)
-        local text, hl
-        local highlights = require('neo-tree.ui.highlights')
-
-        if node.type == 'directory' then hl = highlights.DIRECTORY_NAME end
-        if node:get_depth() == 1 then
-          hl = highlights.ROOT_NAME
-          text = vim.fs.basename(vim.loop.cwd() or '')
-        else
-          text = node.name
-          if config.use_git_status_colors == nil or config.use_git_status_colors then
-            local git_status = state.components.git_status({}, node, state)
-            if git_status and git_status.highlight then hl = git_status.highlight end
-          end
-        end
-
-        return { text = text, highlight = hl }
-      end,
-    },
   },
 
   window = {
@@ -112,7 +97,7 @@ require('cokeline').setup({
     filetype = 'neo-tree',
     components = {
       {
-        text = '󰐅 File Tree',
+        text = '󰝰 ' .. vim.fs.basename(vim.loop.cwd() or ''),
         fg = 'Function',
         bg = 'TabLine',
         style = 'bold',
