@@ -8,15 +8,29 @@ import System.FilePath (FilePath, (</>))
 
 type Name = String
 type Mode = String
+type FileName = String
 type Path = FilePath
+type Directory = FilePath
 type Extension = FilePath
 
 data Theme = Theme Name Mode
-data Program = Program Name Path Extension
+data Program = Program Name Directory FileName Extension
+
 data Options = Options {name :: String, mode :: String}
 
-programs :: [(Name, Extension)]
-programs = [("ghostty", ""), ("kitty", ".conf")]
+{- FOURMOLU_DISABLE -}
+
+programs :: [Program]
+programs =
+  [ Program "Ghostty"       ".config/ghostty/themes"   "current" ""
+  , Program "Kitty"         ".config/kitty/themes"     "current" ".conf"
+  , Program "Gtk-3.0"       ".config/gtk-3.0/themes"   "current" ".css"
+  , Program "Gtk-4.0"       ".config/gtk-4.0/themes"   "current" ".css"
+  , Program "Zellij Theme"  ".config/zellij/themes"    "custom"  ".kdl"
+  , Program "Zellij Layout" ".config/zellij/layouts"   "default" ".kdl"
+  ]
+
+{- FOURMOLU_Enable -}
 
 main :: IO [()]
 main = genFiles =<< execParser opts
@@ -30,19 +44,13 @@ main = genFiles =<< execParser opts
 genFiles :: Options -> IO [()]
 genFiles (Options name mode) = do
   let theme = Theme name mode
-  programs <- sequence [program n ext | (n, ext) <- programs]
   mapM (set theme) programs
 
-program :: Name -> Extension -> IO Program
-program name ext = do
-  homeDir <- getHomeDirectory
-  let path = homeDir </> ".config" </> name </> "themes"
-  return $ Program name path ext
-
 set :: Theme -> Program -> IO ()
-set (Theme theme mode) (Program prog path ext) = do
-  let themeFile = path ++ "/" ++ theme ++ "-" ++ mode ++ ext
-  let newFile = path ++ "/current" ++ ext
+set (Theme theme mode) (Program prog dir fname ext) = do
+  homeDir <- getHomeDirectory
+  let themeFile = homeDir </> dir </> theme ++ "-" ++ mode
+  let newFile = homeDir </> dir </> fname ++ ext
 
   putStrLn $ "Setting " ++ prog ++ " to " ++ theme ++ " " ++ mode
   copyFile themeFile newFile
