@@ -7,16 +7,11 @@
     fontconfig = {
       enable = true;
       antialias = true;
+      hinting.enable = false;
 
       subpixel = {
         rgba = "rgb";
         lcdfilter = "default";
-      };
-
-      hinting = {
-        enable = true;
-        autohint = false;
-        style = "full";
       };
 
       defaultFonts = {
