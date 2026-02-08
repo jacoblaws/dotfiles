@@ -1,24 +1,24 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "b19413d214068f316c78978b08264ed1c41830ec",
+      "rev": "f85eb6252f4c0212be15c6c4213e9af587574cbe",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "conform.nvim": {
-      "rev": "1bf8b5b9caee51507aa51eaed3da5b0f2595c6b9",
+      "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "everforest": {
-      "rev": "484dd560dccb2d2842685c441ad2b54a54ffef1b",
+      "rev": "b03a03148c8b34c24c96960b93da9c8883d11f54",
       "src": "https://github.com/sainnhe/everforest"
     },
     "fyler.nvim": {
-      "rev": "5e24ff1c46528d8dc2e61c22cc21fb590f626e1e",
+      "rev": "bb8b9f30c652c948d35211958b0deec3496bcc08",
       "src": "https://github.com/A7Lavinraj/fyler.nvim",
       "version": "'stable'"
     },
     "gruvbox-material": {
-      "rev": "4bfc6983abc249c5943a60d8eb3980a3c2ababe1",
+      "rev": "790afe9dd085aa04eccd1da3626c5fa05c620e53",
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
     "lazydev.nvim": {
@@ -26,15 +26,15 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "lualine.nvim": {
-      "rev": "3946f0122255bc377d14a59b27b609fb3ab25768",
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mini": {
-      "rev": "b409fd1d8b9ea7ec7c0923eb2562b52ed5d1ab0a",
+      "rev": "8c40d95931cbe6138391af9180e59439ed2e69df",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "mini.nvim": {
-      "rev": "b409fd1d8b9ea7ec7c0923eb2562b52ed5d1ab0a",
+      "rev": "8c40d95931cbe6138391af9180e59439ed2e69df",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neo-tree.nvim": {
@@ -51,7 +51,7 @@
       "src": "https://github.com/folke/noice.nvim"
     },
     "nordic.nvim": {
-      "rev": "6afe957722fb1b0ec7ca5fbea5a651bcca55f3e1",
+      "rev": "4ce6bad95fde832f9bd10b991de846047a144628",
       "src": "https://github.com/AlexvZyl/nordic.nvim"
     },
     "nui.nvim": {
@@ -63,7 +63,7 @@
       "src": "https://github.com/willothy/nvim-cokeline"
     },
     "nvim-lspconfig": {
-      "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
+      "rev": "66fd02ad1c7ea31616d3ca678fa04e6d0b360824",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-notify": {
@@ -75,17 +75,17 @@
       "src": "https://github.com/svermeulen/nvim-teal-maker"
     },
     "nvim-treesitter": {
-      "rev": "c682a239a9404ce5f90a2d0da34790eff1ed2932",
+      "rev": "45a07f869b0cffba342276f2c77ba7c116d35db8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "227165aaeb07b567fb9c066f224816aa8f3ce63f",
+      "rev": "a0e182ae21fda68c59d1f36c9ed45600aef50311",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
     "outline.nvim": {
-      "rev": "6b62f73a6bf317531d15a7ae1b724e85485d8148",
+      "rev": "ead1820d49c8e79ce89cab1c2c318981b695c9d2",
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "plenary.nvim": {
