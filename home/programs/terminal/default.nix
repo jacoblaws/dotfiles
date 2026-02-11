@@ -6,11 +6,13 @@ in {
     appimage-run
     bat
     brightnessctl
+    btop
     clipse
     dive
     eza
     fd
     fzf
+    htop
     just
     lazygit
     lf

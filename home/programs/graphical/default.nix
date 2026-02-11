@@ -14,6 +14,7 @@ in {
     godot
     libreoffice
     lutris
+    mission-center
     nemo-with-extensions
     obsidian
     orca-slicer
