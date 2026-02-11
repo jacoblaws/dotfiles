@@ -10,6 +10,7 @@ in {
     inputs.musnix.nixosModules.musnix
   ];
 
+  documentation.man.generateCaches = false;
   security.rtkit.enable = true;
   networking.networkmanager.enable = true;
 
