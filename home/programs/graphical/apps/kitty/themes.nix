@@ -50,4 +50,4 @@ let
     color14                 ${theme.cyan}
     color15                 ${theme.fg}
   '';
-in genFiles ".config/kitty/themes" ".conf" spec themes
+in genFiles ".config/kitty/themes" "" spec themes

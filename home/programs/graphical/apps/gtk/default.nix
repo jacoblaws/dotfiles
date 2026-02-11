@@ -2,8 +2,8 @@
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles toCss toGtkCss;
-  gtk3Themes = genFiles ".config/gtk-3.0/themes" ".css" toGtkCss themes;
-  gtk4Themes = genFiles ".config/gtk-4.0/themes" ".css" toCss themes;
+  gtk3Themes = genFiles ".config/gtk-3.0/themes" "" toGtkCss themes;
+  gtk4Themes = genFiles ".config/gtk-4.0/themes" "" toCss themes;
   gtkThemes = lib.recursiveUpdate gtk3Themes gtk4Themes;
 
   inherit (config.home) homeDirectory;
