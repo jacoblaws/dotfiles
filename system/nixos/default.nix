@@ -2,6 +2,7 @@
 let theme = config.themes.everforest.dark;
 in {
   imports = [
+    ../../bin
     ./programs
     ./services
     ./fontconfig.nix
