@@ -58,6 +58,9 @@ in {
         --sl1: #${theme.sl1};
         --sl2: #${theme.sl2};
         --sl3: #${theme.sl3};
+
+        --a0:  #${theme.a0};
+        --a1:  #${theme.a1};
       }
     '';
 
@@ -94,5 +97,8 @@ in {
       @define-color sl1 #${theme.sl1};
       @define-color sl2 #${theme.sl2};
       @define-color sl3 #${theme.sl3};
+
+      @define-color a0 #${theme.a0};
+      @define-color a1 #${theme.a1};
     '';
 }
