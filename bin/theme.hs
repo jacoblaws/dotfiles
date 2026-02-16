@@ -6,17 +6,15 @@ import Options.Applicative
 import System.Directory (copyFile, getHomeDirectory)
 import System.FilePath (FilePath, (</>))
 
-type Name = String
-type Mode = String
-type FileName = String
-type Path = FilePath
 type Directory = FilePath
 type Extension = FilePath
+type FileName = String
+type Mode = String
+type Name = String
+type Path = FilePath
 
 data Theme = Theme Name Mode
 data Program = Program Name Directory FileName Extension
-
-data Options = Options {name :: String, mode :: String}
 
 {- FOURMOLU_DISABLE -}
 
@@ -30,21 +28,19 @@ programs =
   , Program "Zellij Layout" ".config/zellij/layouts"   "default" ".kdl"
   ]
 
-{- FOURMOLU_Enable -}
+{- FOURMOLU_ENABLE -}
 
 main :: IO [()]
 main = genFiles =<< execParser opts
  where
   parser = do
-    name <- strOption (long "name" <> short 'n' <> help "Colorscheme name")
-    mode <- strOption (long "mode" <> short 'm' <> help "Colorscheme mode (dark/light)")
-    pure (Options name mode)
+    name <- strArgument (metavar "NAME")
+    mode <- strArgument (metavar "MODE")
+    pure (Theme name mode)
   opts = info (parser <**> helper) fullDesc
 
-genFiles :: Options -> IO [()]
-genFiles (Options name mode) = do
-  let theme = Theme name mode
-  mapM (set theme) programs
+genFiles :: Theme -> IO [()]
+genFiles theme = mapM (set theme) programs
 
 set :: Theme -> Program -> IO ()
 set (Theme theme mode) (Program prog dir fname ext) = do
