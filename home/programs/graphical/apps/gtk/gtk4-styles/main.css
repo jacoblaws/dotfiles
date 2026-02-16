@@ -1,0 +1,86 @@
+@import "../themes/current.css";
+
+:root {
+  /* Accents */
+  --accent-red: var(--red);
+  --accent-green: var(--green);
+  --accent-yellow: var(--yellow);
+  --accent-blue: var(--blue);
+  --accent-purple: var(--magenta);
+  --accent-orange: var(--orange);
+  --accent-teal: var(--cyan);
+  --accent-pink: #ff0000;
+  --accent-slate: #00ff00;
+
+  --accent-bg-color: var(--a0);
+  --accent-fg-color: var(--bgd);
+
+  /* Window */
+  --window-bg-color: var(--bgd);
+  --window-fg-color: var(--fg);
+
+  /* Views */
+  --view-bg-color: var(--bg0);
+  --view-fg-color: var(--fg);
+
+  /* Header bar, search bar, tab bar */
+  --headerbar-bg-color: var(--bgd);
+  --headerbar-fg-color: var(--fg);
+  --headerbar-border-color: var(--bgd);
+  --headerbar-backdrop-color: var(--bgd);
+  --headerbar-shade-color: var(--bgd);
+  --headerbar-darker-shade-color: var(--bgd);
+
+  /* Split pane views */
+  --sidebar-bg-color: var(--bgd);
+  --sidebar-fg-color: var(--fg);
+  --sidebar-border-color: var(--bgd);
+  --sidebar-backdrop-color: var(--sidebar-bg-color);
+  --sidebar-shade-color: var(--sidebar-bg-color);
+
+  --secondary-sidebar-bg-color: #ff0000;
+  --secondary-sidebar-fg-color: #00ff00;
+  --secondary-sidebar-border-color: #0000ff;
+  --secondary-sidebar-backdrop-color: #ff00ff;
+  --secondary-sidebar-shade-color: #ffff00;
+
+  /* Cards, boxed lists */
+  --card-bg-color: var(--bg0);
+  --card-fg-color: var(--fg);
+  --card-shade-color: var(--bg0);
+
+  /* Dialogs */
+  --dialog-bg-color: var(--bgd);
+  --dialog-fg-color: var(--fg);
+
+  /* Popovers */
+  --popover-bg-color: var(--bgd);
+  --popover-fg-color: var(--fg);
+  --popover-shade-color: var(--bgd);
+
+  /* Thumbnails */
+  --thumbnail-bg-color: var(--bg0);
+  --thumbnail-fg-color: var(--fg);
+
+  /* Destructive-action buttons */
+  --destructive-color: var(--red);
+  --destructive-bg-color: var(--red);
+  --destructive-fg-color: var(--fg);
+
+  /* Level bars, entries, labels, and info bars */
+  --success-color: var(--green);
+  --success-bg-color: var(--green);
+  --success-fg-color: var(--fg);
+
+  --warning-color: var(--yellow);
+  --warning-bg-color: var(--yellow);
+  --warning-fg-color: var(--fg);
+
+  --error-color: var(--red);
+  --error-bg-color: var(--red);
+  --error-fg-color: var(--fg);
+
+  /* Miscellaneous */
+  --shade-color: var(--bg0);
+  --scrollbar-outline-color: #ff0000;
+}

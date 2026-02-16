@@ -14,5 +14,7 @@ in {
     "gtk-4.0/gtk.css".text = ''@import url("styles/main.css");'';
     "gtk-3.0/styles".source = mkOutOfStoreSymlink
       "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk3-styles";
+    "gtk-4.0/styles".source = mkOutOfStoreSymlink
+      "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk4-styles";
   };
 } // gtkThemes
