@@ -1,5 +1,12 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, lib, osConfig, pkgs, ... }:
 let
+  inherit (config.home) homeDirectory;
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+
+  inherit (osConfig) themes;
+  inherit (lib.extended.theme) genFiles toCss;
+  theme = genFiles ".config/zen/default/chrome/themes" "" toCss themes;
+
   nixIcon =
     "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
   firefox-addons =
@@ -113,12 +120,19 @@ let
       };
     };
   };
-in {
+in theme // {
   imports = [ inputs.zen-browser.homeModules.default ];
   programs.zen-browser = {
     enable = true;
     policies = defaultPolicies;
     profiles.default = defaultProfile;
     suppressXdgMigrationWarning = true;
+  };
+
+  xdg.configFile = {
+    "zen/default/chrome/userChrome.css".source = mkOutOfStoreSymlink
+      "${homeDirectory}/dotfiles/home/programs/graphical/apps/zen-browser/userChrome.css";
+    "zen/default/chrome/userContent.css".source = mkOutOfStoreSymlink
+      "${homeDirectory}/dotfiles/home/programs/graphical/apps/zen-browser/userContent.css";
   };
 }

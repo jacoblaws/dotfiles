@@ -1,0 +1,112 @@
+@import url("themes/current.css");
+
+* {
+  /* Backgrounds */
+  --zen-primary-color: var(--bgd) !important;
+  --zen-colors-primary: var(--bgd) !important;
+  --zen-colors-secondary: var(--bgd) !important;
+  --zen-colors-tertiary: var(--bgd) !important;
+  --zen-main-browser-background: var(--bgd) !important;
+  --zen-main-browser-background-old: var(--bgd) !important;
+  --zen-main-browser-background-toolbar: var(--bgd) !important;
+  --zen-main-browser-background-toolbar-old: var(--bgd) !important;
+
+  --zen-selected-bg: transparent !important;
+  --zen-selected-color: var(--green) !important;
+
+  /* Foreground */
+  --toolbox-textcolor: var(--fg) !important;
+
+  /* Context menus */
+  --arrowpanel-color: var(--fg) !important;
+  --arrowpanel-background: var(--bgd) !important;
+  --panel-color: var(--fg) !important;
+  --panel-background: var(--bgd) !important;
+
+  --moz-menuhovertext: var(--yellow) !important;
+}
+
+fmenu,
+menuitem {
+  &:where([_moz-menuactive]:not([disabled="true"])) {
+    color: var(--yellow) !important;;
+    background-color: transparent !important;;
+  }
+
+  &:where([_moz-menuactive][disabled="true"]) {
+    background-color: -moz-menuhoverdisabled;
+  }
+}
+
+.urlbar {
+  color: var(--fg) !important;
+}
+
+.urlbarView,
+.urlbarView-url {
+  color: var(--bg5) !important;
+}
+
+.urlbarView-row-inner[aria-selected="true"] {
+  color: var(--green) !important;
+}
+
+
+.urlbarView-row {
+  color: var(--fg) !important;
+
+  strong {
+    color: var(--yellow) !important;
+  }
+
+  &[selected] {
+    background-color: transparent !important;
+
+    & *, & .urlbarView-title-separator::before {
+      all: unset;
+    }
+
+    .urlbarView-title,
+    .urlbarView-favicon {
+      color: var(--green) !important;
+      background-color: var(--bgd) !important;
+    }
+
+    .urlbarView-action {
+      color: var(--bg5) !important;
+    }
+
+    .urlbarView-favicon {
+      color:  !important;
+    }
+
+    .urlbarView-row-buttons {
+      color: var(--bg5) !important;
+    }
+  }
+}
+
+/* URL bar base background */
+.urlbar-background {
+  background-color: var(--bg0) !important;
+}
+
+/* Floating URL bar */
+.urlbar[breakout-extend] > .urlbar-background,
+.urlbar[zen-floating-urlbar] > .urlbar-background {
+  background-color: var(--bgd) !important;
+  border: 1px solid var(--grey0) !important;
+}
+
+.titlebar-close {
+  display: none !important;
+}
+
+findbar {
+  background-color: var(--bgd) !important;
+}
+
+#statuspanel-label {
+  color: var(--fg) !important;
+  background-color: var(--bgd) !important;
+}
