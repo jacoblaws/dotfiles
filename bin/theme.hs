@@ -25,6 +25,7 @@ programs =
   , Program "Gtk-3.0"       ".config/gtk-3.0/themes"            "current"    ".css"
   , Program "Gtk-4.0"       ".config/gtk-4.0/themes"            "current"    ".css"
   , Program "Sioyek"        ".config/sioyek"                    "prefs_user" ".config"
+  , Program "Zathura"       ".config/zathura"                   "zathurarc"  ""
   , Program "Zellij Theme"  ".config/zellij/themes"             "custom"     ".kdl"
   , Program "Zellij Layout" ".config/zellij/layouts"            "default"    ".kdl"
   , Program "Zen Browser"   ".config/zen/default/chrome/themes" "current"    ".css"

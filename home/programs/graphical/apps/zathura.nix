@@ -1,53 +1,55 @@
-{ ... }: {
-  programs.zathura = {
-    enable = true;
-    options = {
-      window-title-basename = true;
-      selection-clipboard = "clipboard";
+{ lib, osConfig, pkgs, ... }:
+let
+  inherit (osConfig) themes;
+  inherit (lib.extended.theme) genFiles;
+  options = pal: ''
+    set window-title-basename true
+    set selection-clipboard   "clipboard"
+    set font "Recursive Sans Linear Static"
 
-      # everforest colorscheme
-      notification-error-bg    = "#2d353b"; # bg0
-      notification-error-fg    = "#e67e80"; # red
-      notification-warning-bg  = "#2d353b"; # bg0
-      notification-warning-fg  = "#369875"; # orange
-      notification-bg          = "#2d353b"; # bg0
-      notification-fg          = "#ac7080"; # green
+    # Theme
+    set notification-error-bg   "#${pal.bg0}"
+    set notification-error-fg   "#${pal.red}"
+    set notification-warning-bg "#${pal.bg0}"
+    set notification-warning-fg "#${pal.orange}"
+    set notification-bg         "#${pal.bg0}"
+    set notification-fg         "#${pal.green}"
 
-      completion-bg            = "#343d44"; # bg1
-      completion-fg            = "#d3c6aa"; # fg
-      completion-group-bg      = "#3d484d"; # bg2
-      completion-group-fg      = "#7a8478"; # gray0
-      completion-highlight-bg  = "#7fbbb3"; # blue
-      completion-highlight-fg  = "#3d484d"; # bg2
+    set completion-bg           "#${pal.bg1}"
+    set completion-fg           "#${pal.fg}"
+    set completion-group-bg     "#${pal.bg2}"
+    set completion-group-fg     "#${pal.grey0}"
+    set completion-highlight-bg "#${pal.blue}"
+    set completion-highlight-fg "#${pal.bg2}"
 
-      index-bg                 = "#2d353b"; # bg0
-      index-fg                 = "#d3c6aa"; # fg
-      index-active-bg          = "#343f44"; # bg1
-      index-active-fg          = "#dbbc7f"; # yellow
+    set index-bg                "#${pal.bg0}"
+    set index-fg                "#${pal.fg}"
+    set index-active-bg         "#${pal.bg1}"
+    set index-active-fg         "#${pal.yellow}"
 
-      inputbar-bg              = "#232a2e"; # bg_dim
-      inputbar-fg              = "#d3c6aa"; # fg
+    set inputbar-bg             "#${pal.bgd}"
+    set inputbar-fg             "#${pal.fg}"
 
-      statusbar-bg             = "#232a2e"; # bg_dim
-      statusbar-fg             = "#d3c6aa"; # Foreground
+    set statusbar-bg            "#${pal.bgd}"
+    set statusbar-fg            "#${pal.fg}"
 
-      highlight-color          = "#ac7080"; # green
-      highlight-active-color   = "#dbbc7f"; # yellow
+    set highlight-color         "#${pal.green}"
+    set highlight-active-color  "#${pal.yellow}"
 
-      default-bg               = "#2d353b"; # bg0
-      default-fg               = "#d3c6aa"; # fg
+    set default-bg              "#${pal.bg0}"
+    set default-fg              "#${pal.fg}"
 
-      render-loading           = true;
-      render-loading-fg        = "#2d353b"; # Background
-      render-loading-bg        = "#d3c6aa"; # Foreground
+    set render-loading          true;
+    set render-loading-fg       "#${pal.bg0}"
+    set render-loading-bg       "#${pal.fg}"
 
-      recolor-lightcolor       = "#2d353b"; # Background
-      recolor-darkcolor        = "#d3c5aa"; # Foreground
+    set recolor-lightcolor      "#${pal.bg0}"
+    set recolor-darkcolor       "#${pal.fg}"
 
-      # startup options
-      adjust-open = "width";
-      recolor = true;
-      recolor-keephue = true;
-    };
-  };
-}
+    # startup options
+    adjust-open = "width";
+    recolor = true;
+    recolor-keephue = true;
+  '';
+  config = genFiles ".config/zathura" "" options themes;
+in lib.recursiveUpdate config { home.packages = [ pkgs.zathura ]; }
