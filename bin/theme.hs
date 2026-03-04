@@ -20,13 +20,14 @@ data Program = Program Name Directory FileName Extension
 
 programs :: [Program]
 programs =
-  [ Program "Ghostty"       ".config/ghostty/themes"            "current" ""
-  , Program "Kitty"         ".config/kitty/themes"              "current" ".conf"
-  , Program "Gtk-3.0"       ".config/gtk-3.0/themes"            "current" ".css"
-  , Program "Gtk-4.0"       ".config/gtk-4.0/themes"            "current" ".css"
-  , Program "Zellij Theme"  ".config/zellij/themes"             "custom"  ".kdl"
-  , Program "Zellij Layout" ".config/zellij/layouts"            "default" ".kdl"
-  , Program "Zen Browser"   ".config/zen/default/chrome/themes" "current" ".css"
+  [ Program "Ghostty"       ".config/ghostty/themes"            "current"    ""
+  , Program "Kitty"         ".config/kitty/themes"              "current"    ".conf"
+  , Program "Gtk-3.0"       ".config/gtk-3.0/themes"            "current"    ".css"
+  , Program "Gtk-4.0"       ".config/gtk-4.0/themes"            "current"    ".css"
+  , Program "Sioyek"        ".config/sioyek"                    "prefs_user" ".config"
+  , Program "Zellij Theme"  ".config/zellij/themes"             "custom"     ".kdl"
+  , Program "Zellij Layout" ".config/zellij/layouts"            "default"    ".kdl"
+  , Program "Zen Browser"   ".config/zen/default/chrome/themes" "current"    ".css"
   ]
 
 {- FOURMOLU_ENABLE -}
