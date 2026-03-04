@@ -20,6 +20,14 @@ require('mini.jump2d').setup()     -- Jump within visible lines
 require('mini.move').setup()       -- Move any selection in any direction
 require('mini.trailspace').setup() -- Work with trailing whitespace
 
+-- Highlight patterns in text
+local hipatterns = require('mini.hipatterns')
+hipatterns.setup({
+  highlighters = {
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },
+})
+
 -- Icon provider
 require('mini.icons').setup({ lsp = load_icons('kind') })
 require('mini.icons').mock_nvim_web_devicons()
