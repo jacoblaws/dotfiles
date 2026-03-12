@@ -10,6 +10,7 @@ in {
     discord
     drawio
     firefox
+    foliate
     gnome-calculator
     godot
     libreoffice
