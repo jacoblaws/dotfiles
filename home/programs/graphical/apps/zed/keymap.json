@@ -1,0 +1,20 @@
+[
+  {
+    "context": "VimControl && vim_mode == normal",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space e": "project_panel::ToggleFocus",
+      "space o": "outline::Toggle",
+      "space t": "terminal_panel::ToggleFocus",
+
+      "space f f": "file_finder::Toggle",
+      "space f b": "tab_switcher::Toggle",
+    },
+  },
+  {
+    "context": "VimControl",
+    "bindings": {
+      "shift-h": "workspace::MovePaneLeft",
+    },
+  },
+]

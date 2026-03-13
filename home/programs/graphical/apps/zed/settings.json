@@ -1,0 +1,103 @@
+{
+  "tab_bar": {
+    "show": true
+  },
+  "window_decorations": "server",
+  "load_direnv": "shell_hook",
+  "buffer_line_height": "standard",
+  "disable_ai": true,
+  "ensure_final_newline_on_save": false,
+  "relative_line_numbers": "enabled",
+  "vim_mode": true,
+
+  "auto_install_extensions": {
+    "everforest": true,
+    "lilypond": true,
+    "lua": true,
+    "nix": true,
+    "toml": true,
+  },
+
+  "theme": {
+    "mode": "system",
+    "light": "Everforest Light",
+    "dark": "Everforest Dark",
+  },
+  "icon_theme": "Zed (Default)",
+
+  "scrollbar": {
+    "show": "never",
+  },
+
+  "which_key": {
+    "enabled": true,
+    "delay_ms": 200,
+  },
+
+  "languages": {
+    "Nix": {
+      "language_servers": ["nixd", "nil"],
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+          "arguments": ["--quiet", "--"],
+        },
+      },
+    },
+  },
+
+  "ui_font_size": 16.0,
+  "ui_font_family": "Recursive Sans Linear Static",
+  "ui_font_fallbacks": ["Symbols Nerd Font"],
+  "ui_font_features": {
+    "calt": true,
+    "dlig": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": false,
+    "ss04": true,
+    "ss05": true,
+    "ss06": true,
+    "ss07": true,
+    "ss08": true,
+    "ss12": true,
+  },
+
+  "buffer_font_size": 16.0,
+  "buffer_font_weight": 400.0,
+  "buffer_font_family": "Recursive Mono Casual Static",
+  "buffer_font_fallbacks": ["Symbols Nerd Font"],
+  "buffer_font_features": {
+    "calt": true,
+    "dlig": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": false,
+    "ss04": true,
+    "ss05": true,
+    "ss06": true,
+    "ss07": true,
+    "ss08": true,
+    "ss12": true,
+  },
+
+  "terminal": {
+    "font_size": 16.0,
+    "font_weight": 400.0,
+    "font_family": "Recursive Mono Casual Static",
+    "font_fallbacks": ["Symbols Nerd Font"],
+    "font_features": {
+      "calt": true,
+      "dlig": true,
+      "ss01": true,
+      "ss02": true,
+      "ss03": false,
+      "ss04": true,
+      "ss05": true,
+      "ss06": true,
+      "ss07": true,
+      "ss08": true,
+      "ss12": true,
+    },
+  },
+}
