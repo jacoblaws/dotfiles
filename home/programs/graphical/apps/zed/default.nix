@@ -3,6 +3,7 @@ let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in {
+  imports = [ ./themes.nix ];
   programs.zed-editor = {
     enable = true;
     extraPackages = with pkgs; [
