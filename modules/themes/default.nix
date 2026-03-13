@@ -12,6 +12,12 @@ in {
   options.themes = mkOption {
     type = types.attrsOf (types.submodule {
       options = {
+        name = mkOption {
+          type = types.str;
+          default = "";
+          example = "everforest";
+        };
+
         dark = mkOption {
           type = types.attrsOf types.str;
           default = { };

@@ -1,5 +1,7 @@
 {
   themes.everforest = {
+    name = "Everforest";
+
     dark = {
       red = "e67e80";
       yellow = "dbbc7f";
