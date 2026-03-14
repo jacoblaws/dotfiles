@@ -110,3 +110,7 @@ findbar {
   color: var(--fg) !important;
   background-color: var(--bgd) !important;
 }
+
+.zen-current-workspace-indicator {
+  display: none !important;
+}

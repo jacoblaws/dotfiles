@@ -38,6 +38,7 @@ let
       darkreader
       proton-pass
       ublock-origin
+      vimium
     ];
 
     search = {
@@ -111,6 +112,8 @@ let
 
     settings = {
       toolkit.legacyUserProfileCustomizations.stylesheets = true;
+      browser = { startup.blankWindow = true; };
+
       zen = {
         view = {
           hide-window-controls = true;
