@@ -129,7 +129,6 @@ in theme // {
     enable = true;
     policies = defaultPolicies;
     profiles.default = defaultProfile;
-    suppressXdgMigrationWarning = true;
   };
 
   xdg.configFile = {
