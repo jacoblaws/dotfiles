@@ -5,6 +5,7 @@ vim.pack.add({
   { src = 'https://github.com/stevearc/conform.nvim' },
   { src = 'https://github.com/folke/lazydev.nvim' },
   { src = 'https://github.com/saghen/blink.cmp' },
+  { src = 'https://github.com/martineausimon/nvim-lilypond-suite' },
 })
 
 -- stylua: ignore start
@@ -117,6 +118,16 @@ require('blink.cmp').setup({
           },
         },
       },
+    },
+  },
+})
+
+require('nvls').setup({
+  lilypond = {
+    mappings = {
+      player = '<leader>lp',
+      compile = '<leader>lc',
+      open_pdf = '<leader>lv',
     },
   },
 })

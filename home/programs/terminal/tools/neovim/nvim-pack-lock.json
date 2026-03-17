@@ -62,6 +62,10 @@
       "rev": "9fbed130683b7b6f73198c09e35ba4b33f547c08",
       "src": "https://github.com/willothy/nvim-cokeline"
     },
+    "nvim-lilypond-suite": {
+      "rev": "a1a313fd6028a196cc9aaa8c8501838fe8cc8e2a",
+      "src": "https://github.com/martineausimon/nvim-lilypond-suite"
+    },
     "nvim-lspconfig": {
       "rev": "66fd02ad1c7ea31616d3ca678fa04e6d0b360824",
       "src": "https://github.com/neovim/nvim-lspconfig"

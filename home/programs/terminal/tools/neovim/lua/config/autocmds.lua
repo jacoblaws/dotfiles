@@ -13,3 +13,8 @@ autocmd('User', {
     vim.b[data.buf].minidiff_summary_string = table.concat(text, ' ')
   end,
 })
+
+autocmd('BufWritePre', {
+  pattern = { '*.ly' },
+  callback = function() vim.cmd('LilyCmp') end,
+})
