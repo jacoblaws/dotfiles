@@ -1,0 +1,54 @@
+@import url("../themes/current.css");
+
+.nemo-window * {
+  border: unset;
+}
+
+.nemo-window separator.horizontal {
+  all: unset;
+}
+
+.nemo-window separator:not(.horizontal) {
+  margin: -2px;
+  color: @bgd;
+  background-color: @bgd;
+}
+
+.nemo-window-pane button {
+  color: @a1;
+  border-bottom: 2px solid @bg2;
+}
+
+.nemo-window scale slider {
+  background-image: image(@fg);
+}
+
+.nemo-window #MenuBar,
+.nemo-window .image-button {
+  color: @grey0;
+  background-color: unset;
+}
+
+.nemo-window button:hover label,
+.nemo-window button:hover image,
+.nemo-window .image-button:checked {
+  color: @a1;
+}
+
+.nemo-window #File:hover,
+.nemo-window #Edit:hover,
+.nemo-window #View:hover,
+.nemo-window #Go:hover,
+.nemo-window #Bookmarks:hover,
+.nemo-window #Help:hover {
+  color: @a1;
+}
+
+.nemo-window .text-button,
+.nemo-window .slider-button {
+  background-color: unset;
+}
+
+.nemo-window .text-button:checked {
+  color: @a1;
+}

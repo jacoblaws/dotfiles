@@ -24,9 +24,9 @@
 /* Split pane views */
 @define-color sidebar_bg_color @bgd;
 @define-color sidebar_fg_color @fg;
-@define-color sidebar_backdrop_color @red;
-@define-color sidebar_shade_color @blue;
-@define-color sidebar_border_color @green;
+@define-color sidebar_backdrop_color @bgd;
+@define-color sidebar_shade_color #ff0000;
+@define-color sidebar_border_color #00ff00;
 
 @define-color secondary_sidebar_bg_color @bgd;
 @define-color secondary_sidebar_fg_color @fg;
@@ -37,7 +37,7 @@
 /* Cards, boxed lists */
 @define-color card_bg_color @bg0;
 @define-color card_fg_color @fg;
-@define-color card_shade_color @bg0;
+@define-color card_shade_color @bg2;
 
 /* Dialogs */
 @define-color dialog_bg_color @bg0;
@@ -68,4 +68,4 @@
 
 /* Miscellaneous */
 @define-color shade_color @bgd;
-@define-color scrollbar_outline_color #ff0000;
+@define-color scrollbar_outline_color #0000ff;
