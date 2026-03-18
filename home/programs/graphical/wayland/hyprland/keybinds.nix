@@ -9,7 +9,7 @@
     bind = [
       # launcher
       "SUPER, e, exec, nemo"
-      "SUPER, b, exec, firefox"
+      "SUPER, b, exec, zen-beta"
       "SUPER, s, exec, spotify"
       "SUPER, o, exec, obsidian"
       "SUPER, d, exec, discord"

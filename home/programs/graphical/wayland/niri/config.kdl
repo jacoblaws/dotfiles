@@ -119,7 +119,7 @@ binds {
   Mod+Slash          { show-hotkey-overlay; }
 
   // Applications
-  Mod+B hotkey-overlay-title="Open Browser"          { spawn "firefox"; }
+  Mod+B hotkey-overlay-title="Open Browser"          { spawn "zen-beta"; }
   Mod+D hotkey-overlay-title="Open Discord"          { spawn "discord"; }
   Mod+E hotkey-overlay-title="Open File Explorer"    { spawn "nemo"; }
   Mod+O hotkey-overlay-title="Open Obsidian"         { spawn "obsidian"; }
