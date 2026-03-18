@@ -1,6 +1,5 @@
 { config, inputs, lib, osConfig, pkgs, ... }:
 let
-  inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
 
   inherit (osConfig) themes;
@@ -111,19 +110,20 @@ let
     };
 
     settings = {
-      toolkit.legacyUserProfileCustomizations.stylesheets = true;
-      browser = { startup.blankWindow = true; };
-
-      zen = {
-        view = {
-          hide-window-controls = true;
-          show-newtab-button-top = false;
-          sidebar-expanded = false;
-        };
-      };
+      "browser.startup.blankWindow" = true;
+      "browser.session-store.resume_from_crash" = false;
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      "zen.session-store.backup-file" = false;
+      "zen.session-store.log" = false;
+      "zen.session-store.restore-unsynced-windows" = false;
+      "zen.view.hide-window-controls" = true;
+      "zen.view.show-newtab-button-top" = false;
+      "zen.view.sidebar-expanded" = false;
+      "zen.welcome-screen.seen" = true;
+      "zen.window-sync.enabled" = false;
     };
   };
-in theme // {
+in lib.recursiveUpdate theme {
   imports = [ inputs.zen-browser.homeModules.default ];
   programs.zen-browser = {
     enable = true;
@@ -132,9 +132,9 @@ in theme // {
   };
 
   xdg.configFile = {
-    "zen/default/chrome/userChrome.css".source = mkOutOfStoreSymlink
-      "${homeDirectory}/dotfiles/home/programs/graphical/apps/zen-browser/userChrome.css";
-    "zen/default/chrome/userContent.css".source = mkOutOfStoreSymlink
-      "${homeDirectory}/dotfiles/home/programs/graphical/apps/zen-browser/userContent.css";
+    "zen/default/chrome/userChrome.css".source =
+      mkOutOfStoreSymlink ./userChrome.css;
+    "zen/default/chrome/userContent.css".source =
+      mkOutOfStoreSymlink ./userContent.css;
   };
 }
