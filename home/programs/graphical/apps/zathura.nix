@@ -4,7 +4,7 @@ let
   inherit (lib.extended.theme) genFiles;
   options = pal: ''
     set window-title-basename true
-    set selection-clipboard   "clipboard"
+    set selection-clipboard "clipboard"
     set font "Recursive Sans Linear Static"
 
     # Theme
@@ -39,7 +39,7 @@ let
     set default-bg              "#${pal.bg0}"
     set default-fg              "#${pal.fg}"
 
-    set render-loading          true;
+    set render-loading          true
     set render-loading-fg       "#${pal.bg0}"
     set render-loading-bg       "#${pal.fg}"
 
@@ -47,9 +47,9 @@ let
     set recolor-darkcolor       "#${pal.fg}"
 
     # startup options
-    adjust-open = "width";
-    recolor = true;
-    recolor-keephue = true;
+    set adjust-open "width"
+    set recolor true
+    set recolor-keephue true
   '';
   config = genFiles ".config/zathura" "" options themes;
 in lib.recursiveUpdate config { home.packages = [ pkgs.zathura ]; }
