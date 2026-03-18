@@ -26,7 +26,7 @@ in {
 
   toCss = theme: # css
     ''
-      :root {
+      * {
         --red: #${theme.red};
         --yellow: #${theme.yellow};
         --green: #${theme.green};
