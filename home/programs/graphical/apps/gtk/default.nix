@@ -1,4 +1,4 @@
-{ config, osConfig, lib, ... }:
+{ config, osConfig, lib, pkgs, ... }:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles toCss toGtkCss;
@@ -8,7 +8,27 @@ let
 
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
-in {
+in lib.recursiveUpdate gtkThemes {
+  gtk = {
+    enable = true;
+
+    font = {
+      name = "Recursive Sans Casual Static";
+      package = pkgs.recursive;
+      size = 12;
+    };
+
+    iconTheme = {
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
+    };
+
+    theme = {
+      name = "adw-gtk3";
+      package = pkgs.adw-gtk3;
+    };
+  };
+
   xdg.configFile = {
     "gtk-3.0/gtk.css".text = ''@import url("styles/main.css");'';
     "gtk-4.0/gtk.css".text = ''@import url("styles/main.css");'';
@@ -17,4 +37,4 @@ in {
     "gtk-4.0/styles".source = mkOutOfStoreSymlink
       "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk4-styles";
   };
-} // gtkThemes
+}
