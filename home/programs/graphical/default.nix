@@ -15,9 +15,12 @@ in {
     godot
     libreoffice
     lutris
+    mangohud
     mission-center
+    nautilus
     nemo-with-extensions
     obsidian
+    openmw
     orca-slicer
     papirus-icon-theme
     pavucontrol
