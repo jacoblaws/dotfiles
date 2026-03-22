@@ -15,19 +15,35 @@
   fonts.packages = with pkgs; [
     alegreya
     alegreya-sans
+    cardo
     commit-mono
     fira
-    fira-go
     fira-code
+    fira-go
+    garamond-libre
+    inter
     jetbrains-mono
+    junicode
     libertinus
+    nerd-fonts.symbols-only
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
-    nerd-fonts.symbols-only
     recursive
     roboto
-    inter
+
+    # Select specific fonts from google fonts
+    (pkgs.google-fonts.override {
+      fonts = [
+        "Almendra"
+        "Amarante"
+        "EB Garamond"
+        "Fondamento"
+        "Grenze Gotisch"
+        "Grenze"
+        "IM Fell English"
+      ];
+    })
   ];
 
   nixpkgs = {
