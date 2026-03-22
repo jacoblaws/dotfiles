@@ -89,14 +89,12 @@ environment {
 output "DP-3" {
   mode "3440x1440@143.923"
   position x=0 y=0
-  variable-refresh-rate
 }
 
 output "DP-2" {
   mode "2560x1440@144.00"
   transform "90"
   position x=3440 y=-700
-  variable-refresh-rate
 }
 
 output "eDP-1" {
