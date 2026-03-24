@@ -4,7 +4,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
 
   { src = 'https://github.com/folke/which-key.nvim' },
-  { src = 'https://github.com/A7Lavinraj/fyler.nvim', version = 'stable' },
+  { src = 'https://github.com/A7Lavinraj/fyler.nvim' },
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim', version = vim.version.range('3') },
   { src = 'https://github.com/willothy/nvim-cokeline' },
   { src = 'https://github.com/folke/noice.nvim' },
@@ -28,11 +28,19 @@ require('which-key').add({
 })
 
 require('fyler').setup({
-  confirm_simple = true,
-  default_explorer = true,
-  win = {
-    border = 'rounded',
-    kind = 'float',
+  integrations = { winpick = { provider = 'snacks' } },
+  views = {
+    finder = {
+      default_explorer = true,
+      columns_order = { 'diagnostic', 'git', 'permission', 'size' },
+      indentscope = {
+        markers = {
+          { '│', 'FylerIndentMarker' },
+          { '╰', 'FylerIndentMarker' },
+        },
+      },
+      win = { kind = 'float' },
+    },
   },
 })
 

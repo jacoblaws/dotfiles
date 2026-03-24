@@ -13,9 +13,8 @@
       "src": "https://github.com/sainnhe/everforest"
     },
     "fyler.nvim": {
-      "rev": "bb8b9f30c652c948d35211958b0deec3496bcc08",
-      "src": "https://github.com/A7Lavinraj/fyler.nvim",
-      "version": "'stable'"
+      "rev": "15fabd5d8cf6ba8afb0a404878106ba5300843b1",
+      "src": "https://github.com/A7Lavinraj/fyler.nvim"
     },
     "gruvbox-material": {
       "rev": "790afe9dd085aa04eccd1da3626c5fa05c620e53",
