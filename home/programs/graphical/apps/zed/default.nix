@@ -33,7 +33,7 @@ in
       fourmolu
       ruff
       stylua
-      nixfmt-classic
+      nixfmt
       shfmt
       rustfmt
       nufmt
