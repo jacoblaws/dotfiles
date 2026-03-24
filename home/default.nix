@@ -1,7 +1,12 @@
 { user, ... }:
-let homeDir = "/home/${user}";
-in {
-  imports = [ ./programs ./services ];
+let
+  homeDir = "/home/${user}";
+in
+{
+  imports = [
+    ./programs
+    ./services
+  ];
 
   home = {
     username = user;
@@ -24,7 +29,10 @@ in {
   xdg.mimeApps = {
     enable = true;
     associations.added = {
-      "application/pdf" = [ "zathura.desktop" "sioyek.desktop" ];
+      "application/pdf" = [
+        "zathura.desktop"
+        "sioyek.desktop"
+      ];
       "default-web-browser" = [ "firefox.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
       "text/html" = [ "firefox.desktop" ];
@@ -34,7 +42,10 @@ in {
       "x-scheme-handler/unkown" = [ "firefox.desktop" ];
     };
     defaultApplications = {
-      "application/pdf" = [ "zathura.desktop" "sioyek.desktop" ];
+      "application/pdf" = [
+        "zathura.desktop"
+        "sioyek.desktop"
+      ];
       "default-web-browser" = [ "firefox.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
       "text/html" = [ "firefox.desktop" ];

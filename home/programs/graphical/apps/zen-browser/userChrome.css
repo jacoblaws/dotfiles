@@ -29,8 +29,8 @@
 fmenu,
 menuitem {
   &:where([_moz-menuactive]:not([disabled="true"])) {
-    color: var(--yellow) !important;;
-    background-color: transparent !important;;
+    color: var(--yellow) !important;
+    background-color: transparent !important;
   }
 
   &:where([_moz-menuactive][disabled="true"]) {
@@ -51,7 +51,6 @@ menuitem {
   color: var(--green) !important;
 }
 
-
 .urlbarView-row {
   color: var(--fg) !important;
 
@@ -62,7 +61,8 @@ menuitem {
   &[selected] {
     background-color: transparent !important;
 
-    & *, & .urlbarView-title-separator::before {
+    & *,
+    & .urlbarView-title-separator::before {
       all: unset;
     }
 
@@ -77,7 +77,7 @@ menuitem {
     }
 
     .urlbarView-favicon {
-      color:  !important;
+      color: !important;
     }
 
     .urlbarView-row-buttons {

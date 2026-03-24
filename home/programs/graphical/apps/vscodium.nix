@@ -1,6 +1,13 @@
-{ system, inputs, pkgs, ... }: let
+{
+  system,
+  inputs,
+  pkgs,
+  ...
+}:
+let
   extensions = inputs.nix-vscode-extensions.extensions.${system};
-in {
+in
+{
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;

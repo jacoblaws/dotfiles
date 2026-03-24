@@ -1,6 +1,8 @@
 { osConfig, ... }:
-let inherit (osConfig.themes.everforest) dark light;
-in {
+let
+  inherit (osConfig.themes.everforest) dark light;
+in
+{
   xdg.configFile."noctalia/colorschemes/everforest/everforest.json".text = # json
     ''
       {

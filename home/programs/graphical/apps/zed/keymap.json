@@ -8,13 +8,13 @@
       "space t": "terminal_panel::ToggleFocus",
 
       "space f f": "file_finder::Toggle",
-      "space f b": "tab_switcher::Toggle",
-    },
+      "space f b": "tab_switcher::Toggle"
+    }
   },
   {
     "context": "VimControl",
     "bindings": {
-      "shift-h": "workspace::MovePaneLeft",
-    },
-  },
+      "shift-h": "workspace::MovePaneLeft"
+    }
+  }
 ]

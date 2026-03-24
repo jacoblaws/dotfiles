@@ -1,7 +1,13 @@
 { lib, pkgs, ... }:
-let modulePaths = lib.extended.fs.modulePaths;
-in {
-  imports = modulePaths [ ./apps ./wayland ];
+let
+  modulePaths = lib.extended.fs.modulePaths;
+in
+{
+  imports = modulePaths [
+    ./apps
+    ./wayland
+  ];
+
   home.packages = with pkgs; [
     anki
     aseprite

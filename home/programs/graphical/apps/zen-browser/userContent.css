@@ -21,16 +21,19 @@
 }
 
 @-moz-document url-prefix("about:blank") {
-  html, body, body :not(iframe) {
+  html,
+  body,
+  body :not(iframe) {
     background-color: var(--bg0) !important;
     border-color: initial !important;
     color: initial !important;
   }
 
   /* Remove Dark Reader specific styles */
-  style.darkreader, style[class^="darkreader"] {
+  style.darkreader,
+  style[class^="darkreader"] {
     display: none !important;
-  S}
+  }
 }
 
 @-moz-document url("about:newtab"), url("about:home"), url("") {

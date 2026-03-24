@@ -1,5 +1,9 @@
-{ inputs, pkgs, ... }: {
-  imports = [ ./themes ./substituters.nix ];
+{ inputs, pkgs, ... }:
+{
+  imports = [
+    ./themes
+    ./substituters.nix
+  ];
 
   nix = {
     optimise.automatic = true;
@@ -50,8 +54,7 @@
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        zjstatus =
-          inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
+        zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
       })
     ];
   };

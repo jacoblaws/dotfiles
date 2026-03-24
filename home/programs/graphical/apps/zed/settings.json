@@ -15,23 +15,23 @@
     "lilypond": true,
     "lua": true,
     "nix": true,
-    "toml": true,
+    "toml": true
   },
 
   "theme": {
     "mode": "system",
     "light": "Everforest Light",
-    "dark": "Everforest Dark",
+    "dark": "Everforest Dark"
   },
   "icon_theme": "Zed (Default)",
 
   "scrollbar": {
-    "show": "never",
+    "show": "never"
   },
 
   "which_key": {
     "enabled": true,
-    "delay_ms": 200,
+    "delay_ms": 200
   },
 
   "languages": {
@@ -40,10 +40,10 @@
       "formatter": {
         "external": {
           "command": "nixfmt",
-          "arguments": ["--quiet", "--"],
-        },
-      },
-    },
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    }
   },
 
   "ui_font_size": 16.0,
@@ -60,7 +60,7 @@
     "ss06": true,
     "ss07": true,
     "ss08": true,
-    "ss12": true,
+    "ss12": true
   },
 
   "buffer_font_size": 16.0,
@@ -78,7 +78,7 @@
     "ss06": true,
     "ss07": true,
     "ss08": true,
-    "ss12": true,
+    "ss12": true
   },
 
   "terminal": {
@@ -97,7 +97,7 @@
       "ss06": true,
       "ss07": true,
       "ss08": true,
-      "ss12": true,
-    },
-  },
+      "ss12": true
+    }
+  }
 }

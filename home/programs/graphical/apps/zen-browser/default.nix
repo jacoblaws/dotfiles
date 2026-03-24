@@ -1,4 +1,11 @@
-{ config, inputs, lib, osConfig, pkgs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
 
@@ -6,10 +13,8 @@ let
   inherit (lib.extended.theme) genFiles toCss;
   theme = genFiles ".config/zen/default/chrome/themes" "" toCss themes;
 
-  nixIcon =
-    "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-  firefox-addons =
-    inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
+  nixIcon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+  firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 
   defaultPolicies = {
     AutofillAddressEnabled = true;
@@ -44,56 +49,70 @@ let
       force = true; # Needed so nix can overwite search settings on rebuild
       default = "Brave";
       privateDefault = "Brave";
-      order = [ "Brave" "DuckDuckGo" ];
+      order = [
+        "Brave"
+        "DuckDuckGo"
+      ];
 
       engines = {
         "Brave" = {
-          urls =
-            [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+          urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
           icon = "https://brave.com/favicon.ico";
-          definedAliases = [ "@brave" "@b" ];
+          definedAliases = [
+            "@brave"
+            "@b"
+          ];
         };
 
         "Home Manager Options" = {
-          urls = [{
-            template =
-              "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
-          }];
+          urls = [
+            {
+              template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
+            }
+          ];
           icon = nixIcon;
           definedAliases = [ "@hm" ];
         };
 
         "Hoogle" = {
-          urls = [{
-            template = "https://hoogle.haskell.org/?hoogle={searchTerms}";
-          }];
+          urls = [
+            {
+              template = "https://hoogle.haskell.org/?hoogle={searchTerms}";
+            }
+          ];
           icon = "https://hoogle.haskell.org/favicon.png";
-          definedAliases = [ "@hoogle" "@h" ];
+          definedAliases = [
+            "@hoogle"
+            "@h"
+          ];
         };
 
         "Nix Packages" = {
-          urls = [{
-            template =
-              "https://search.nixos.org/packages?query={searchTerms}&channel=unstable";
-          }];
+          urls = [
+            {
+              template = "https://search.nixos.org/packages?query={searchTerms}&channel=unstable";
+            }
+          ];
           icon = nixIcon;
           definedAliases = [ "@np" ];
         };
 
         "Nix Options" = {
-          urls = [{
-            template =
-              "https://search.nixos.org/options?query={searchTerms}&channel=unstable";
-          }];
+          urls = [
+            {
+              template = "https://search.nixos.org/options?query={searchTerms}&channel=unstable";
+            }
+          ];
           icon = nixIcon;
           definedAliases = [ "@no" ];
         };
 
         "NixOS Wiki" = {
-          urls = [{
-            template =
-              "https://wiki.nixos.org/w/index.php?search={searchTerms}";
-          }];
+          urls = [
+            {
+              template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+            }
+          ];
           icon = nixIcon;
           definedAliases = [ "@nw" ];
         };
@@ -123,7 +142,8 @@ let
       "zen.window-sync.enabled" = false;
     };
   };
-in lib.recursiveUpdate theme {
+in
+lib.recursiveUpdate theme {
   imports = [ inputs.zen-browser.homeModules.default ];
   programs.zen-browser = {
     enable = true;
@@ -132,9 +152,7 @@ in lib.recursiveUpdate theme {
   };
 
   xdg.configFile = {
-    "zen/default/chrome/userChrome.css".source =
-      mkOutOfStoreSymlink ./userChrome.css;
-    "zen/default/chrome/userContent.css".source =
-      mkOutOfStoreSymlink ./userContent.css;
+    "zen/default/chrome/userChrome.css".source = mkOutOfStoreSymlink ./userChrome.css;
+    "zen/default/chrome/userContent.css".source = mkOutOfStoreSymlink ./userContent.css;
   };
 }

@@ -1,34 +1,55 @@
 {
   description = "NixOS and Home-Manager flake";
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./hosts ./modules ];
+      imports = [
+        ./hosts
+        ./modules
+      ];
       systems = [ "x86_64-linux" ];
-      perSystem = { pkgs, ... }: {
-        devShells = let nixTools = with pkgs; [ nixd nixfmt statix ];
-        in {
-          default = pkgs.mkShell {
-            name = "dotfiles";
-            packages = nixTools;
-          };
+      perSystem =
+        { pkgs, ... }:
+        {
+          devShells =
+            let
+              nixTools = with pkgs; [
+                nixd
+                nixfmt
+                statix
+              ];
+            in
+            {
+              default = pkgs.mkShell {
+                name = "dotfiles";
+                packages = nixTools;
+              };
 
-          haskell = pkgs.mkShell {
-            name = "dotfiles-haskell";
-            packages = with pkgs.haskell.packages.ghc912;
-              [
-                (ghc.withPackages (p: [ optparse-applicative ]))
-                haskell-language-server
-                fourmolu
-              ] ++ nixTools;
-          };
+              haskell = pkgs.mkShell {
+                name = "dotfiles-haskell";
+                packages =
+                  with pkgs.haskell.packages.ghc912;
+                  [
+                    (ghc.withPackages (p: [ optparse-applicative ]))
+                    haskell-language-server
+                    fourmolu
+                  ]
+                  ++ nixTools;
+              };
 
-          lua = pkgs.mkShell {
-            name = "dotfiles-lua";
-            packages = with pkgs; [ emmylua-ls stylua ] ++ nixTools;
-          };
+              lua = pkgs.mkShell {
+                name = "dotfiles-lua";
+                packages =
+                  with pkgs;
+                  [
+                    emmylua-ls
+                    stylua
+                  ]
+                  ++ nixTools;
+              };
+            };
         };
-      };
     };
 
   inputs = {

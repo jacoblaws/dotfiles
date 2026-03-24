@@ -1,9 +1,10 @@
-{ ... }: {
+{ ... }:
+{
   programs.tmux = {
     enable = true;
 
-    mouse = true;    # enable mouse mode
-    baseIndex = 1;   # start windows and panes at index 1
+    mouse = true; # enable mouse mode
+    baseIndex = 1; # start windows and panes at index 1
     escapeTime = 10; # remove neovim delay
 
     extraConfig = ''

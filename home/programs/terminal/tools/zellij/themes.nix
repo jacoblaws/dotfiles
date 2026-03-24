@@ -2,7 +2,8 @@
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles;
-  spec = pal: # kdl
+  spec =
+    pal: # kdl
     ''
       themes {
         custom {
@@ -35,4 +36,5 @@ let
         }
       }
     '';
-in genFiles ".config/zellij/themes" "" spec themes
+in
+genFiles ".config/zellij/themes" "" spec themes

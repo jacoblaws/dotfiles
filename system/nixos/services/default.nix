@@ -1,6 +1,13 @@
-{ config, lib, pkgs, ... }:
-let theme = config.themes.everforest.dark;
-in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  theme = config.themes.everforest.dark;
+in
+{
   services = {
     geoclue2.enable = true;
     gvfs.enable = true;
@@ -37,7 +44,9 @@ in {
       enable = true;
       keyboards.default = {
         ids = [ "*" ];
-        settings.main = { capslock = "overload(control, esc)"; };
+        settings.main = {
+          capslock = "overload(control, esc)";
+        };
       };
     };
 
@@ -56,4 +65,3 @@ in {
     };
   };
 }
-

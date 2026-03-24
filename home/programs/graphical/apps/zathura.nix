@@ -1,4 +1,9 @@
-{ lib, osConfig, pkgs, ... }:
+{
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles;
@@ -52,4 +57,5 @@ let
     set recolor-keephue true
   '';
   config = genFiles ".config/zathura" "" options themes;
-in lib.recursiveUpdate config { home.packages = [ pkgs.zathura ]; }
+in
+lib.recursiveUpdate config { home.packages = [ pkgs.zathura ]; }

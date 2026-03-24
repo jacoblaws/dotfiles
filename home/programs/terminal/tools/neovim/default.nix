@@ -1,10 +1,16 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
   neovim-nightly = inputs.neovim-nightly-overlay;
   systemPkgs = pkgs.stdenv.hostPlatform.system;
-in {
+in
+{
   programs.neovim = {
     enable = true;
     package = neovim-nightly.packages.${systemPkgs}.default;
@@ -45,6 +51,5 @@ in {
     ];
   };
 
-  xdg.configFile.nvim.source = mkOutOfStoreSymlink
-    "${homeDirectory}/dotfiles/home/programs/terminal/tools/neovim";
+  xdg.configFile.nvim.source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/terminal/tools/neovim";
 }

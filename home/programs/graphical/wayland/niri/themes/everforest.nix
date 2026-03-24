@@ -2,7 +2,8 @@
 let
   inherit (osConfig) currentTheme theme;
   inherit (theme.${currentTheme}) dark light;
-in {
+in
+{
   xdg.configFile."noctalia/themes/everforest-dark.json".text = # json
     ''
       {

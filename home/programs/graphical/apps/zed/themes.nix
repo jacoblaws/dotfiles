@@ -2,18 +2,25 @@
 let
   inherit (osConfig) themes;
 
-  genThemeFiles = themes: spec:
+  genThemeFiles =
+    themes: spec:
     let
       themeVals = lib.attrValues themes;
       paths = map (theme: "zed/themes/${theme.name}.json") themeVals;
       specs = map (theme: spec theme) themeVals;
       toAttrs = path: spec: lib.setAttrByPath [ path "text" ] spec;
       zipped = lib.zipListsWith toAttrs paths specs;
-    in { xdg.configFile = lib.mergeAttrsList zipped; };
+    in
+    {
+      xdg.configFile = lib.mergeAttrsList zipped;
+    };
 
-  spec = theme:
-    let dark = theme.dark;
-    in ''
+  spec =
+    theme:
+    let
+      dark = theme.dark;
+    in
+    ''
       {
         "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
         "name": "${theme.name}",
@@ -440,4 +447,5 @@ let
         ]
       }
     '';
-in genThemeFiles themes spec
+in
+genThemeFiles themes spec

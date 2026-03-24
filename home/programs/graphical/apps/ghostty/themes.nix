@@ -26,4 +26,5 @@ let
     palette = 14=#${pal.cyan}
     palette = 15=#${pal.fg}
   '';
-in genFiles ".config/ghostty/themes" "" spec themes
+in
+genFiles ".config/ghostty/themes" "" spec themes

@@ -2,7 +2,8 @@
 let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
-in {
+in
+{
   imports = [ ./themes.nix ];
   programs.zed-editor = {
     enable = true;
@@ -40,9 +41,9 @@ in {
     ];
   };
 
-  xdg.configFile."zed/settings.json".source = mkOutOfStoreSymlink
-    "${homeDirectory}/dotfiles/home/programs/graphical/apps/zed/settings.json";
+  xdg.configFile."zed/settings.json".source =
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/zed/settings.json";
 
-  xdg.configFile."zed/keymap.json".source = mkOutOfStoreSymlink
-    "${homeDirectory}/dotfiles/home/programs/graphical/apps/zed/keymap.json";
+  xdg.configFile."zed/keymap.json".source =
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/zed/keymap.json";
 }

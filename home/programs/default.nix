@@ -1,1 +1,6 @@
-{ imports = [ ./graphical ./terminal ]; }
+{
+  imports = [
+    ./graphical
+    ./terminal
+  ];
+}

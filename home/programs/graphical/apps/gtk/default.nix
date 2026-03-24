@@ -1,4 +1,10 @@
-{ config, osConfig, lib, pkgs, ... }:
+{
+  config,
+  osConfig,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles toGtkCss;
@@ -8,7 +14,8 @@ let
 
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
-in lib.recursiveUpdate gtkThemes {
+in
+lib.recursiveUpdate gtkThemes {
   gtk = {
     enable = true;
 
@@ -32,9 +39,9 @@ in lib.recursiveUpdate gtkThemes {
   xdg.configFile = {
     "gtk-3.0/gtk.css".text = ''@import url("styles/main.css");'';
     "gtk-4.0/gtk.css".text = ''@import url("styles/main.css");'';
-    "gtk-3.0/styles".source = mkOutOfStoreSymlink
-      "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk3";
-    "gtk-4.0/styles".source = mkOutOfStoreSymlink
-      "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk4";
+    "gtk-3.0/styles".source =
+      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk3";
+    "gtk-4.0/styles".source =
+      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk4";
   };
 }

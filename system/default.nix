@@ -1,1 +1,9 @@
-let nixos = [ ./common ./nixos ]; in { inherit nixos; }
+let
+  nixos = [
+    ./common
+    ./nixos
+  ];
+in
+{
+  inherit nixos;
+}

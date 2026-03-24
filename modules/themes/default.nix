@@ -1,6 +1,8 @@
 { lib, ... }:
-let inherit (lib) mkOption types literalExpression;
-in {
+let
+  inherit (lib) mkOption types literalExpression;
+in
+{
   options.defaultTheme = mkOption {
     type = types.str;
     default = "everforest";
@@ -10,37 +12,39 @@ in {
   };
 
   options.themes = mkOption {
-    type = types.attrsOf (types.submodule {
-      options = {
-        name = mkOption {
-          type = types.str;
-          default = "";
-          example = "everforest";
-        };
+    type = types.attrsOf (
+      types.submodule {
+        options = {
+          name = mkOption {
+            type = types.str;
+            default = "";
+            example = "everforest";
+          };
 
-        dark = mkOption {
-          type = types.attrsOf types.str;
-          default = { };
-          example = literalExpression ''
-            {
-              fg = "ffffff";
-              bg = "000000";
-            }
-          '';
-        };
+          dark = mkOption {
+            type = types.attrsOf types.str;
+            default = { };
+            example = literalExpression ''
+              {
+                fg = "ffffff";
+                bg = "000000";
+              }
+            '';
+          };
 
-        light = mkOption {
-          type = types.attrsOf types.str;
-          default = { };
-          example = literalExpression ''
-            {
-              fg = "000000";
-              bg = "ffffff";
-            }
-          '';
+          light = mkOption {
+            type = types.attrsOf types.str;
+            default = { };
+            example = literalExpression ''
+              {
+                fg = "000000";
+                bg = "ffffff";
+              }
+            '';
+          };
         };
-      };
-    });
+      }
+    );
 
     description = ''
       Colorscheme colors separated into light and dark palettes

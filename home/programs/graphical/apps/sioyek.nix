@@ -1,4 +1,9 @@
-{ lib, osConfig, pkgs, ... }:
+{
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles;
@@ -31,4 +36,5 @@ let
     search_highlight_color #${pal.magenta}
   '';
   config = genFiles ".config/sioyek" "" options themes;
-in lib.recursiveUpdate config { home.packages = [ pkgs.sioyek ]; }
+in
+lib.recursiveUpdate config { home.packages = [ pkgs.sioyek ]; }

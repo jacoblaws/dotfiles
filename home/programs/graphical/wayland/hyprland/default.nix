@@ -1,5 +1,8 @@
 {
-  imports = [ ./keybinds.nix ./settings.nix ];
+  imports = [
+    ./keybinds.nix
+    ./settings.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

@@ -1,6 +1,14 @@
-{ config, pkgs, inputs, user, ... }:
-let theme = config.themes.everforest.dark;
-in {
+{
+  config,
+  pkgs,
+  inputs,
+  user,
+  ...
+}:
+let
+  theme = config.themes.everforest.dark;
+in
+{
   imports = [
     ../../bin
     ./programs
@@ -48,7 +56,12 @@ in {
   users.users.${user} = {
     shell = pkgs.bash;
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "audio" "kvm" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "kvm"
+    ];
   };
 
   i18n = {
@@ -87,4 +100,3 @@ in {
 
   system.stateVersion = "23.11";
 }
-

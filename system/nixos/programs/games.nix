@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.steam = {
     enable = true;
     protontricks.enable = true;
@@ -10,7 +11,10 @@
   programs.gamescope = {
     enable = true;
     capSysNice = false;
-    args = [ "--rt" "--expose-wayland" ];
+    args = [
+      "--rt"
+      "--expose-wayland"
+    ];
   };
 
   programs.gamemode = {
@@ -22,9 +26,11 @@
     enable = true;
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-cpp;
-    extraRules = [{
-      "name" = "gamescope";
-      "nice" = -20;
-    }];
+    extraRules = [
+      {
+        "name" = "gamescope";
+        "nice" = -20;
+      }
+    ];
   };
 }

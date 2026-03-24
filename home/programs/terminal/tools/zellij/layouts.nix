@@ -1,8 +1,14 @@
-{ lib, osConfig, pkgs, ... }:
+{
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 let
   inherit (osConfig) themes;
   inherit (lib.extended.theme) genFiles;
-  spec = pal: # kdl
+  spec =
+    pal: # kdl
     ''
       layout {
         default_tab_template {
@@ -37,4 +43,5 @@ let
         }
       }
     '';
-in genFiles ".config/zellij/layouts" "" spec themes
+in
+genFiles ".config/zellij/layouts" "" spec themes
