@@ -4,7 +4,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = 'main' },
   { src = 'https://github.com/stevearc/conform.nvim' },
   { src = 'https://github.com/folke/lazydev.nvim' },
-  { src = 'https://github.com/saghen/blink.cmp' },
+  { src = 'https://github.com/saghen/blink.cmp', version = 'v1' },
   { src = 'https://github.com/martineausimon/nvim-lilypond-suite' },
 })
 
@@ -76,7 +76,7 @@ require('lazydev').setup({
 
 require('blink.cmp').setup({
   keymap = { preset = 'enter' },
-  appearance = { nerd_font_variant = 'mono' },
+  appearance = { nerd_font_variant = 'normal' },
   fuzzy = { implementation = 'prefer_rust_with_warning' },
   snippets = { preset = 'mini_snippets' },
 
