@@ -6,7 +6,7 @@
       imports = [ ./hosts ./modules ];
       systems = [ "x86_64-linux" ];
       perSystem = { pkgs, ... }: {
-        devShells = let nixTools = with pkgs; [ nixd nixfmt-classic statix ];
+        devShells = let nixTools = with pkgs; [ nixd nixfmt statix ];
         in {
           default = pkgs.mkShell {
             name = "dotfiles";
@@ -83,6 +83,11 @@
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zjstatus = {

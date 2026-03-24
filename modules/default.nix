@@ -1,1 +1,6 @@
-{ flake.nixosModules = { themes = import ./themes; }; }
+{
+  imports = [ ./treefmt.nix ];
+  flake.nixosModules = {
+    themes = import ./themes;
+  };
+}
