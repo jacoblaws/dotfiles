@@ -1,6 +1,8 @@
 { user, ... }:
 let homeDir = "/home/${user}";
 in {
+  imports = [ ./programs ./services ];
+
   home = {
     username = user;
     homeDirectory = homeDir;

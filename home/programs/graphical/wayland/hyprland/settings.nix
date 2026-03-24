@@ -89,5 +89,12 @@
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
     };
+
+    monitor = [
+      "DP-3, 3440x1440@144, 0x0, 1, bitdepth, 10, vrr, 0"
+      "DP-2, 2560x1440@144, 3440x0, 1, transform, 1, bitdepth, 10, vrr, 0"
+      "eDP-1, 1920x1080@60, auto, 1"
+      ", preferred, auto, 1"
+    ];
   };
 }

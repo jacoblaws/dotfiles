@@ -8,12 +8,12 @@ let
     (final: prev: (import "${self}/lib" final) // inputs.home-manager.lib);
   specialArgs = { inherit self inputs lib user; };
 
-  hmModule = host: system: {
+  hmModule = system: {
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = specialArgs // { system = system; };
-      users.${user}.imports = (import "${self}/home/profiles").${host};
+      users.${user} = ../home;
     };
   };
 in {
@@ -21,12 +21,12 @@ in {
   in {
     desktop = nixosSystem {
       inherit specialArgs;
-      modules = nixos ++ [ ./desktop (hmModule "desktop" system) ];
+      modules = nixos ++ [ ./desktop (hmModule system) ];
     };
 
     laptop = nixosSystem {
       inherit specialArgs;
-      modules = nixos ++ [ ./laptop (hmModule "laptop" system) ];
+      modules = nixos ++ [ ./laptop (hmModule system) ];
     };
   };
 }
