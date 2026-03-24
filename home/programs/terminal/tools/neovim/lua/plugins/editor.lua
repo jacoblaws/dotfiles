@@ -28,7 +28,7 @@ vim.lsp.enable({
 })
 
 ---@diagnostic disable: missing-fields
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter').setup({
   folds = { enable = true },
   highlight = { enable = true },
   indent = { enable = true },
