@@ -46,8 +46,16 @@ require('mini.ai').setup()        -- Extend and create a/i text objects
 require('mini.align').setup()     -- Align text interactively
 require('mini.comment').setup()   -- Comment lines
 require('mini.operators').setup() -- Text editing operators
-require('mini.pairs').setup()     -- Autopairs
 require('mini.splitjoin').setup() -- Split and join arguments
 require('mini.surround').setup()  -- Surround actions
+
+-- Autopairs
+require('mini.pairs').setup({
+  modes = { insert = true, command = true, terminal = false },
+  skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+  skip_ts = { "string" },
+  skip_unbalanced = true,
+  markdown = true,
+})
 
 -- stylua: ignore end
