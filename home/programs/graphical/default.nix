@@ -6,6 +6,7 @@ in {
     anki
     aseprite
     blender
+    brave
     calibre
     discord
     drawio
@@ -31,6 +32,7 @@ in {
     pureref
     r2modman
     spotify
+    ungoogled-chromium
     unityhub
     winetricks
     xivlauncher
