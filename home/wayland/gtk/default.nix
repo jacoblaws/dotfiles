@@ -39,9 +39,7 @@ lib.recursiveUpdate gtkThemes {
   xdg.configFile = {
     "gtk-3.0/gtk.css".text = ''@import url("styles/main.css");'';
     "gtk-4.0/gtk.css".text = ''@import url("styles/main.css");'';
-    "gtk-3.0/styles".source =
-      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk3";
-    "gtk-4.0/styles".source =
-      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/apps/gtk/gtk4";
+    "gtk-3.0/styles".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/wayland/gtk/gtk3";
+    "gtk-4.0/styles".source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/wayland/gtk/gtk4";
   };
 }

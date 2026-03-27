@@ -1,11 +1,9 @@
-{ lib, pkgs, ... }:
-let
-  modulePaths = lib.extended.fs.modulePaths;
-in
+{ pkgs, ... }:
 {
-  imports = modulePaths [
-    ./apps
-    ./wayland
+  imports = [
+    ./zen-browser
+    ./sioyek.nix
+    ./zathura.nix
   ];
 
   home.packages = with pkgs; [
@@ -44,16 +42,4 @@ in
     xivlauncher
     zotero
   ];
-
-  home.pointerCursor = {
-    name = "Qogir";
-    package = pkgs.qogir-icon-theme;
-
-    size = 24;
-    gtk.enable = true;
-    hyprcursor.enable = true;
-    hyprcursor.size = 24;
-    x11.enable = true;
-    x11.defaultCursor = "Qogir";
-  };
 }

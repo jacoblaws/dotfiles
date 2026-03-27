@@ -1,43 +1,33 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   inherit (config.home) homeDirectory;
   inherit (config.lib.file) mkOutOfStoreSymlink;
-  neovim-nightly = inputs.neovim-nightly-overlay;
-  systemPkgs = pkgs.stdenv.hostPlatform.system;
 in
 {
-  programs.neovim = {
+  imports = [ ./themes.nix ];
+  programs.zed-editor = {
     enable = true;
-    package = neovim-nightly.packages.${systemPkgs}.default;
-
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-
     extraPackages = with pkgs; [
-      # Dependencies
+      libgcc
       tree-sitter
 
       # Language servers
       bash-language-server
       clang-tools
       haskell-language-server
-      emmylua-ls
+      lua-language-server
       marksman
+      nil
       nixd
       nushell
+      package-version-server
       rust-analyzer
       taplo
       texlab
       tinymist
       ty
       typescript-language-server
+      vscode-json-languageserver
 
       # Formatters
       fourmolu
@@ -51,5 +41,9 @@ in
     ];
   };
 
-  xdg.configFile.nvim.source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/terminal/tools/neovim";
+  xdg.configFile."zed/settings.json".source =
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/apps/zed/settings.json";
+
+  xdg.configFile."zed/keymap.json".source =
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/apps/zed/keymap.json";
 }

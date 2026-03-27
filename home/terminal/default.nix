@@ -1,9 +1,14 @@
-{ lib, pkgs, ... }:
-let
-  modulePaths = lib.extended.fs.modulePaths;
-in
+{ pkgs, ... }:
 {
-  imports = modulePaths [ ./tools ];
+  imports = [
+    ./ghostty
+    ./kitty
+    ./zellij
+    ./shell.nix
+    ./starship.nix
+    ./tmux.nix
+  ];
+
   home.packages = with pkgs; [
     appimage-run
     bat

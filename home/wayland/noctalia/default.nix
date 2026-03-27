@@ -16,8 +16,8 @@ in
   };
   xdg.configFile = {
     "noctalia/plugins.json".source =
-      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/wayland/noctalia/plugins.json";
+      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/wayland/noctalia/plugins.json";
     "noctalia/settings.json".source =
-      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/graphical/wayland/noctalia/settings.json";
+      mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/wayland/noctalia/settings.json";
   };
 }

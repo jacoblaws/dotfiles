@@ -4,8 +4,11 @@ let
 in
 {
   imports = [
-    ./programs
-    ./services
+    ./apps
+    ./editors
+    ./terminal
+    ./wayland
+    ./services.nix
   ];
 
   home = {
