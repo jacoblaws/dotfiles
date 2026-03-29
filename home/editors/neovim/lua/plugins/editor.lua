@@ -153,3 +153,5 @@ require('nvls').setup({
     },
   },
 })
+
+---@diagnostic disable: param-type-mismatch, missing-fields
