@@ -11,5 +11,5 @@ in
   home.packages = with pkgs; [ zjstatus ];
   programs.zellij.enable = true;
   xdg.configFile."zellij/config.kdl".source =
-    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/programs/terminal/tools/zellij/config.kdl";
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/terminal/zellij/config.kdl";
 }
