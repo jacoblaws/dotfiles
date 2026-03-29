@@ -27,19 +27,41 @@ vim.lsp.enable({
   'ty',            -- Python
 })
 
----@diagnostic disable: missing-fields
-require('nvim-treesitter').setup({
-  folds = { enable = true },
-  highlight = { enable = true },
-  indent = { enable = true },
+local parsers = {
+  -- Programming langugages
+  'c', 'cpp', 'haskell', 'javascript', 'lua', 'nix', 'purescript', 'python', 'rescript', 'rust',
+  -- Shell
+  'bash', 'elvish', 'fish', 'nu', 'zsh',
+  -- Markup
+  'html', 'latex', 'markdown', 'markdown_inline', 'typst',
+  -- Utilities
+  'cmake', 'comment', 'css', 'diff', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit',
+  'gitignore', 'json', 'json5', 'just', 'kdl', 'luadoc', 'luap', 'printf', 'query', 'regex',
+  'scss', 'toml', 'tsx', 'vim', 'vimdoc', 'xml', 'yaml',
+}
 
-  auto_install = true,
-  insure_installed = {
-    'bash', 'c',    'cpp',        'css',        'diff',   'haskell', 'html',     'javascript',
-    'json', 'json', 'jsonc',      'kdl',        'latex',  'lua',     'markdown', 'markdown_inline',
-    'nix',  'nu',   'printf',     'purescript', 'python', 'regex',   'rust',     'scss',
-    'toml', 'tsx',  'typescript', 'typst',      'vim',    'vimdoc',  'xml',      'yaml',
-  },
+-- Install missing parsers
+local isnt_installed = function(lang)
+  return #vim.api.nvim_get_runtime_file('parser/' .. lang .. '.*', false) == 0
+end
+local to_install = vim.tbl_filter(isnt_installed, parsers)
+if #to_install > 0 then require('nvim-treesitter').install(to_install) end
+
+-- Find filetypes for autocmd
+local filetypes = {}
+for _, lang in ipairs(parsers) do
+  for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
+    table.insert(filetypes, ft)
+  end
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = filetypes,
+  callback = function(ev)
+    vim.treesitter.start(ev.buf)
+    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
 })
 
 require('conform').setup({
