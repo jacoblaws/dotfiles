@@ -42,8 +42,8 @@ in
   };
 
   xdg.configFile."zed/settings.json".source =
-    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/apps/zed/settings.json";
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/editors/zed/settings.json";
 
   xdg.configFile."zed/keymap.json".source =
-    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/apps/zed/keymap.json";
+    mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/editors/zed/keymap.json";
 }
