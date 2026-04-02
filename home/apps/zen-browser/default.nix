@@ -51,7 +51,7 @@ let
       privateDefault = "Brave";
       order = [
         "Brave"
-        "DuckDuckGo"
+        "ddg"
       ];
 
       engines = {

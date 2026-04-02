@@ -31,7 +31,7 @@
     pavucontrol
     picard
     prismlauncher
-    protonvpn-gui
+    proton-vpn
     puredata
     pureref
     r2modman

@@ -19,7 +19,7 @@ in
     inputs.musnix.nixosModules.musnix
   ];
 
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
   security.rtkit.enable = true;
   networking.networkmanager.enable = true;
 
