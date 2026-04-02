@@ -14,7 +14,7 @@ in
   home = {
     username = user;
     homeDirectory = homeDir;
-    stateVersion = "23.11";
+    stateVersion = "26.05";
   };
 
   xdg.userDirs = {
