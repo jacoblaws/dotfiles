@@ -8,7 +8,5 @@
     };
   };
 
-  services.hyprsunset.enable = true;
   services.hyprpolkitagent.enable = true;
-  services.swaync.enable = true;
 }
