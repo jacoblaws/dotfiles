@@ -8,7 +8,7 @@ let
   extensions = inputs.nix-vscode-extensions.extensions.${system};
 in
 {
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
     mutableExtensionsDir = false;

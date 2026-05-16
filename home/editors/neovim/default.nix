@@ -16,6 +16,7 @@ in
     package = neovim-nightly.packages.${systemPkgs}.default;
 
     defaultEditor = true;
+    sideloadInitLua = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
