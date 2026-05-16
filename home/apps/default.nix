@@ -19,7 +19,7 @@
     gnome-calculator
     godot
     libreoffice
-    lutris
+    # lutris
     mangohud
     mission-center
     nautilus
