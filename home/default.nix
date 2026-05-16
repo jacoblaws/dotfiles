@@ -36,26 +36,26 @@ in
         "zathura.desktop"
         "sioyek.desktop"
       ];
-      "default-web-browser" = [ "firefox.desktop" ];
+      "default-web-browser" = [ "zen-beta.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "x-scheme-handler/about" = [ "firefox.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "x-scheme-handler/unkown" = [ "firefox.desktop" ];
+      "text/html" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/about" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/unkown" = [ "zen-beta.desktop" ];
     };
     defaultApplications = {
       "application/pdf" = [
         "zathura.desktop"
         "sioyek.desktop"
       ];
-      "default-web-browser" = [ "firefox.desktop" ];
+      "default-web-browser" = [ "zen-beta.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "text/html" = [ "firefox.desktop" ];
-      "x-scheme-handler/about" = [ "firefox.desktop" ];
-      "x-scheme-handler/http" = [ "firefox.desktop" ];
-      "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "x-scheme-handler/unkown" = [ "firefox.desktop" ];
+      "text/html" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/about" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/http" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/https" = [ "zen-beta.desktop" ];
+      "x-scheme-handler/unkown" = [ "zen-beta.desktop" ];
     };
   };
 }
