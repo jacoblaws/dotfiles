@@ -40,6 +40,7 @@
     interactiveShellInit = ''
       set -U fish_greeting
       fish_add_path $HOME/dotfiles/bin
+      direnv hook fish | source
     '';
 
     functions = {
