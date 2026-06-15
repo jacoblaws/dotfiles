@@ -66,7 +66,7 @@ hl.config({
 	},
 
 	misc = {
-		vrr = 1,
+		vrr = 2,
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
 	},
@@ -78,7 +78,7 @@ hl.gesture({
 	action = "workspace",
 })
 
-hl.monitor({ output = "DP-3", mode = "3440x1440@144", position = "0x0", scale = 1, bitdepth = 10, vrr = 1 })
+hl.monitor({ output = "DP-3", mode = "3440x1440@144", position = "0x0", scale = 1, bitdepth = 10, vrr = 2 })
 hl.monitor({ output = "eDP-1", mode = "1920x1080@60", position = "0x0", scale = 1 })
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 
