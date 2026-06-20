@@ -11,9 +11,7 @@ let
 in
 {
   imports = [ inputs.noctalia.homeModules.default ] ++ modulePaths [ ./themes ];
-  programs.noctalia-shell = {
-    enable = true;
-  };
+  programs.noctalia.enable = true;
   xdg.configFile = {
     "noctalia/plugins.json".source =
       mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/wayland/noctalia/plugins.json";
