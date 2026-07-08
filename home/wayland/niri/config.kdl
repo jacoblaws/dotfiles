@@ -1,6 +1,6 @@
 prefer-no-csd
 screenshot-path "~/media/screenshots/%Y-%m-%d %H-%M-%S.png"
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 window-rule {
   tiled-state true
