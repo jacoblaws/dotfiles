@@ -4,60 +4,71 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        ./hosts
-        ./modules
-      ];
       systems = [ "x86_64-linux" ];
-      perSystem =
-        { pkgs, ... }:
-        {
-          devShells =
-            let
-              nixTools = with pkgs; [
-                nixd
-                nixfmt
-                statix
-              ];
-            in
-            {
-              default = pkgs.mkShell {
-                name = "dotfiles";
-                packages = nixTools;
-              };
+      imports = [
+        (inputs.import-tree [
+          ./bin
+          ./modules
+	  ./system
+	  ./home
+        ])
+      ];
 
-              haskell = pkgs.mkShell {
-                name = "dotfiles-haskell";
-                packages =
-                  with pkgs.haskell.packages.ghc912;
-                  [
-                    (ghc.withPackages (p: [ optparse-applicative ]))
-                    haskell-language-server
-                    fourmolu
-                  ]
-                  ++ nixTools;
-              };
+      perSystem = { pkgs, ... }: {
+        devShells =
+          let
+            nixTools = with pkgs; [
+              nixd
+              nixfmt
+              statix
 
-              lua = pkgs.mkShell {
-                name = "dotfiles-lua";
-                packages =
-                  with pkgs;
-                  [
-                    emmylua-ls
-                    stylua
-                  ]
-                  ++ nixTools;
-              };
+              tombi
+            ];
+          in
+          {
+            default = pkgs.mkShell {
+              name = "dotfiles";
+              packages = nixTools;
             };
-        };
+
+            haskell = pkgs.mkShell {
+              name = "dotfiles-haskell";
+              packages =
+                with pkgs.haskell.packages.ghc912;
+                [
+                  (ghc.withPackages (p: [ optparse-applicative ]))
+                  haskell-language-server
+                  fourmolu
+                ]
+                ++ nixTools;
+            };
+
+            lua = pkgs.mkShell {
+              name = "dotfiles-lua";
+              packages =
+                with pkgs;
+                [
+                  emmylua-ls
+                  stylua
+                ]
+                ++ nixTools;
+            };
+          };
+      };
     };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    import-tree.url = "github:denful/import-tree";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -93,18 +104,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

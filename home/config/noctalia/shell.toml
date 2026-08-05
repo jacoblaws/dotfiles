@@ -1,0 +1,183 @@
+[shell]
+corner_radius_scale                  = 1.0
+button_borders                       = true
+input_borders                        = true
+popup_borders                        = true
+card_borders                         = true
+popup_shadows                        = true
+font_family                          = "Recursive Sans Linear Static"
+time_format                          = "{:%-I:%M %P}"
+date_format                          = "%A, %x"
+offline_mode                         = false
+external_ip_enabled                  = false
+telemetry                            = false
+setup_wizard_enabled                 = false
+niri_overview_type_to_launch_enabled = false
+polkit_agent                         = true
+password_style                       = "default"
+avatar_path                          = "~/media/images/profiles/current.png"
+settings_show_advanced               = true
+settings_window_translucent          = false
+show_location                        = true
+launch_apps_as_systemd_services      = false
+launch_apps_custom_command           = ""
+screen_time_enabled                  = false
+app_icon_colorize                    = true
+app_icon_color                       = "on_surface"
+clipboard_enabled                    = true
+clipboard_keep_from_closed_apps      = true
+clipbord_history_max_entries         = 100
+clipboard_confirm_clear_history      = true
+clipboard_auto_paste                 = "auto"
+clipboard_image_action_command       = ""
+shared_gl_context                    = true
+disable_mipmaps                      = false
+
+[shell.animation]
+enabled = true
+speed   = 1.0
+
+[shell.shadow]
+direction = "down"
+alpha     = 0.55
+
+[shell.panel]
+transparency_mode              = "solid"
+borders                        = true
+shadow                         = true
+list_item_background           = false
+floating_layer                 = "overlay"
+launcher_placement             = "attached"
+clipboard_placement            = "attached"
+control_center_placement       = "attached"
+wallpaper_placement            = "attached"
+session_placement              = "floating"
+polkit_placement               = "floating"
+launcher_position              = "auto"
+clipboard_position             = "auto"
+polkit_position                = "center"
+floating_offset                = 8
+open_near_click_control_center = true
+open_near_click_launcher       = true
+open_near_click_clipboard      = true
+open_near_click_wallpaper      = true
+open_near_click_session        = true
+
+[shell.launcher]
+categories           = true
+show_icons           = true
+compact              = true
+app_grid             = true
+sort_by_usage        = true
+fetch_exchange_rates = true
+provider_prefix      = "/"
+auto_paste           = "auto"
+
+[shell.launcher.providers.calculator]
+prefix = "c"
+global = true
+
+[shell.launcher.providers.emoji]
+prefix = "e"
+
+[shell.launcher.providers.session]
+prefix = "w"
+
+[shell.launcher.providers.wallpaper]
+prefix = "wa"
+
+[shell.launcher.providers.windows]
+prefix = "wi"
+
+[shell.launcher.dmenu.entry.ssh]
+command = "awk '/^Host /{print $2}' ~/.ssh/config"
+exec    = "ghostty ssh {selection}"
+prefix  = "ssh"
+glyph   = "server"
+global  = false
+
+[shell.screen_corners]
+enabled = false
+size    = 32
+
+[shell.screenshot]
+save_to_file         = true
+directory            = "~/media/images/screenshots"
+filename_pattern     = "screenshot_%m%d%Y"
+copy_to_clipboard    = true
+freeze_screen        = true
+confirm_region       = false
+remember_last_region = false
+show_cursor          = false
+pipe_to_command      = false
+pipe_command         = ""
+
+[shell.greeter_sync]
+auto_sync         = false
+privilege_command = "ghostty -e pkexec"
+
+[hot_corners]
+enabled  = false
+delay_ms = 0
+
+[hot_corners.top_left]
+action = "none"
+
+[hot_corners.bottom_right]
+action  = "command"
+command = "swaylock -f"
+
+[lockscreen]
+enabled              = true
+lock_before_suspend  = true
+fingerprint          = true
+allow_empty_password = false
+blurred_desktop      = false
+blur_intensity       = 0.5
+tint_intensity       = 0.3
+wallpaper            = ""
+monitors             = []
+
+[keybinds]
+validate     = [ "return", "kp_enter" ]
+cancel       = [ "escape" ]
+left         = [ "left" ]
+right        = [ "right" ]
+up           = [ "up" ]
+down         = [ "down" ]
+tab_next     = [ "tab" ]
+tab_previous = [ "shift+tab", "iso_left_tab" ]
+copy         = [ "ctrl+c" ]
+save         = [ "ctrl+s" ]
+delete       = [ "del" ]
+
+[theme]
+mode            = "auto"
+source          = "custom"
+custom_palette  = "Everforest"
+pure_black_dark = false
+
+[location]
+auto_locate = false
+address     = "Portland, OR"
+
+[wallpaper]
+enabled               = true
+fill_mode             = "center"
+fill_color            = "#232a2e"
+transition            = "fade"
+transition_duration   = "1500"
+edge_smoothness       = 0.3
+transition_on_startup = false
+directory             = "/home/jvl/media/images/wallpapers"
+directory_dark        = "/home/jvl/media/images/wallpapers/dark"
+directory_light       = "/home/jvl/media/images/wallpapers/light"
+
+[wallpaper.default]
+path = "/home/jvl/media/images/wallpapers/current.png"
+
+[wallpaper.automation]
+enabled          = false
+interval_seconds = 1800
+order            = "random"
+recursive        = true

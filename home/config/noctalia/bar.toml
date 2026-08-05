@@ -1,0 +1,74 @@
+[bar]
+order = [ "default" ]  # Layer shell creation order
+
+[bar.default]
+enabled       = true
+position      = "top"
+auto_hide     = false
+reserve_space = true
+layer         = "top"
+
+# Layout
+thickness            = 30   # pixels
+content_scale        = 1.0  # scale factor
+margin_ends          = 0    # px
+margin_edge          = 0    # px
+margin_opposite_edge = 0    # px
+padding              = 7    # px
+panel_overlap        = 2    # px
+
+# Shape
+radius              = 0
+radius_top_left     = 0
+radius_top_right    = 0
+radius_bottom_left  = -14
+radius_bottom_right = -14
+border              = "outline"
+border_width        = 0.0
+
+# Effects
+background_opacity = 1.0
+shadow             = true
+contact_shadow     = false
+
+# Widgets
+font_family    = "Recursive Sans Linear Static"
+font_weight    = 500
+widget_spacing = 7
+
+# Capsules
+capsule = false
+
+# Widget List
+start  = [ "control-center", "Workspaces" ]
+center = [ "volume", "clipboard", "clock", "notifications", "launcher" ]
+end    = [ "privacy", "tray", "bluetooth", "network", "battery", "session" ]
+
+# Individual widget configurations
+[widget.control-center]
+glyph                 = "U+F313"
+custom_image          = ""
+custom_image_colorize = false
+
+[widget.workspaces]
+style                     = "regular"
+show_labels               = false
+label_source              = "id"
+max_label_chars           = 1
+pill_scale                = 1.0
+active_pill_size          = 2.0
+inactive_pill_sze         = 1.0
+focused_color             = "primary"
+occupied_color            = "secondary"
+empty_color               = "secondary"
+urgent_color              = "error"
+change_color_on_hover     = true
+focused_output_only       = false
+labels_only_when_occupied = false
+
+[widget.volume]
+device     = "output"
+show_label = false
+
+[widget.clock]
+format = "{:%-I:%M %P}"

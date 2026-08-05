@@ -1,0 +1,71 @@
+# {
+#   config,
+#   inputs,
+#   pkgs,
+#   ...
+# }:
+# let
+#   inherit (config.home) homeDirectory;
+#   inherit (config.lib.file) mkOutOfStoreSymlink;
+#   neovim-nightly = inputs.neovim-nightly-overlay;
+#   systemPkgs = pkgs.stdenv.hostPlatform.system;
+# in
+# {
+#   programs.neovim = {
+#     enable = true;
+#     package = neovim-nightly.packages.${systemPkgs}.default;
+#
+#     defaultEditor = true;
+#     sideloadInitLua = true;
+#     viAlias = true;
+#     vimAlias = true;
+#     vimdiffAlias = true;
+#
+#     extraPackages = with pkgs; [
+#       # Dependencies
+#       tree-sitter
+#
+#       # Language servers
+#       bash-language-server
+#       clang-tools
+#       haskell-language-server
+#       emmylua-ls
+#       marksman
+#       nixd
+#       nushell
+#       rust-analyzer
+#       taplo
+#       texlab
+#       tinymist
+#       ty
+#       typescript-language-server
+#
+#       # Formatters
+#       fourmolu
+#       ruff
+#       stylua
+#       nixfmt
+#       shfmt
+#       rustfmt
+#       nufmt
+#       typstyle
+#     ];
+#   };
+#
+#   xdg.configFile.nvim.source = mkOutOfStoreSymlink "${homeDirectory}/dotfiles/home/editors/neovim";
+# }
+
+{ inputs, pkgs, ... }: let
+  neovim-nightly = inputs.neovim-nightly-overlay;
+in {
+  flake.nixosModules.neovim = { pkgs, ... }:
+    let
+      systemPkgs = pkgs.stdenv.hostPlatform.system;
+    in
+    {
+      hjem.users.jvl = {
+        packages = [ neovim-nightly.packages.${systemPkgs}.default ];
+        xdg.config.files.nvim.source = "/home/jvl/dotfiles/hjem/neovim";
+      };
+    };
+}

@@ -1,0 +1,49 @@
+add_newline = false
+format = """
+$directory$git_branch$git_status$c$lua$nodejs$python$rust$nix_shell$cmd_duration$status
+$character"""
+
+[c]
+format = "[$symbol($version(-$name) )]($style)"
+symbol = " "
+
+[character]
+format = "$symbol "
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+truncation_length = 7
+
+[git_branch]
+format = "on [$symbol$branch(:$remote_branch)]($style) "
+symbol = "󰘬 "
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[lua]
+format = "[$symbol($version )]($style)"
+symbol = "󰢱 "
+
+[nix_shell]
+format = "[$symbol$state]($style) "
+symbol = "󱄅 "
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+symbol = "󰎙 "
+
+[python]
+format = '[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)'
+symbol = "󰌠 "
+
+[rust]
+format = "[$symbol($version )]($style)"
+symbol = "󱘗 "
+
+[status]
+format = "[$symbol$status]($style) "
