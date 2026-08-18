@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+  "diagnostics": {
+    "globals": [
+      "hl",
+      "os",
+      "vim"
+    ]
+  },
+  "workspace": {
+    "library": [ "/usr/share/hypr/stubs" ]
+  }
+}
